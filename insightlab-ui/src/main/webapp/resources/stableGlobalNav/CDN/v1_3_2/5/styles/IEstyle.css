@@ -1,0 +1,17 @@
+/* IE9+ --> IE forces default text styling which looks better with opacity */
+.acxiom-action-container.dark .acxiom-button.action[disabled],
+.acxiom-action-container.dark .row-fluid  .acxiom-button.action[disabled],
+.acxiom-action-container.dark .row-fluid  div[class*="span"] .acxiom-button.action[disabled]
+{opacity: 0.4 !important}
+
+/* action bar overrides */
+body .acxiom-action-container .acxiom-select[class*="span"] select {padding-top:3px !important;}
+body .acxiom-action-container .acxiom-select:after {top: 6px;}
+
+/* removes grey box inside select boxes */
+select option {background:none !important; }
+
+/* tooltip positioning is differrent in IE - fixed by adding bottom margin */
+div.acxiom-tooltip{
+	margin-bottom: 4px !important;
+}

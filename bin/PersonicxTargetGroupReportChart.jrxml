@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PersonicxTargetGroupReportChart" pageWidth="720" pageHeight="612" orientation="Landscape" columnWidth="720" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="571d636c-6bf8-4faa-9473-41ffeb80b6cc">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="clusterName" class="java.lang.String">
+		<fieldDescription><![CDATA[clusterName]]></fieldDescription>
+	</field>
+	<field name="index" class="java.lang.Integer">
+		<fieldDescription><![CDATA[index]]></fieldDescription>
+	</field>
+	<field name="targetGroupName" class="java.lang.String">
+		<fieldDescription><![CDATA[targetGroupName]]></fieldDescription>
+	</field>
+	<field name="totalRow" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[totalRow]]></fieldDescription>
+	</field>
+	<variable name="MAX_INDEX" class="java.lang.Integer" calculation="Highest">
+		<variableExpression><![CDATA[$F{index}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<group name="MAX_NUMBER_OF_BARS_GROUP">
+		<groupExpression><![CDATA[($V{REPORT_COUNT}-1)/15]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="405" splitType="Stretch">
+			<printWhenExpression><![CDATA[$V{MAX_NUMBER_OF_BARS_GROUP_COUNT}.equals(1)]]></printWhenExpression>
+			<barChart>
+				<chart isShowLegend="false" renderType="draw" theme="default">
+					<reportElement mode="Opaque" x="0" y="0" width="720" height="405" uuid="97912db2-629c-4e67-bae0-3ef4b1937e2a"/>
+					<box>
+						<topPen lineWidth="0.5" lineColor="#808080"/>
+						<leftPen lineWidth="0.5" lineColor="#808080"/>
+						<bottomPen lineWidth="0.5" lineColor="#808080"/>
+						<rightPen lineWidth="0.5" lineColor="#808080"/>
+					</box>
+					<chartTitle position="Top"/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<dataset resetType="Group" resetGroup="MAX_NUMBER_OF_BARS_GROUP"/>
+					<categorySeries>
+						<seriesExpression><![CDATA["chart"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{clusterName}.equals("null")? $F{targetGroupName}: $F{clusterName}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{clusterName}.equals ("null")? 0 : $F{index}]]></valueExpression>
+						<labelExpression><![CDATA[$F{clusterName}.equals ("null")? " " : $F{index} + ""]]></labelExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot isShowLabels="true" isShowTickLabels="true" isShowTickMarks="true">
+					<plot orientation="Horizontal">
+						<seriesColor seriesOrder="0" color="#7C9DC0"/>
+					</plot>
+					<itemLabel color="#000000" backgroundColor="#FFFFFF">
+						<font size="7"/>
+					</itemLabel>
+					<categoryAxisFormat>
+						<axisFormat labelColor="#BBBBBB" tickLabelColor="#666666" verticalTickLabels="true" axisLineColor="#BBBBBB">
+							<labelFont>
+								<font size="8"/>
+							</labelFont>
+							<tickLabelFont>
+								<font size="8"/>
+							</tickLabelFont>
+						</axisFormat>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat labelColor="#666666" tickLabelColor="#666666" verticalTickLabels="false" axisLineColor="#BBBBBB"/>
+					</valueAxisFormat>
+					<rangeAxisMaxValueExpression><![CDATA[$V{MAX_INDEX} + $V{MAX_INDEX}*0.5]]></rangeAxisMaxValueExpression>
+				</barPlot>
+			</barChart>
+		</band>
+	</detail>
+</jasperReport>

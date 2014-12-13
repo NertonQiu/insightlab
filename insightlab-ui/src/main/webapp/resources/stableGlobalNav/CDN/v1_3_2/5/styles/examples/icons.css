@@ -1,0 +1,25 @@
+#icon-example {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#icon-example thead {
+    font-weight: bold;
+}
+
+#icon-example tr {
+    height: 30px;
+}
+
+#icon-example td {
+    border: 1px solid #ccc;
+}
+
+#icon-example td:nth-child(1) {
+    padding: 2px 0 2px 10px;
+}
+
+#icon-example td:nth-child(2),
+#icon-example td:nth-child(3) {
+    text-align: center;
+}

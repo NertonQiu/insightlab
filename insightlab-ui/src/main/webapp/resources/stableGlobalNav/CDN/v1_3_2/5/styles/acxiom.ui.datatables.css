@@ -1,0 +1,302 @@
+/* Containers 
+----------------------------------------------- */
+
+.acxiom-datatable {
+	background:white; 
+	border-bottom:1px solid #DDD;
+	margin: 0;
+}
+.dataTables_scrollBody {
+	position: relative;
+	border-left:1px solid #DDD;
+	border-right:1px solid #DDD;
+} 
+.dataTables_info {
+	display: none;
+}
+.dataTables_scrollBody .sorting_desc, .dataTables_scrollBody .sorting_asc {
+	background: none;
+}
+
+/* Table 
+----------------------------------------------- */
+
+.acxiom-datatable table{
+	border-collapse: collapse;
+}
+.acxiom-datatable .dataTables_scrollHead {
+	border-bottom: 1px solid #999 !important;
+}
+.acxiom-datatable table thead th {
+	border: none;
+	padding: 11px 7px 8px 7px;
+	font-size: 12px;
+	font-weight: bold;
+	color: #444;
+	vertical-align: bottom;
+	text-align: left;
+	text-transform: uppercase;
+	*cursor: hand;
+}
+.acxiom-datatable table thead th span {
+    background: none repeat scroll 0 0 #FFF;
+	border-radius: 			2px 2px 0 0;
+	-webkit-border-radius: 	2px 2px 0 0;
+	-moz-border-radius: 	2px 2px 0 0;
+    display: block;
+    float: left;
+    height: 5px;
+	left: -6px;
+	top: 8px;
+	padding: 0 6px;
+    position: relative;
+    width: 100% !important;
+}
+.acxiom-datatable th.sorting:hover,
+.acxiom-datatable th.sorting_desc:hover, 
+.acxiom-datatable th.sorting_asc:hover  {
+	cursor: pointer;
+}
+.acxiom-datatable th.sorting:hover span {
+    background-color: #CDE2EB;
+}
+.acxiom-datatable table td {
+	font-size: 12px;
+	padding: 6px 7px;
+	color: #444;
+	border-bottom: 1px solid #DDDDDD;
+	background: #fff;
+}
+.acxiom-datatable table tr.checked td  {
+	background: #E8EDEF;
+}
+.acxiom-datatable table tr:hover td {
+    background: #CDE2EB;
+}
+.acxiom-datatable table tr.active td, .acxiom-datatable table tr.active td a  {
+	background: #899EB1;
+	color: #FFF !important;
+}
+
+
+/* Sorting 
+----------------------------------------------- */
+.acxiom-datatable .sorting_asc {
+	background: url(img/acxiom-table-arrow-up.png) no-repeat right center;
+}
+.acxiom-datatable .sorting_desc {
+	background: url(img/acxiom-table-arrow-down.png) no-repeat right center;
+}
+.acxiom-datatable .sorting {
+
+}
+/* sorted column bg */
+.acxiom-datatable tr td.sorting_1  {
+	background-color: #F8F4F5;
+}
+/* th bottom "border" */
+.acxiom-datatable th.sorting_desc span, .acxiom-datatable th.sorting_asc span {
+    background-color: #687884;
+}
+
+/* Reordering
+----------------------------------------------- */
+
+/* dragged column header */
+.DTCR_clonedTable {	
+	border-bottom: 1px solid #999;
+	padding: 0 5px;
+	font-size: 12px;
+	font-weight: bold;
+	color: #444;
+	vertical-align: bottom;
+	text-align: left;
+	text-transform: uppercase;
+	background: #FFFFFF url(img/drag-n-drop.png) 95% center no-repeat;
+    -moz-opacity: .7;
+    -webkit-opacity: .7;
+    opacity: .7;
+}
+
+/* Inputs 
+----------------------------------------------- */
+
+/* button and select width */
+.acxiom-datatable table td input.acxiom-input, .acxiom-datatable table td .acxiom-select {width: 85%;}
+.acxiom-datatable table td .acxiom-select select {width: 100%; padding-right:30px !important;}
+
+/* textarea width */
+.acxiom-datatable textarea {max-width: 85%;}
+
+/* clear button */
+.acxiom-datatable .acxiom-button.clear {color:#FFF;}
+.acxiom-datatable .acxiom-button.clear:not([disabled]):hover {color:#FFF; border-bottom:1px solid #FFF;}
+
+
+/* adjust checkbox > span in th */
+.acxiom-datatable table thead th label span, .acxiom-datatable table thead th:hover label span { 
+	background: none;
+	display: inline;
+	padding: 0;
+	width: auto !important;
+ 	left: 0; 
+	top: 0;
+	margin: 0;
+	margin-bottom: 5px;
+	height: auto !important;
+}
+
+/* Pagination 
+----------------------------------------------- */
+.dataTables_paginate .first, .dataTables_paginate .previous, .dataTables_paginate .next, .dataTables_paginate .last {
+    border: medium none;
+    display: block;
+    float: left;
+    font-size: 0;
+    height: 7px;
+    padding: 0;
+    width: 9px;	
+}
+.dataTables_paginate .first {
+    background: url("img/pagination/W_EL1.png") no-repeat scroll 0 0 transparent;
+
+}
+.dataTables_paginate .previous {
+    background: url("img/pagination/W_EL2.png") no-repeat scroll 0 0 transparent;
+}
+.dataTables_paginate .previous {
+    background: url("img/pagination/W_EL2.png") no-repeat scroll 0 0 transparent;
+}
+.dataTables_paginate .next {
+    background: url("img/pagination/W_ER3.png") no-repeat scroll 0 0 transparent;
+}
+.dataTables_paginate .last {
+    background: url("img/pagination/W_ER4.png") no-repeat scroll 0 0 transparent;
+}
+.dataTables_paginate .paginate_button_disabled {
+    opacity: 0.5;
+}
+.dataTables_paginate span {
+    float: left;
+    margin-top: -3px;
+    position: relative;
+}
+.dataTables_paginate .paginate_active {
+    background: transparent;
+    border: medium none;
+    color: #FFFFFF !important;
+    cursor: default;
+    float: left;
+    font-size: 13px;
+    line-height: 13px !important;
+	padding: 0 6px;
+    width: auto;
+}
+.dataTables_paginate span .paginate_button {
+    display: none;
+}
+.dataTables_paginate a.paginate_button:hover {
+    background-color: transparent !important;
+}
+.dataTables_paginate {
+    margin-right: 32px;
+    margin-top: 25px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+/* Filter 
+----------------------------------------------- */
+
+.dataTables_length {
+    color: white;
+    display: inline-block;
+    height: 28px;
+    margin-right: 45px;
+    right: 0;
+    margin-top: -33px;
+    position: absolute;
+}
+.dataTables_filter {
+    display: inline-block;
+    margin-top: -32px;
+    margin-left: 20px;
+    position: absolute;
+}
+.dataTables_length label, .dataTables_filter label {
+	color: #FFFFFF;
+}
+.dataTables_length label {
+    padding-top: 5px;
+}
+.dataTables_length label select {
+    height:22px;
+}
+
+
+/* Selected Row 
+----------------------------------------------- */
+.selected_tr td {   
+ 	background: #899EB1 !important;
+	color: #FFF !important;
+}
+
+/* Note 
+----------------------------------------------- */
+.notes_link {
+	position: absolute;
+	display: block;
+	font-size: 11px;
+	line-height: 11px;
+	padding: 3px 6px;
+	text-decoration: none;
+	color: #fff;
+	background: transparent url('img/table-selected-bg.png') left top repeat;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	margin-left: 45px;
+	cursor: default;
+}
+.note {
+	padding: 15px 0;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	min-height: 40px;
+	background:  url('img/table-selected-bg.png');
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	display: none;
+	z-index: 1;
+}
+
+.selected_tr .oppen-row .note {
+	display: block;
+}
+.selected_tr .oppen-row .notes_link {
+	display: none;
+}
+.note .note-row label {
+	display: block;
+	float: left;
+	margin-right: 10px;
+	font-weight: bold;
+	color: #fff;
+	width: 47px;
+	padding: 0;
+}
+.note .note-row a {
+	margin-right: 27px;
+	color: #fff;
+	text-decoration: underline;
+}
+.note .note-row a:hover {
+	text-decoration: none;
+}
+.note-row {
+	padding: 7px 15px;
+}
+/* clear button */
+.note .acxiom-button.clear {color:#FFF;}
+.note .acxiom-button.clear:not([disabled]):hover {color:#FFF; border-bottom:1px solid #FFF;}

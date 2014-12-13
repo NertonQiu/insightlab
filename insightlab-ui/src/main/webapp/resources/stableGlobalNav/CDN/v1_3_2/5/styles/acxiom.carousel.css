@@ -1,0 +1,120 @@
+/* @import url("lavender.less"); */
+
+/* @import url("blue.less"); */
+
+/* @import url("sage.less"); */
+
+/* @import url("rust.less"); */
+
+/*@import url("teal.less"); */
+
+/* default settings */
+.checkbox-radio-img {
+  background-position: 0px -70px;
+}
+/* font */
+@font-face {
+  font-family: 'acxiom-Helvetica';
+  src: url('font/helveticaneuece55roman.eot') format('eot'), url('font/helveticaneuece55roman.eot?#iefix') format('embedded-opentype'), url('font/helveticaneuece55roman.woff') format('woff'), url('font/helveticaneuece55roman.ttf') format('truetype'), url('font/helveticaneuece55roman.svg#helveticaneuece55roman') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.status-font {
+  font-weight: bold;
+}
+/* colors */
+/* utility */
+.no-selection {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+#acxiom-carousel-container {
+  margin-bottom: 15px;
+}
+.caurousel-table-title {
+  color: #404141;
+  font-weight: bold;
+  font-size: 14px;
+}
+#carousel_items {
+  /* margin-left: 25px; only if arrows are displayed */
+  width: 100%;
+}
+.carousel_items_container {
+  overflow: hidden;
+}
+#acxiom-carousel-container h2 {
+  font-size: 14px;
+}
+#acxiom-carousel-container .arrow {
+  cursor: pointer;
+}
+#acxiom-carousel-container #carousel_container {
+  width: 100%;
+  float: left;
+}
+#acxiom-carousel-container #features_container {
+  width: 100%;
+  float: left;
+  margin-left: 30px;
+}
+#moveLeftcur,
+#moveRightcur {
+  opacity: 0.4;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+  filter: alpha(opacity=40);
+  -khtml-opacity: 0.4;
+  -moz-opacity: 0.4;
+  cursor: default !important;
+  height: 95px;
+  border: 1px solid #dbdbdb;
+  display: none;
+}
+#acxiom-carousel-container .scenario_items {
+  background: #f6f6f7;
+  cursor: pointer;
+  padding: 20px 10px;
+  border: 1px solid #dbdbdb;
+  text-align: center;
+  float: left;
+  height: 75px;
+  margin-right: 7px;
+  margin-top: 7px;
+}
+#acxiom-carousel-container .scenario_items:hover {
+  background: #c7e3ed;
+  border: 1px solid #cccccc;
+}
+#acxiom-carousel-container .selected {
+  background: #e5eaeb;
+  border: 1px solid #dbdbdb;
+}
+#acxiom-carousel-container .selected .carousel-item-title {
+  font-weight: bold !important;
+  color: #666666;
+}
+#acxiom-carousel-container a {
+  text-decoration: none;
+}
+.carousel-item-title {
+  width: 121px;
+  margin-top: 3px;
+  text-align: center;
+  color: #777777;
+  font-size: 13px !important;
+}
+#_content {
+  clear: both;
+}
+#moveLeftcur {
+  position: absolute;
+  left: 20px;
+}
+#moveRightcur {
+  position: absolute;
+  right: 20px;
+}

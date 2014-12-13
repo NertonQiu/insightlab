@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service
+        desc="This is an instance of the Real Time Platform Tomcat Container Grid Service." name="RealTimePlatformContainer">
+    <category name="Acxiom Web / SSO / Account Center - Insight Lab Settings">
+        <string depend_tag="" depend_value="" desc="Login URL"
+                hidden="false"
+                longdesc="This is the URL to login to Insight Lab"
+                name="il.acxiomweb.login.url" optional="false"></string>
+        <string depend_tag="" depend_value="" desc="Logout URL"
+                hidden="false"
+                longdesc="This is the URL to logout of Insight Lab"
+                name="il.acxiomweb.logout.url" optional="false"></string>
+        <string depend_tag="" depend_value="" desc="Decryption Key"
+                hidden="false" longdesc="This is the decryption key"
+                name="il.acxiomweb.decryptionKey"
+                optional="false"></string>
+        <string depend_tag="" depend_value="" desc="Validation Key"
+                hidden="false" longdesc="This is the validation key"
+                name="il.acxiomweb.validationKey"
+                optional="false"></string>
+        <numeric depend_tag="" depend_value="" desc="Cookie Duration"
+                 hidden="false" longdesc="Duration of cookie life"
+                name="il.acxiomweb.cookie.duration"
+                optional="false"></numeric>
+        <string depend_tag="" depend_value=""
+                desc="Service Encryption Key" hidden="false"
+                longdesc="Encryption key for Acxiom Web services"
+                name="il.acxiomweb.serviceRequest.encryptionKey"
+                optional="false"></string>
+        <string depend_tag="" depend_value="" desc="Application Name"
+                hidden="false"
+                longdesc="Application Name used by SSORoleProvider and UserDetailsServiceImpl"
+                name="il.acxiomweb.applicationName"
+                optional="false"></string>
+        <string depend_tag="" depend_value=""
+                desc="Acxiom Web Services API Key" hidden="false"
+                longdesc="API Key for Acxiom Web Services"
+                name="il.acxiomweb.api.key"
+                optional="false"></string>
+        <string depend_tag="" depend_value=""
+                desc="Acxiom Web Services Secret Key" hidden="false"
+                longdesc="Secret Key for Acxiom Web Services"
+                name="il.acxiomweb.api.secret"
+                optional="false"></string>
+        <string depend_tag="" depend_value=""
+                desc="Acxiom Web Service API" hidden="false"
+                longdesc="Acxiom Web Service API"
+                name="il.acxiomweb.serviceURL.api" optional="false"></string>
+        <string depend_tag="" depend_value="" desc="Cookie Name"
+                hidden="false" longdesc="Acxiom Web Cookie Name"
+                name="il.acxiomweb.cookie.name" optional="false"></string>
+        <string depend_tag="" depend_value="" desc="Cookie Read Method"
+                hidden="false" longdesc="Acxiom Web Cookie Read Method"
+                name="il.acxiomweb.cookie.readMethod" optional="false"></string>
+        <string depend_tag="" depend_value="" desc="Return URL Param Name"
+                hidden="false" longdesc="This is the Return URL parameter name"
+                name="il.acxiomweb.login.returnUrlParamName" optional="false"></string>
+        <string depend_tag="" depend_value="" desc="Acxiom Web Global Navigation Enpoint"
+                hidden="false"
+                longdesc="Endpoint for Acxiom Web Global Navigation"
+                name="il.acxiomweb.serviceURL.globalNavigation" optional="false"></string>
+    </category>
+
+    <category name="Global Navigation - Insight Lab Settings">
+        <string depend_tag="" depend_value=""
+                desc="Global Navigation Service Endpoint" hidden="false"
+                longdesc="Global Navigation Service Endpoint URL"
+                name="il.globalNavService.endpoint"
+                optional="false"></string>
+        <string depend_tag="" depend_value="" desc="Global Navigation Level Zero ID"
+                hidden="false" longdesc="Global Navigation Home Level Zero ID"
+                name="globalNavService.navZeroId"
+                optional="true"></string>
+        <string depend_tag="" depend_value="" desc="Global Navigation Home Link Name"
+                hidden="false" longdesc="Global Navigation Home Link Name"
+                name="il.globalNavService.linkName.home"
+                optional="false"></string>
+        <string depend_tag="" depend_value="" desc="Global Navigation Models Link Name"
+                hidden="false" longdesc="Global Navigation Models Link Name"
+                name="il.globalNavService.linkName.models"
+                optional="false"></string>
+        <string depend_tag="" depend_value=""
+                desc="Global Navigation Mode Fake" hidden="false"
+                longdesc="Global Navigation Mode Fake"
+                name="il.globalNavService.mode.fake"
+                optional="false"></string>
+        <string depend_tag="" depend_value=""
+                desc="Global Navigation Help" hidden="false"
+                longdesc="Global Navigation Help"
+                name="il.globalNavService.help"
+                optional="false"></string>
+    </category>
+
+    <category name="SSO 2.1.0 Acxiom Web Properties">
+        <string depend_tag="" depend_value="" desc="Acxiom Web Global Navigation Enpoint"
+                hidden="false"
+                longdesc="Endpoint for Acxiom Web Global Navigation"
+                name="il.acxiomweb.globalnav.api" optional="false">
+        </string>
+        <string depend_tag="" depend_value="" desc="Acxiom Web Internal Service API URL"
+                hidden="false"
+                longdesc="Acxiom Web Internal Service API URL"
+                name="il.acxiomweb.internal.serviceURL.api" optional="false">
+        </string>
+        <string depend_tag="" depend_value="" desc="Acxiom Web Auth Type"
+                hidden="false"
+                longdesc="Auth type for Acxiom Web"
+                name="il.acxiomweb.auth.type" optional="false">
+        </string>
+        <string depend_tag="" depend_value="" desc="Acxiom Web Mode"
+                hidden="false"
+                longdesc="Acxiom Web Mode (webApp or webService)"
+                name="il.acxiomweb.mode" optional="false">
+        </string>
+        <string depend_tag="" depend_value="" desc="Acxiom Web Context Overwrite"
+                hidden="false"
+                longdesc="Acxiom Web Context Overwrite"
+                name="il.acxiomweb.context.overwrite" optional="true">
+        </string>
+    </category>
+
+    <category name="File Center URL - Insight Lab Settings">
+        <string depend_tag="" depend_value="" desc="File Center URL"
+                hidden="false" longdesc="File Center URL"
+                name="il.app.ui.serviceURL.files" optional="false"></string>
+    </category>
+
+    <category name="Insight Lab Application-Specific Settings">
+        <string depend_tag="" depend_value="" desc="API Endpoint"
+                hidden="false" longdesc="Data Service API Endpoint URL"
+                name="il.app.api.endpoint"
+                optional="false"></string>
+        <string depend_tag="" depend_value=""
+                desc="Application Header Compile" hidden="false"
+                longdesc="Properties for Application Header"
+                name="il.app.header.js.compile"
+                optional="false"></string>
+        <string depend_tag="" depend_value=""
+                desc="Application Error Handling" hidden="false"
+                longdesc="Application Error Handling"
+                name="il.app.errorhandling.debug"
+                optional="false"></string>
+        <string depend_tag="" depend_value=""
+                desc="Memcached - Cache Enabled" hidden="false"
+                longdesc="Memcached caching enabled"
+                name="il.app.cache.enabled"
+                optional="false"></string>
+        <string depend_tag="" depend_value=""
+                desc="Memcached - Cache Host"
+                hidden="false"
+                longdesc="Memcached caching host"
+                name="il.app.cache.host"
+        optional="false"></string>
+        <string depend_tag="" depend_value=""
+                desc="Memcached - Cache Port" hidden="false"
+                longdesc="Memcached caching port"
+                name="il.app.cache.port"
+                optional="false"></string>
+        <string depend_tag="" depend_value=""
+                desc="Memcached - Cache Life" hidden="false"
+                longdesc="Memcached caching life - in seconds 3600*24=86400"
+                name="il.app.cache.live"
+                optional="false"></string>
+    </category>
+
+    <category name="Insight Lab YUI Endpoint (for GSD)">
+        <string depend_tag="" depend_value="" desc="Endpoint for YUI code"
+                hidden="false" longdesc="Endpoint for YUI code"
+                name="il.app.yui.combo.service.endpoint"
+                optional="false"></string>
+    </category>
+    <category name="Insight Lab Campaign Optimizer-Specific Settings">
+        <string depend_tag="" depend_value="" desc="Campaign Optimizer Service Endpoint"
+                hidden="false" longdesc="Campaign Optimizer Service Endpoint URL"
+                name="il.co.service.endpoint"
+                optional="false"></string>
+        <string depend_tag="" depend_value=""
+                desc="Campaign Optimizer Endpoint" hidden="false"
+                longdesc="Campaign Optimizer Endpoint"
+                name="il.co.endpoint"
+                optional="false"></string>
+        <string depend_tag="" depend_value=""
+                desc="Campaign Optimizer Application Name" hidden="false"
+                longdesc="Campaign Optimizer Application Name"
+                name="il.co.applicationName"
+                optional="false"></string>
+    </category>
+
+    <category name="Insight Lab Account Manager Settings">
+        <string depend_tag="" depend_value="" desc="Account Manager Endpoint"
+                hidden="false" longdesc="Account Manager Endpoint URL"
+                name="il.accountmanager.api.endpoint"
+                optional="false"></string>
+    </category>
+    
+    <category name="Weibo relative items ">  
+      	<string desc="AO list page" 
+            name="il.aopage.url.overview" 
+            
+            longdesc="AO list page"
+            optional="false"/> 
+  	</category>  
+
+</service>

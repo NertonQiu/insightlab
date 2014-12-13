@@ -1,0 +1,69 @@
+/* @import url("lavender.less"); */
+
+/* @import url("blue.less"); */
+
+/* @import url("sage.less"); */
+
+/* @import url("rust.less"); */
+
+/*@import url("teal.less"); */
+
+/* default settings */
+.checkbox-radio-img {
+  background-position: 0px -70px;
+}
+/* font */
+@font-face {
+  font-family: 'acxiom-Helvetica';
+  src: url('font/helveticaneuece55roman.eot') format('eot'), url('font/helveticaneuece55roman.eot?#iefix') format('embedded-opentype'), url('font/helveticaneuece55roman.woff') format('woff'), url('font/helveticaneuece55roman.ttf') format('truetype'), url('font/helveticaneuece55roman.svg#helveticaneuece55roman') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.status-font {
+  font-weight: bold;
+}
+/* colors */
+/* utility */
+.no-selection {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.acxiom-search {
+  padding-right: 26px;
+}
+.acxiom-search-icon {
+  cursor: pointer;
+  position: relative;
+  right: 24px;
+  border-style: none;
+  background: none;
+  width: 15px;
+  height: 17px;
+}
+.ui-widget-content {
+  border: 1px solid #555555;
+}
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focu,
+.ui-widget-header .ui-state-focus {
+  border: 1px solid #cde2eb !important;
+  border-radius: 0px !important;
+  -webkit-border-radius: 0px !important;
+  -moz-border-radius: 0px !important;
+  background: #cde2eb url("img/acxiom-autocomplete-bg.png") repeat !important;
+  color: #555555 !important;
+}
+.ui-widget-content a:hover {
+  color: #555555 !important;
+}
+.ui-widget-content a {
+  color: #555555 !important;
+  font-size: 12px;
+}

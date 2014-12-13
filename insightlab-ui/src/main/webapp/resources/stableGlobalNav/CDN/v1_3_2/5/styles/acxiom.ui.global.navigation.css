@@ -1,0 +1,492 @@
+/* @import url("lavender.less"); */
+
+/* @import url("blue.less"); */
+
+/* @import url("sage.less"); */
+
+/* @import url("rust.less"); */
+
+/*@import url("teal.less"); */
+
+/* default settings */
+.checkbox-radio-img {
+  background-position: 0px -70px;
+}
+/* font */
+@font-face {
+  font-family: 'acxiom-Helvetica';
+  src: url('font/helveticaneuece55roman.eot') format('eot'), url('font/helveticaneuece55roman.eot?#iefix') format('embedded-opentype'), url('font/helveticaneuece55roman.woff') format('woff'), url('font/helveticaneuece55roman.ttf') format('truetype'), url('font/helveticaneuece55roman.svg#helveticaneuece55roman') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.status-font {
+  font-weight: bold;
+}
+/* colors */
+/* utility */
+.no-selection {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/*
+=============================================================== 
+	GLOBAL NAVIGATION											 
+=============================================================== */
+
+.acxiom-nav-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  z-index: 300 !important;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.acxiom-nav-inner {
+  width: 100%;
+  background-color: #414141;
+  padding: 0;
+  overflow: hidden;
+}
+.acxiom-nav-inner-left-first {
+  float: left;
+  padding-left: 10px;
+  height: 25px;
+  line-height: 25px;
+}
+.acxiom-nav-inner-left {
+  float: left;
+  padding-left: 5px;
+}
+.acxiom-nots {
+  background: url(img/acxiom-orange-bg.png) repeat-x #e57d23;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-box-shadow: 0 3px 1px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 3px 1px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 3px 1px rgba(0, 0, 0, 0.4);
+  color: white;
+  float: right;
+  font-weight: bold;
+  height: 16px;
+  margin-left: 10px;
+  margin-top: 5px;
+  overflow: hidden;
+  padding-left: 5px;
+  padding-right: 5px;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  width: auto;
+  line-height: 16px;
+}
+.acxiom-nots:hover,
+.acxiom-nots.active {
+  background: gray;
+  cursor: pointer;
+}
+.acxiom-img-separator {
+  width: 15px;
+  height: 1px;
+  float: left;
+}
+.acxiom-div-logo-large {
+  padding-top: 10px;
+  padding-left: 15px;
+  overflow: hidden;
+  padding-bottom: 5px;
+}
+.acxiom-nav-inner-right {
+  float: right;
+  padding-right: 10px;
+}
+.acxiom-nav-left {
+  float: left;
+}
+.acxiom-nav-inner-right div {
+  float: left;
+}
+.acxiom-global-menu {
+  width: 100%;
+  height: 75px;
+  background-color: #414141;
+  display: none;
+  border-top: 1px solid #2c2c2c;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.acxiom-global-menu .acxiom-div-logo-large + div {
+  text-align: center;
+}
+.acxiom-global-menu.demo,
+.acxiom-notifications-tray.demo {
+  position: absolute;
+  z-index: 9;
+}
+.tray-close-button {
+  cursor: pointer;
+}
+.acxiom-div-logo-small {
+  background-color: #4f5354;
+  float: left;
+  cursor: pointer;
+}
+.acxiom-div-logo-small img {
+  height: 16px;
+  width: auto;
+  border: 0;
+  vertical-align: middle;
+}
+.acxiom-div-logo-large a img {
+  height: 40px;
+  width: auto;
+  border: 0;
+  float: left;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 2px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.3);
+}
+.acxiom-div-logo-large a .active {
+  margin: -3px;
+  border: 3px solid white;
+  position: relative;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  box-shadow: 0;
+}
+.acxiom-img-more {
+  height: 35px;
+  width: 70px;
+  background-color: #6e6e6e;
+  float: left;
+  overflow: hidden;
+  border: 3px solid transparent;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  cursor: pointer;
+}
+.acxiom-img-more-icon {
+  width: 14px;
+  float: left;
+  padding-left: 5px;
+}
+.acxiom-img-more-text {
+  text-align: left;
+  color: gainsboro;
+  font-size: 9px;
+  float: left;
+  position: relative;
+}
+.acxiom-global-welcome {
+  font-size: 10px;
+  color: white;
+}
+.acxiom-nav-left div select option {
+  background-color: #eeeeee;
+  height: 23px;
+  padding-top: 8px;
+  border: 0;
+  color: #555555;
+}
+.acxiom-nav-left div select option:hover {
+  background: #466276 url("img/acxiom-option-bg.png") repeat;
+  color: #555555;
+}
+.acxiom-nav-inner-left img {
+  padding-left: 5px;
+  vertical-align: middle;
+}
+.acxiom-nav-inner-left div ul {
+  margin: 0;
+  padding-left: 10px;
+}
+.acxiom-nav-inner-left div ul:hover {
+  background-color: #4f5354;
+}
+.acxiom-nav-inner-left div ul li {
+  list-style: none;
+  float: left;
+}
+.acxiom-nav-inner-left div ul li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  max-height: 100px;
+  height: 25px;
+  line-height: 25px;
+}
+.acxiom-nav-inner-left div ul li a span {
+  color: white;
+  display: inline-block;
+  width: 100px;
+  overflow: hidden;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: pre;
+  vertical-align: middle;
+}
+.acxiom-nav-inner-left div ul li ul {
+  display: none;
+  width: 150px;
+  z-index: 999;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 2px 1px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.4);
+  height: 200px;
+  width: auto;
+  overflow: auto;
+}
+.acxiom-nav-inner-left div ul li:hover ul,
+.acxiom-nav-inner-left div ul li.hover ul {
+  display: block;
+  min-width: 150px;
+  /*left: 94px;*/
+  /*top: 30px;*/
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+.acxiom-nav-inner-left div ul li:hover li,
+.acxiom-nav-inner-left div ul li.hover li {
+  float: none;
+}
+.acxiom-nav-inner-left div ul li:hover li a,
+.acxiom-nav-inner-left div ul li.hover li a {
+  background-color: white;
+  color: #555555;
+  height: 23px;
+  padding-top: 7px;
+  padding-left: 10px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 800px;
+}
+.acxiom-nav-inner-left div ul li li a:hover {
+  background-color: #c7e3ed;
+}
+.acxiom-notifications-tray {
+  width: 100%;
+  height: 75px;
+  background-color: #555555;
+  display: none;
+  border-top: 1px solid #2c2c2c;
+}
+.acxiom-notifications-tray .notification {
+  background-color: white;
+  height: 54px;
+  width: 180px;
+  margin: 10px;
+  float: left;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-box-shadow: 0 3px 1px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 3px 1px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 3px 1px rgba(0, 0, 0, 0.4);
+  background: #e6e6e6;
+  background: -moz-linear-gradient(top, #e6e6e6 0%, white 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e6e6e6), color-stop(100%, white));
+  background: -webkit-linear-gradient(top, #e6e6e6 0%, white 100%);
+  background: -o-linear-gradient(top, #e6e6e6 0%, white 100%);
+  background: -ms-linear-gradient(top, #e6e6e6 0%, white 100%);
+  background: linear-gradient(to bottom, #e6e6e6 0%, white 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e6e6e6', endColorstr='#ffffff', GradientType=0);
+  position: relative;
+}
+.acxiom-notifications-tray .notification .right {
+  float: right;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 20px;
+  right: 0;
+}
+.acxiom-notifications-tray .notification .count {
+  float: right;
+  z-index: 999;
+  height: 14px;
+  margin-top: -3px;
+  margin-right: -3px;
+  padding: 0px 5px 2px;
+  background-color: #f17e1a;
+  background: url(img/acxiom-orange-bg.png) repeat-x #e57d23;
+  color: white;
+  font-weight: bold;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  cursor: default;
+  -webkit-box-shadow: 0 3px 1px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 3px 1px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 3px 1px rgba(0, 0, 0, 0.4);
+}
+.acxiom-notifications-tray .notification .scrollup {
+  margin-top: 8px;
+  margin-left: 5px;
+}
+.acxiom-notifications-tray .notification .scrolldown {
+  margin-left: 5px;
+}
+.acxiom-notifications-tray .notification .content {
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  color: #333333;
+  max-height: 45px;
+}
+.acxiom-notifications-tray .notification .content .data {
+  float: left;
+}
+.acxiom-notifications-tray .notification .header {
+  font-weight: bold;
+  font-size: 11px;
+}
+.acxiom-notifications-tray .notification .message {
+  font-size: 12px;
+  float: left;
+}
+.acxiom-notifications-tray .notification .message-detail {
+  font-size: 12px;
+  font-weight: bold;
+  float: left;
+  padding-left: 3px;
+}
+/* dropdown menu left */
+
+.acxiom-nav-left div {
+  position: relative;
+  display: inline-block;
+}
+.acxiom-nav-left div:after {
+  content: url(img/acxiom-nav-arrow-disabled.png);
+  position: absolute;
+  top: 1px;
+  right: 0;
+  bottom: 0;
+  font-size: 60%;
+  line-height: 22px;
+  padding-right: 5px;
+  margin: 1px;
+  width: 16px;
+  color: white;
+  pointer-events: none;
+  padding-top: 0px;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+}
+/* dropdown menu right */
+
+.acxiom-nav-inner-right div ul {
+  margin: 0;
+  padding: 5px 10px 0;
+  height: 20px;
+}
+.acxiom-nav-inner-right div ul:hover {
+  background-color: #4f5354;
+}
+.acxiom-nav-inner-right div ul li {
+  list-style: none;
+  float: left;
+}
+.acxiom-nav-inner-right div ul li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+.acxiom-nav-inner-right div ul li ul {
+  display: none;
+  width: 150px;
+  z-index: 999;
+  -webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 2px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  height: auto;
+}
+.acxiom-nav-inner-right div ul li:hover ul,
+.acxiom-nav-inner-right div ul li.hover ul {
+  display: block;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+}
+.acxiom-nav-inner-right div ul li:hover li,
+.acxiom-nav-inner-right div ul li.hover li {
+  float: none;
+}
+.acxiom-nav-inner-right div ul li:hover li a,
+.acxiom-nav-inner-right div ul li.hover li a {
+  background-color: white;
+  color: #555555;
+  height: 23px;
+  padding-top: 7px;
+  padding-left: 10px;
+}
+.acxiom-nav-inner-right div ul li li a:hover {
+  background-color: #c7e3ed;
+}
+.acxm-company-title {
+  color: white;
+  font-size: 11px;
+  display: none;
+  position: absolute;
+  padding-top: 4px;
+  top: 80px;
+}
+/* Custom */
+
+.acxiom-globalnav-scroll-content {
+  height: auto !important;
+}
+.acxiom-globalnav-sign-in {
+  color: white;
+  line-height: 27px;
+  text-decoration: none;
+  padding-right: 15px;
+}
+.acxiom-globalnav-company-title {
+  color: white;
+  font-size: 11px;
+  display: none;
+  position: absolute;
+  padding-top: 4px;
+  z-index: 301;
+}
+.acxiom-global-menu.demo,
+.acxiom-notifications-tray.demo {
+  position: absolute;
+  z-index: 9;
+}
+.acxiom-global-navigation .acxiom-page-container {
+  top: 6px;
+  background-color: transparent !important;
+}
+.acxiom-page-container #acxiom-body-container {
+  margin-top: 46px;
+}
+.acxiom-page-container .acxiom-subtabs-container + #acxiom-body-container {
+  margin-top: 0;
+}

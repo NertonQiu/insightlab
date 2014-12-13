@@ -1,0 +1,230 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>InsightLabUI-AU</artifactId>
+		<groupId>com.acxiom.insightlab</groupId>
+		<version>2.0.1</version> <!-- ugh, this will have to update for each metadata change! -->
+                <relativePath>../pom.xml</relativePath>                    
+	</parent>
+
+	<artifactId>insightlab-ui</artifactId>
+	<version>${applicationVersion}</version>
+	<name>InsightLab UI (user interface) project</name>
+	<packaging>war</packaging>
+	<url>http://maven.apache.org</url>
+
+
+	<properties>
+		<java-version>1.6</java-version>
+		<jasmine-plugin-version>1.3.1.2</jasmine-plugin-version>
+		<saga-plugin-version>1.5.2</saga-plugin-version>
+		<exec-plugin-version>1.1</exec-plugin-version>
+		<compiler-plugin-version>2.3.2</compiler-plugin-version>
+		<system.properties.maven>1.0</system.properties.maven>
+		<maven.build.timestamp.format>yyyy-MM-dd HH:mm z</maven.build.timestamp.format>
+	</properties>
+
+	<repositories>
+
+        <repository>
+            <id>lib</id>
+            <name>lib</name>
+            <releases>
+                <enabled>true</enabled>
+                <checksumPolicy>ignore</checksumPolicy>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <url>file://${project.basedir}/lib</url>
+        </repository>
+        <repository>
+            <id>FastXML</id>
+            <url>http://repo1.maven.org/maven2/com/fasterxml/jackson</url>      
+        </repository>    
+        <repository>
+            <id>jasperreports</id>
+            <url>http://jasperreports.sourceforge.net/maven2</url>
+        </repository>
+		<!--<repository>-->
+			<!--<id>dmt-release</id>-->
+			<!--<name>DMT release</name>-->
+			<!--<url>http://10.0.1.250/artifactory/libs-release-local</url>-->
+		<!--</repository>-->
+       <repository>
+           <id>acxiom-shareddev</id>
+           <name>Acxiom Shared Dev Repository</name>
+           <url>http://maven.shareddev.acxiom.net</url>
+       </repository>
+        <repository>
+            <id>releases</id>
+            <name>Internal Releases</name>
+            <url>http://maven.shareddev.acxiom.net/nexus/content/repositories/releases</url>
+        </repository>
+        <repository>
+            <id>snapshots</id>
+            <name>Internal Snapshots</name>
+            <url>http://maven.shareddev.acxiom.net/nexus/content/repositories/snapshots</url>
+        </repository>
+	</repositories>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>sonatype-oss-public</id>
+			<url>https://oss.sonatype.org/content/groups/public</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${compiler-plugin-version}</version>
+				<configuration>
+					<source>${java-version}</source>
+					<target>${java-version}</target>
+				</configuration>
+			</plugin>
+			<!-- Jasmine -->
+			<!-- <plugin>
+				<groupId>com.github.searls</groupId>
+				<artifactId>jasmine-maven-plugin</artifactId>
+				<version>${jasmine-plugin-version}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>test</goal>
+						</goals>
+						<configuration>
+							<keepServerAlive>true</keepServerAlive>
+						</configuration>
+					</execution>
+				</executions>
+				<configuration>
+					<jsSrcDir>${project.basedir}/src/main/webapp</jsSrcDir>
+
+					a list of to scripts that need to be loaded before any others. 
+						Mostly useful to load remote scripts
+					<preloadSources>
+						<source>${project.basedir}/src/main/webapp/resources/stableGlobalNav/CDN/v1_3_2/5/libraries/jquery/jquery.min.js</source>
+						<source>${project.basedir}/src/main/webapp/resources/stableGlobalNav/CDN/v1_3_2/5/libraries/jquery/jquery.placeholder.js</source>
+						<source>${project.basedir}/src/main/webapp/resources/stableGlobalNav/CDN/v1_3_2/5/libraries/jquery/jquery.plugin.migrate.min.js</source>
+						<source>${project.basedir}/src/main/webapp/resources/stableGlobalNav/CDN/v1_3_2/5/libraries/jquery/jquery.plugin.calendar.js</source>
+						<source>${project.basedir}/src/main/webapp/resources/scripts/thirdparty/jquery-ui-1.9.2.custom.min.js</source>
+						<source>${project.basedir}/src/main/webapp/resources/stableGlobalNav/CDN/v1_3_2/5/js/ACXM.js</source>
+						<source>${project.basedir}/src/main/webapp/resources/stableGlobalNav/CDN/v1_3_2/5/js/acxiom.dialogue.js</source>
+						<source>${project.basedir}/src/main/webapp/resources/stableGlobalNav/CDN/v1_3_2/5/libraries/datatables/media/js/jquery.dataTables.min.js</source>
+						<source>${project.basedir}/src/main/webapp/js/common.js</source>
+						<source>${project.basedir}/src/main/webapp/js/stubby.js</source>
+						<source>${project.basedir}/src/main/webapp/resources/scripts/datatable-plugins/FixedColumns.js</source>
+						<source>${project.basedir}/src/main/webapp/resources/scripts/datatable-plugins/rowGrouping.js</source>
+						<source>${project.basedir}/src/main/webapp/resources/scripts/main_compiled.js</source>
+					</preloadSources>
+
+					<sourceIncludes>
+						<include>resources/scripts/utils/*.js</include>
+						<include>resources/scripts/components/*.js</include>
+						<include>resources/scripts/mappers/*.js</include>
+						<include>resources/scripts/widgets/*.js</include>
+
+						<source>domCreator.js</source>
+					</sourceIncludes>
+
+					<sourceExcludes>
+						<exclude>resources/html/stable_header.js</exclude>
+						<exclude>resources/src/scripts/widgets/DataLoader.js</exclude>
+						<exclude>resources/src/scripts/net/HttpRequest.js</exclude>
+						<exclude>resources/src/scripts/net/HttpServletRequest.js</exclude>
+						<exclude>resources/src/scripts/net/ServletRequest.js</exclude>
+						<exclude>resources/src/scripts/dom/DataStorage.js</exclude>
+						<exclude>resources/src/scripts/dom/EventTargetListener.js</exclude>
+						<exclude>resources/src/scripts/widgets/BaseWidget.js</exclude>
+					</sourceExcludes>
+
+					<specIncludes>
+                        <include>dataTableComponent.js</include>
+                        <include>targetGroupsList_test.js</include>
+                        <include>panelFilters_test.js</include>
+                        <include>recentRequests_test.js</include>
+                        <include>panelwidget_test.js</include>
+                        <include>breadcrumb_test.js</include>
+                        <include>dataFormatter_test.js</include>
+						<include>filterWidgets_test.js</include>
+                        <include>CheckListComponent_test.js</include>
+                        <include>component_test.js</include>
+					</specIncludes>
+
+					<sourceEncoding>utf-8</sourceEncoding>
+
+					<webDriverClassName>org.openqa.selenium.phantomjs.PhantomJSDriver</webDriverClassName>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.github.timurstrekalov</groupId>
+				<artifactId>saga-maven-plugin</artifactId>
+				<version>${saga-plugin-version}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>coverage</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<backgroundJavaScriptTimeout>5000</backgroundJavaScriptTimeout>
+					<baseDir>http://localhost:${jasmine.serverPort}</baseDir>
+					<outputDir>${project.build.directory}/coverage</outputDir>
+					
+					<noInstrumentPatterns>
+						<pattern>.*/spec/.*</pattern>Don't instrument specs
+						<pattern>.+/stubby\.js</pattern>Don't instrument specs
+						<pattern>.+/domCreator\.js</pattern>Don't instrument specs
+						<pattern>.+/jquery-ui-1.9.2.custom.min\.js</pattern>Don't instrument specs
+						<pattern>.+/jquery.min\.js</pattern>Don't instrument specs
+						<pattern>.+/jquery.plugin.migrate.min\.js</pattern>Don't instrument specs
+						<pattern>.+/ACXM\.js</pattern>Don't instrument specs
+						<pattern>.+/main_compiled\.js</pattern>Don't instrument specs
+						<pattern>.+/jquery.dataTables.min\.js</pattern>Don't instrument specs
+						<pattern>.+/jquery.placeholder\.js</pattern>Don't instrument specs
+						<pattern>.+/jquery.acxiom.dialogue\.js</pattern>Don't instrument specs
+						<pattern>.+/jquery.plugin.calendar\.js</pattern>Don't instrument specs
+						<pattern>.+/acxiom.dialogue\.js</pattern>Don't instrument specs
+						<pattern>.+/FixedColumns\.js</pattern>Don't instrument specs
+						<pattern>.+/rowGrouping\.js</pattern>Don't instrument specs
+						<pattern>.+/DataMapper\.js</pattern>Don't instrument specs
+						<pattern>.+/Template\.js</pattern>Don't instrument specs
+					</noInstrumentPatterns>
+					
+					<reportFormats>HTML, PDF, RAW, CSV</reportFormats>
+				</configuration>
+			</plugin> -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>${exec-plugin-version}</version>
+				<executions>
+					<execution>
+						<id>Javascript Files Compiling</id>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+						<configuration>
+							<workingDirectory>src/main/webapp/tools</workingDirectory>
+							<!-- for UNIX based systems use "chmod +x <file_name>.sh" command 
+								for each executable file -->
+							<executable>./main_compiled.sh</executable>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

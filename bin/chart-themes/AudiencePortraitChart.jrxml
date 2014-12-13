@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="AudiencePortraitChart" pageWidth="720" pageHeight="364" orientation="Landscape" columnWidth="720" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="7cdd8455-67bc-44ae-873e-6c22abc7fe7d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="boxedBasePercent" class="java.lang.Double">
+		<fieldDescription><![CDATA[boxedBasePercent]]></fieldDescription>
+	</field>
+	<field name="questionText" class="java.lang.String">
+		<fieldDescription><![CDATA[questionText]]></fieldDescription>
+	</field>
+	<field name="boxedBaseCount" class="java.lang.Integer">
+		<fieldDescription><![CDATA[boxedBaseCount]]></fieldDescription>
+	</field>
+	<field name="responseID" class="java.lang.String">
+		<fieldDescription><![CDATA[responseID]]></fieldDescription>
+	</field>
+	<field name="responseValue" class="java.lang.String">
+		<fieldDescription><![CDATA[responseValue]]></fieldDescription>
+	</field>
+	<field name="overUnderFlag" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[overUnderFlag]]></fieldDescription>
+	</field>
+	<field name="questionID" class="java.lang.String">
+		<fieldDescription><![CDATA[questionID]]></fieldDescription>
+	</field>
+	<field name="boxedBaseTotal" class="java.lang.Integer">
+		<fieldDescription><![CDATA[boxedBaseTotal]]></fieldDescription>
+	</field>
+	<field name="boxedTargetCount" class="java.lang.Integer">
+		<fieldDescription><![CDATA[boxedTargetCount]]></fieldDescription>
+	</field>
+	<field name="questionReportText" class="java.lang.String">
+		<fieldDescription><![CDATA[questionReportText]]></fieldDescription>
+	</field>
+	<field name="boxedTargetTotal" class="java.lang.Integer">
+		<fieldDescription><![CDATA[boxedTargetTotal]]></fieldDescription>
+	</field>
+	<field name="boxedTargetPercent" class="java.lang.Double">
+		<fieldDescription><![CDATA[boxedTargetPercent]]></fieldDescription>
+	</field>
+	<field name="responseText" class="java.lang.String">
+		<fieldDescription><![CDATA[responseText]]></fieldDescription>
+	</field>
+	<field name="responseReportText" class="java.lang.String">
+		<fieldDescription><![CDATA[responseReportText]]></fieldDescription>
+	</field>
+	<field name="index" class="java.lang.Integer">
+		<fieldDescription><![CDATA[index]]></fieldDescription>
+	</field>
+	<field name="zScore" class="java.lang.Double">
+		<fieldDescription><![CDATA[zScore]]></fieldDescription>
+	</field>
+	<variable name="CATEGORY" class="java.lang.String">
+		<variableExpression><![CDATA[$F{questionReportText}+(($F{responseReportText}== null || $F{responseReportText}.isEmpty())?"":("-"+$F{responseReportText}))]]></variableExpression>
+	</variable>
+	<variable name="MAX_INDEX" class="java.lang.Integer" calculation="Highest">
+		<variableExpression><![CDATA[$F{index}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<group name="MAX_NUMBER_OF_BARS_GROUP" isStartNewPage="true">
+		<groupExpression><![CDATA[($V{REPORT_COUNT}-1)/15]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="364" splitType="Stretch">
+			<printWhenExpression><![CDATA[$V{MAX_NUMBER_OF_BARS_GROUP_COUNT}.equals(1)]]></printWhenExpression>
+			<stackedBarChart>
+				<chart isShowLegend="false" renderType="draw" theme="AudiencePortraitChartTheme">
+					<reportElement uuid="f4b2dc16-44d8-40b7-ad35-7d8f2b96ce75" mode="Opaque" x="0" y="0" width="720" height="364" isRemoveLineWhenBlank="true" backcolor="#FFFFFF">
+						<property name="net.sf.jasperreports.print.keep.full.text" value="true"/>
+					</reportElement>
+					<chartTitle>
+						<font size="8" isPdfEmbedded="true"/>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<dataset resetType="Group" resetGroup="MAX_NUMBER_OF_BARS_GROUP"/>
+					<categorySeries>
+						<seriesExpression><![CDATA["a"]]></seriesExpression>
+						<categoryExpression><![CDATA[$V{CATEGORY}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{index} >= 100? 100 : $F{index}]]></valueExpression>
+						<labelExpression><![CDATA[""]]></labelExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA["b"]]></seriesExpression>
+						<categoryExpression><![CDATA[$V{CATEGORY}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{index} >= 100? $F{index} - 100 : 100 - $F{index}]]></valueExpression>
+						<labelExpression><![CDATA[""]]></labelExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA["c"]]></seriesExpression>
+						<categoryExpression><![CDATA[$V{CATEGORY}]]></categoryExpression>
+						<valueExpression><![CDATA[$V{MAX_INDEX}*0.05]]></valueExpression>
+						<labelExpression><![CDATA[$F{index} + ""]]></labelExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot isShowLabels="true" isShowTickLabels="true" isShowTickMarks="true">
+					<plot orientation="Horizontal" backgroundAlpha="1.0" foregroundAlpha="0.85">
+						<seriesColor seriesOrder="0" color="#FFFFFF"/>
+						<seriesColor seriesOrder="1" color="#637E9A"/>
+						<seriesColor seriesOrder="2" color="#FFFFFF"/>
+					</plot>
+					<itemLabel color="#000000" backgroundColor="#FFFFFF">
+						<font fontName="SansSerif" size="8"/>
+					</itemLabel>
+					<categoryAxisFormat>
+						<axisFormat labelColor="#BBBBBB" tickLabelColor="#666666" verticalTickLabels="false" axisLineColor="#BBBBBB">
+							<labelFont>
+								<font size="8" isPdfEmbedded="true"/>
+							</labelFont>
+							<tickLabelFont>
+								<font size="8" isPdfEmbedded="true"/>
+							</tickLabelFont>
+						</axisFormat>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat labelColor="#666666" tickLabelColor="#666666" verticalTickLabels="false" axisLineColor="#BBBBBB">
+							<labelFont>
+								<font size="8" isPdfEmbedded="true"/>
+							</labelFont>
+							<tickLabelFont>
+								<font size="8" isPdfEmbedded="true"/>
+							</tickLabelFont>
+						</axisFormat>
+					</valueAxisFormat>
+					<rangeAxisMaxValueExpression><![CDATA[$V{MAX_INDEX}+$V{MAX_INDEX}*0.05]]></rangeAxisMaxValueExpression>
+				</barPlot>
+			</stackedBarChart>
+		</band>
+	</detail>
+</jasperReport>

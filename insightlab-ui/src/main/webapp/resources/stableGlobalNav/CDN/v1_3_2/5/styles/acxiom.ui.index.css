@@ -1,0 +1,25 @@
+
+.acxiom-column, .acxiom-column .acxiom-hyperlink-ul, .acxiom-column .acxiom-hyperlink-ul div{
+	display:block !important;
+}
+.acxiom-hyperlink-ul:hover, .acxiom-hyperlink-ul div:hover, .acxiom-column{
+	background-color:none !important;
+	border: 0px !important;
+	padding: 0 !important;
+}
+.acxiom-column{
+	width:20% !important;
+}
+.acxiom-pages-list{
+	float:left;
+}
+.acxiom-pages-list span{
+	color:#333333;
+	line-height:25px;
+}
+.acxiom-pages-list span:first-child{
+	font-weight:bold;
+}
+.acxiom-pages-list span a:hover{
+	text-decoration:none;
+}

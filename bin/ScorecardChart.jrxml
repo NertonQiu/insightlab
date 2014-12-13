@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ScorecardChart" pageWidth="540" pageHeight="565" columnWidth="540" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="edcc4c6d-79d9-4576-a5b9-96791a3636c0">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ScorecardFactory"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="ROWS_COUNT" class="java.lang.Integer"/>
+	<field name="averageRank" class="java.lang.Double">
+		<fieldDescription><![CDATA[平均排名]]></fieldDescription>
+	</field>
+	<field name="contribution" class="java.lang.Double">
+		<fieldDescription><![CDATA[贡献度]]></fieldDescription>
+	</field>
+	<field name="count" class="java.lang.Double">
+		<fieldDescription><![CDATA[数量]]></fieldDescription>
+	</field>
+	<field name="description" class="java.lang.String">
+		<fieldDescription><![CDATA[描述]]></fieldDescription>
+	</field>
+	<field name="ibElement" class="java.lang.String">
+		<fieldDescription><![CDATA[ibElement]]></fieldDescription>
+	</field>
+	<field name="modelID" class="java.lang.String">
+		<fieldDescription><![CDATA[模型编号]]></fieldDescription>
+	</field>
+	<variable name="MAX_CONTRIBUTION" class="java.lang.Double" calculation="Highest">
+		<variableExpression><![CDATA[$F{contribution}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="BAR_LABEL_WIDTH" class="java.lang.Double">
+		<variableExpression><![CDATA[$V{MAX_CONTRIBUTION}*0.15]]></variableExpression>
+	</variable>
+	<variable name="OPTIMAL_ROWS_NUMBER_ON_PAGE" class="java.lang.Integer" incrementType="Report">
+		<variableExpression><![CDATA[38]]></variableExpression>
+	</variable>
+	<variable name="NUMBER_OF_BARS_IN_GROUP" class="java.lang.Integer" incrementType="Report">
+		<variableExpression><![CDATA[$P{ROWS_COUNT} > $V{OPTIMAL_ROWS_NUMBER_ON_PAGE}? $P{ROWS_COUNT}/($P{ROWS_COUNT}/$V{OPTIMAL_ROWS_NUMBER_ON_PAGE} + 1) +1 : $P{ROWS_COUNT}]]></variableExpression>
+	</variable>
+	<group name="MAX_NUMBER_OF_BARS_GROUP">
+		<groupExpression><![CDATA[($V{REPORT_COUNT}-1)/$V{NUMBER_OF_BARS_IN_GROUP}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="561" splitType="Stretch">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<printWhenExpression><![CDATA[$V{MAX_NUMBER_OF_BARS_GROUP_COUNT}.equals(1)]]></printWhenExpression>
+			<frame>
+				<reportElement x="0" y="0" width="540" height="561" uuid="13f296d5-498c-444a-bc39-0e0b1eabcd61">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+				</reportElement>
+				<barChart>
+					<chart isShowLegend="false" customizerClass="com.acxiom.insightlab.report.chart.customizer.BarChartCustomizer" renderType="draw" theme="default">
+						<reportElement mode="Opaque" x="0" y="0" width="540" height="561" backcolor="#FFFFFF" uuid="379ff8c0-cda8-4e17-80d3-3038dcb445d5">
+							<property name="local_mesure_unitwidth" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<property name="local_mesure_unitheight" value="pixel"/>
+							<property name="net.sf.jasperreports.chart.range.axis.integer.unit" value="true"/>
+							<printWhenExpression><![CDATA[$P{ROWS_COUNT} >= $V{OPTIMAL_ROWS_NUMBER_ON_PAGE} - $V{OPTIMAL_ROWS_NUMBER_ON_PAGE}/3]]></printWhenExpression>
+						</reportElement>
+						<box topPadding="0" bottomPadding="0" rightPadding="5">
+							<topPen lineWidth="0.5" lineColor="#808080"/>
+							<leftPen lineWidth="0.5" lineColor="#808080"/>
+							<bottomPen lineWidth="0.5" lineColor="#808080"/>
+							<rightPen lineWidth="0.5" lineColor="#808080"/>
+						</box>
+						<chartTitle position="Top">
+							<font size="14" pdfFontName="helveticaneuece55roman.ttf" isPdfEmbedded="true"/>
+						</chartTitle>
+						<chartSubtitle/>
+						<chartLegend position="Top"/>
+					</chart>
+					<categoryDataset>
+						<dataset resetType="Group" resetGroup="MAX_NUMBER_OF_BARS_GROUP"/>
+						<categorySeries>
+							<seriesExpression><![CDATA["a"]]></seriesExpression>
+							<categoryExpression><![CDATA[$F{ibElement}]]></categoryExpression>
+							<valueExpression><![CDATA[$F{contribution}]]></valueExpression>
+							<labelExpression><![CDATA[$F{contribution} + "%"]]></labelExpression>
+						</categorySeries>
+					</categoryDataset>
+					<barPlot isShowLabels="true" isShowTickLabels="true" isShowTickMarks="true">
+						<plot orientation="Horizontal" backgroundAlpha="1.0" foregroundAlpha="0.85">
+							<seriesColor seriesOrder="0" color="#637E9A"/>
+						</plot>
+						<itemLabel color="#000000" backgroundColor="#FFFFFF">
+							<font fontName="SansSerif" size="7" pdfFontName="helveticaneuece55roman.ttf" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+						</itemLabel>
+						<categoryAxisFormat>
+							<axisFormat labelColor="#BBBBBB" tickLabelColor="#666666" verticalTickLabels="true" axisLineColor="#BBBBBB">
+								<labelFont>
+									<font fontName="SansSerif" size="8" pdfFontName="helveticaneuece55roman.ttf" isPdfEmbedded="true"/>
+								</labelFont>
+								<tickLabelFont>
+									<font fontName="SansSerif" size="8" pdfFontName="helveticaneuece55roman.ttf" isPdfEmbedded="true"/>
+								</tickLabelFont>
+							</axisFormat>
+						</categoryAxisFormat>
+						<valueAxisFormat>
+							<axisFormat labelColor="#666666" tickLabelColor="#666666" tickLabelMask="#.##'%'" verticalTickLabels="false" axisLineColor="#BBBBBB">
+								<labelFont>
+									<font fontName="SansSerif" pdfFontName="helveticaneuece55roman.ttf" isPdfEmbedded="true"/>
+								</labelFont>
+								<tickLabelFont>
+									<font fontName="SansSerif" pdfFontName="helveticaneuece55roman.ttf" isPdfEmbedded="true"/>
+								</tickLabelFont>
+							</axisFormat>
+						</valueAxisFormat>
+						<rangeAxisMaxValueExpression><![CDATA[$V{MAX_CONTRIBUTION}+$V{BAR_LABEL_WIDTH}]]></rangeAxisMaxValueExpression>
+					</barPlot>
+				</barChart>
+			</frame>
+			<frame>
+				<reportElement x="0" y="0" width="540" height="561" uuid="0a37cdaa-c481-43e7-8ce8-98096733f7f7">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<barChart>
+					<chart isShowLegend="false" customizerClass="com.acxiom.insightlab.report.chart.customizer.BarMiddleSizeChartCustomizer" renderType="draw" theme="default">
+						<reportElement mode="Opaque" x="0" y="0" width="540" height="374" backcolor="#FFFFFF" uuid="be458568-90a9-4e6c-bf0a-a7e676001f17">
+							<property name="local_mesure_unitwidth" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<property name="local_mesure_unitheight" value="pixel"/>
+							<property name="net.sf.jasperreports.chart.range.axis.integer.unit" value="true"/>
+							<printWhenExpression><![CDATA[$P{ROWS_COUNT} < $V{OPTIMAL_ROWS_NUMBER_ON_PAGE} - $V{OPTIMAL_ROWS_NUMBER_ON_PAGE}/3 &&
+$P{ROWS_COUNT} >= $V{OPTIMAL_ROWS_NUMBER_ON_PAGE} - ($V{OPTIMAL_ROWS_NUMBER_ON_PAGE}/3)*2]]></printWhenExpression>
+						</reportElement>
+						<box topPadding="0" bottomPadding="0" rightPadding="5">
+							<topPen lineWidth="0.5" lineColor="#808080"/>
+							<leftPen lineWidth="0.5" lineColor="#808080"/>
+							<bottomPen lineWidth="0.5" lineColor="#808080"/>
+							<rightPen lineWidth="0.5" lineColor="#808080"/>
+						</box>
+						<chartTitle position="Top">
+							<font size="14" pdfFontName="helveticaneuece55roman.ttf" isPdfEmbedded="true"/>
+						</chartTitle>
+						<chartSubtitle/>
+						<chartLegend position="Top"/>
+					</chart>
+					<categoryDataset>
+						<dataset resetType="Group" resetGroup="MAX_NUMBER_OF_BARS_GROUP"/>
+						<categorySeries>
+							<seriesExpression><![CDATA["a"]]></seriesExpression>
+							<categoryExpression><![CDATA[$F{ibElement}]]></categoryExpression>
+							<valueExpression><![CDATA[$F{contribution}]]></valueExpression>
+							<labelExpression><![CDATA[$F{contribution} + "%"]]></labelExpression>
+						</categorySeries>
+					</categoryDataset>
+					<barPlot isShowLabels="true" isShowTickLabels="true" isShowTickMarks="true">
+						<plot orientation="Horizontal" backgroundAlpha="1.0" foregroundAlpha="0.85">
+							<seriesColor seriesOrder="0" color="#637E9A"/>
+						</plot>
+						<itemLabel color="#000000" backgroundColor="#FFFFFF">
+							<font fontName="SansSerif" size="7" pdfFontName="helveticaneuece55roman.ttf" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+						</itemLabel>
+						<categoryAxisFormat>
+							<axisFormat labelColor="#BBBBBB" tickLabelColor="#666666" verticalTickLabels="true" axisLineColor="#BBBBBB">
+								<labelFont>
+									<font fontName="SansSerif" size="8" pdfFontName="helveticaneuece55roman.ttf" isPdfEmbedded="true"/>
+								</labelFont>
+								<tickLabelFont>
+									<font fontName="SansSerif" size="8" pdfFontName="helveticaneuece55roman.ttf" isPdfEmbedded="true"/>
+								</tickLabelFont>
+							</axisFormat>
+						</categoryAxisFormat>
+						<valueAxisFormat>
+							<axisFormat labelColor="#666666" tickLabelColor="#666666" tickLabelMask="#.##'%'" verticalTickLabels="false" axisLineColor="#BBBBBB">
+								<labelFont>
+									<font fontName="SansSerif" pdfFontName="helveticaneuece55roman.ttf" isPdfEmbedded="true"/>
+								</labelFont>
+								<tickLabelFont>
+									<font fontName="SansSerif" pdfFontName="helveticaneuece55roman.ttf" isPdfEmbedded="true"/>
+								</tickLabelFont>
+							</axisFormat>
+						</valueAxisFormat>
+						<rangeAxisMaxValueExpression><![CDATA[$V{MAX_CONTRIBUTION}+$V{BAR_LABEL_WIDTH}]]></rangeAxisMaxValueExpression>
+					</barPlot>
+				</barChart>
+			</frame>
+			<frame>
+				<reportElement x="0" y="0" width="540" height="561" uuid="686410be-8645-4cbb-bf03-db00128e9026">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<barChart>
+					<chart isShowLegend="false" customizerClass="com.acxiom.insightlab.report.chart.customizer.BarSmallSizeChartCustomizer" renderType="draw" theme="default">
+						<reportElement mode="Opaque" x="0" y="0" width="540" height="187" backcolor="#FFFFFF" uuid="77921466-3ee3-4fbb-a4d0-49b6da63dcff">
+							<property name="local_mesure_unitwidth" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<property name="local_mesure_unitheight" value="pixel"/>
+							<property name="net.sf.jasperreports.chart.range.axis.integer.unit" value="true"/>
+							<printWhenExpression><![CDATA[$P{ROWS_COUNT} < $V{OPTIMAL_ROWS_NUMBER_ON_PAGE} - 2*($V{OPTIMAL_ROWS_NUMBER_ON_PAGE}/3)]]></printWhenExpression>
+						</reportElement>
+						<box topPadding="0" bottomPadding="0" rightPadding="5">
+							<topPen lineWidth="0.5" lineColor="#808080"/>
+							<leftPen lineWidth="0.5" lineColor="#808080"/>
+							<bottomPen lineWidth="0.5" lineColor="#808080"/>
+							<rightPen lineWidth="0.5" lineColor="#808080"/>
+						</box>
+						<chartTitle position="Top">
+							<font size="14" pdfFontName="helveticaneuece55roman.ttf" isPdfEmbedded="true"/>
+						</chartTitle>
+						<chartSubtitle/>
+						<chartLegend position="Top"/>
+					</chart>
+					<categoryDataset>
+						<dataset resetType="Group" resetGroup="MAX_NUMBER_OF_BARS_GROUP"/>
+						<categorySeries>
+							<seriesExpression><![CDATA["a"]]></seriesExpression>
+							<categoryExpression><![CDATA[$F{ibElement}]]></categoryExpression>
+							<valueExpression><![CDATA[$F{contribution}]]></valueExpression>
+							<labelExpression><![CDATA[$F{contribution} + "%"]]></labelExpression>
+						</categorySeries>
+					</categoryDataset>
+					<barPlot isShowLabels="true" isShowTickLabels="true" isShowTickMarks="true">
+						<plot orientation="Horizontal" backgroundAlpha="1.0" foregroundAlpha="0.85">
+							<seriesColor seriesOrder="0" color="#637E9A"/>
+						</plot>
+						<itemLabel color="#000000" backgroundColor="#FFFFFF">
+							<font fontName="SansSerif" size="7" pdfFontName="helveticaneuece55roman.ttf" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+						</itemLabel>
+						<categoryAxisFormat>
+							<axisFormat labelColor="#BBBBBB" tickLabelColor="#666666" verticalTickLabels="true" axisLineColor="#BBBBBB">
+								<labelFont>
+									<font fontName="SansSerif" size="8" pdfFontName="helveticaneuece55roman.ttf" isPdfEmbedded="true"/>
+								</labelFont>
+								<tickLabelFont>
+									<font fontName="SansSerif" size="8" pdfFontName="helveticaneuece55roman.ttf" isPdfEmbedded="true"/>
+								</tickLabelFont>
+							</axisFormat>
+						</categoryAxisFormat>
+						<valueAxisFormat>
+							<axisFormat labelColor="#666666" tickLabelColor="#666666" tickLabelMask="#.##'%'" verticalTickLabels="false" axisLineColor="#BBBBBB">
+								<labelFont>
+									<font fontName="SansSerif" pdfFontName="helveticaneuece55roman.ttf" isPdfEmbedded="true"/>
+								</labelFont>
+								<tickLabelFont>
+									<font fontName="SansSerif" pdfFontName="helveticaneuece55roman.ttf" isPdfEmbedded="true"/>
+								</tickLabelFont>
+							</axisFormat>
+						</valueAxisFormat>
+						<rangeAxisMaxValueExpression><![CDATA[$V{MAX_CONTRIBUTION}+$V{BAR_LABEL_WIDTH}]]></rangeAxisMaxValueExpression>
+					</barPlot>
+				</barChart>
+			</frame>
+		</band>
+	</detail>
+</jasperReport>

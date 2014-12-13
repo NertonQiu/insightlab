@@ -1,0 +1,310 @@
+/**
+ * CSS Style Guide:
+ * @link http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml
+ * @link http://code.google.com/p/closure-stylesheets/
+ *
+ * Web colors:
+ * @link http://en.wikipedia.org/wiki/Web_colors
+ *
+ * Global Acxiom class name prefix: "acxm-".
+ * Project specific class name prefix: "acxm-dmp-".
+ */
+
+:focus {
+  outline: none;
+}
+
+body,
+li,
+label,
+input,
+button,
+select,
+textarea {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+body.acxm-dmp-header,
+body.acxm-dmp-footer {
+  border: 0;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+iframe.header,
+iframe.footer {
+  border: 0;
+  height: 100px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+iframe.footer {
+  height: 50px;
+  margin-top: 15px;
+}
+
+.logo {
+  float: left;
+}
+
+.logo img {
+  height: 47px;
+  max-width: 163px;
+  width: 163px;
+}
+
+header.acxm-page-header {
+  border-bottom: 1px solid #4682B4; /*SteelBlue*/
+  padding: 17px 0 0 0;
+}
+
+footer.acxm-page-footer {
+  border-top: 1px solid #4682B4; /*SteelBlue*/
+  padding: 17px 0;
+}
+
+.acxm-pn-title {
+  font-size: 16px;
+  float: left;
+  margin: 15px 0 0 5px;
+}
+
+.acxm-page-header form {
+  float: left;
+}
+
+.acxm-page-header form input {
+  font-size: 12px;
+  margin: 0;
+}
+
+.acxm-page-header .navbar {
+  margin-bottom: 0;
+}
+
+.acxm-page-header ul.nav {
+  float:left;
+  margin: 0 0 0 10px;
+  overflow: hidden;
+}
+
+.acxm-page-header ul.nav > li {
+  border-left: 1px solid Gray;
+  margin: 0 1px 0 -1px;
+  padding: 0 5px;
+}
+
+.acxm-page-header ul.nav > li a {
+  color: SteelBlue;
+  line-height: 15px;
+  padding: 0;
+  text-decoration: underline;
+}
+
+
+.nav-tabs {
+  border-bottom: 0;
+}
+
+.nav-tabs > li {
+  margin-bottom: 0;
+  margin-top: -1px;
+}
+
+.nav-tabs > li > a {
+  background-color: transparent;
+  line-height: 20px;
+  padding: 5px 0 4px 0;
+  margin-right: 14px;
+}
+
+.nav-tabs > li:last-child > a {
+  margin-right: 0px;
+}
+
+.nav > li > a {
+  background-color: transparent;
+  border: 0;
+}
+
+.nav > li > a:hover {
+  background-color: transparent;
+  border: 0;
+}
+
+.nav-tabs > .active > a,
+.nav-tabs > .active > a:hover {
+  background-color: #ffffff;
+  border: 1px solid #4682B4; /*SteelBlue*/
+  border-top: none;
+  box-shadow: 0px 1px 1px LightSteelBlue;
+  cursor: default;
+  padding-top: 4px;
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
+.nav-pills > li > a {
+  margin-bottom: 2px;
+  margin-top: 2px;
+  padding-bottom: 6px;
+  padding-top: 6px;
+  text-decoration: underline;
+}
+
+/*moved from main.css*/
+.acxm-dmp a {
+  color: SteelBlue;
+  outline: none;
+}
+
+.acxm-dmp a:hover {
+  text-decoration: none;
+}
+
+.acxm-dmp .container-fluid {
+  padding-left: 10px;
+  padding-right:10px;
+}
+
+.disabled {
+  opacity: 0.4;
+}
+
+/* header */
+.acxm-dmp header {
+  border-bottom: 1px solid SteelBlue;
+  height: 44px;
+  padding: 16px 0 0 0;
+}
+
+.acxm-dmp .logo,
+.acxm-dmp .logo span,
+.acxm-dmp .logo img {
+  float: left;
+}
+
+.acxm-dmp .logo {
+  width: 100%;
+}
+
+.acxm-dmp .logo span {
+  float: left;
+  font-family: Arial;
+  font-size: 24px;
+  padding: 7px 0 0 8px;
+}
+
+.nav-tabs {
+  border-bottom: none;
+  float: right;
+  list-style: none;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  overflow: visible;	
+}
+
+/* footer */
+.acxm-dmp footer {
+  border-top: 1px solid SteelBlue;
+  color: Gray;
+  height: 34px;
+  padding: 16px 0;
+  text-align: center;
+}
+
+.acxm-dmp footer p {
+  font-size: 11px;
+}
+
+.acxm-left-pane ul.unstyled {
+  margin: 5px 0 0 0;
+}
+
+#tabbed-charts-container ul.unstyled > li > a {
+  line-height: 22px;
+  padding: 2px 10px;
+  text-align: center;
+}
+
+.nav-pills > .active > a,
+.nav-pills > .active > a:hover {
+  background-color: #4682B4; /*SteelBlue*/
+  color: #ffffff;
+  cursor: default;
+  text-decoration: none;
+  -webkit-border-radius: 2px;
+     -moz-border-radius: 2px;
+          border-radius: 2px;
+}
+
+.acxm-page a, .acx-page .btn-primary, .table tbody tr td, .topics-list tbody tr, .topics-list  tr.current-row-topic {
+  /*-moz-transition: all 300ms linear; -webkit-transition: all 300ms linear;
+  -o-transition: all 300ms linear; transition: all 300ms linear*/
+}
+
+.acxm-page a:hover,
+.acxm-page .nav-tabs a,
+.acxm-page .nav-tabs a:visited {
+  color: #4682B4; /*SteelBlue*/
+}
+
+.acxm-page .nav-tabs a:hover {
+  color: #333 !important;
+}
+
+.acxm-page .nav-tabs .active a,
+.acxm-page .nav-tabs .active a:visited {
+  color: #333;
+  text-decoration: none;
+  -webkit-border-radius: 0 0 2px 2px;
+     -moz-border-radius: 0 0 2px 2px;
+          border-radius: 0 0 2px 2px;
+}
+
+/*common tables*/
+table caption,
+.acxm-page .nav-tabs .active a,
+header.acxm-title {
+  background: #ffffff;
+  background-image: -moz-linear-gradient(top, #ffffff 0%, rgba(247, 247, 247, .85) 100%);
+  /* @alternate */
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff), color-stop(100%,rgba(247, 247, 247, .85)));
+  /* @alternate */
+  background-image: -webkit-linear-gradient(top, #ffffff 0%,rgba(247, 247, 247, .85) 100%);
+  /* @alternate */
+  background-image: -o-linear-gradient(top, #ffffff 0%,rgba(247, 247, 247, .85) 100%);
+  /* @alternate */
+  background-image: -ms-linear-gradient(top, #ffffff 0%,rgba(247, 247, 247, .85) 100%);
+  /* @alternate */
+  background-image: linear-gradient(to bottom, #ffffff 0%,rgba(247, 247, 247, .85) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#eaeaea', GradientType=0);
+}
+
+#progress-loader {
+  background: rgba(255,255,255,.8) url('../images/loader-large.gif') no-repeat center center;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index:1000;
+}
+
+/*Inline edit table header column*/
+
+th.edit-cell:hover {
+  background: url(../../../resources/images/edit.png) no-repeat top right;
+}
+
+th.edit-cell input {
+  margin-bottom: 0px;
+}
+
+/*.ui-helper-hidden-accessible { display:none; }*/

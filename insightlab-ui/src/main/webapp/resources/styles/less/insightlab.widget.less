@@ -1,0 +1,371 @@
+.widget {
+  background-color: #FFF;
+  border:1px solid #ccc;
+  border-radius: 3px;
+  margin: 0 0 20px 0;
+  /*-webkit-box-shadow: 3px 3px 4px 1px #CCC;
+  -moz-box-shadow: 3px 3px 4px 1px #CCC;
+  box-shadow: 3px 3px 4px 1px #CCC;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#CCC')";
+  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#CCC');*/
+}
+
+.widget h5 {
+  margin-top: 0;
+  background: rgb(242,242,242);
+  background: -moz-linear-gradient(top,  rgba(242,242,242,1) 0%, rgba(228,228,228,1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(242,242,242,1)), color-stop(100%,rgba(228,228,228,1)));
+  background: -webkit-linear-gradient(top,  rgba(242,242,242,1) 0%,rgba(228,228,228,1) 100%);
+  background: -o-linear-gradient(top,  rgba(242,242,242,1) 0%,rgba(228,228,228,1) 100%);
+  background: -ms-linear-gradient(top,  rgba(242,242,242,1) 0%,rgba(228,228,228,1) 100%);
+  background: linear-gradient(to bottom,  rgba(242,242,242,1) 0%,rgba(228,228,228,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', endColorstr='#e4e4e4',GradientType=0 );
+  padding: 5px;
+  line-height: 1.5;
+  border-radius: 3px 3px 0 0;
+  font-weight:600;
+}
+
+.widget h5:after {
+  clear: both;
+  content: '';
+  display: block;
+  font-size: 0;
+  line-height: 0;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.widget .widget-header {
+  background: rgb(242,242,242);
+  background: -moz-linear-gradient(top,  rgba(242,242,242,1) 0%, rgba(228,228,228,1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(242,242,242,1)), color-stop(100%,rgba(228,228,228,1)));
+  background: -webkit-linear-gradient(top,  rgba(242,242,242,1) 0%,rgba(228,228,228,1) 100%);
+  background: -o-linear-gradient(top,  rgba(242,242,242,1) 0%,rgba(228,228,228,1) 100%);
+  background: -ms-linear-gradient(top,  rgba(242,242,242,1) 0%,rgba(228,228,228,1) 100%);
+  background: linear-gradient(to bottom,  rgba(242,242,242,1) 0%,rgba(228,228,228,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', endColorstr='#e4e4e4',GradientType=0 );
+  padding: 6px;
+  display:block;
+  margin: 0 0 10px 0;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 20px;
+  text-rendering: optimizelegibility;
+  position: relative;
+  border-radius: 3px 3px 0 0;
+  cursor: default!important;
+}
+
+
+.widget h5 span {
+  float: right;
+  font-weight: normal;
+  font-size: 11px;
+}
+
+.widget h5 i {
+  display: block;
+  float: right;
+  height: 16px;
+  margin: -1px 5px 0px 5px;
+  width: 16px;
+}
+.widget h5 i:before {
+  display: block;
+  height: 16px;
+  width: 16px;
+  content: "\25CF";
+  font-size: 26px;
+  line-height: 16px;
+}
+
+.widget h5 i.red {
+  color: FireBrick;
+}
+
+.widget h5 i.green {
+  color: ForestGreen;
+}
+
+.widget p {
+  padding: 5px;
+}
+.widget h5 .status-desc, .widget h5 .status-ico {
+  display: inline-block;
+  position: relative;
+}
+.widget h5 .status-desc {
+  padding: 5px 5px 0 5px;
+  bottom: 3px;
+  word-break: break-all;
+}
+.widget h5 .status-ico {
+  top: 4px;
+}
+.widget .btn-container {
+  position: relative;
+  top: 10px;
+}
+
+.widget .footer {
+  background-color: #E4E4E4;
+  height: auto;
+  margin-top: 10px;
+  padding: 5px;
+  min-height: 18px;
+  border-radius: 0 0 3px 3px;
+}
+
+.widget .footer a {
+  font-size: 13px;
+  line-height: 18px;
+}
+.widget-header span {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  word-wrap: break-word;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  font-weight: 600;
+}
+.progressbar {
+  height: 10px;
+  border-radius: 3px;
+  overflow: hidden;
+  background: #fff;
+  position: relative;
+  bottom: -2px;
+  background: #eee;
+  .ui-widget-header {
+    border: 1px solid rgb(0, 150, 211);
+    background: rgba(61, 175, 222, 1) 4%;
+    height: 13px;
+  }
+}
+
+
+/*    */
+#widget-content h2{
+  margin-top: 0;
+}
+.widget .caret {
+  background: url('../img/icon-widget.png') no-repeat right -28px;
+  border: none;
+  cursor: pointer !important;
+  float: right;
+  height: 28px;
+  margin-top: -4px;
+  width: 28px;
+}
+
+.widget .caret.expanded {
+  background-position: top right;
+}
+
+.widget-body {
+  /*overflow: hidden;*/
+  padding: 0 10px 10px;
+}
+#Scorecard_for_Model-widget .widget-body , #Gains_Table-widget .widget-body,
+#Validation_Gains_Table-widget .widget-body, #InfoBase-widget .widget-body {
+  padding: 10px;
+}
+
+.widget-body .table {
+  margin: 0px;
+}
+
+.dragable {
+  margin:  0;
+  padding: 0;
+}
+
+.dragable li {
+  list-style-type: none;
+}
+
+.placeHolder div {
+  background-color: #f9f9f9;
+  border: dashed 1px #ddd;
+  min-height: 100px;
+}
+
+.icon-widget {
+  margin-top: 4px;
+  opacity: .7;
+  filter: alpha(opacity=70);
+}
+
+#gainsDetails,
+#validationDetails {
+  margin-left: -33%;
+  width: auto;
+}
+
+.goog-tooltip{
+  z-index: 1001
+}
+
+.ui-widget-header{
+  border: 1px solid rgb(0,150,211);
+  background:rgba(61,175,222,1) 4%;
+}
+.widget-legend-container{
+  position: relative;
+  list-style-type: none;
+}
+.widget-legend-container .widget-legend{
+
+  width: 150px;
+  position: absolute;
+  top: 17%;
+  left: 95%;
+  margin-left: -150px;
+  list-style-type: none;
+}
+.widget-legend-container.widget-legend-container-fullsize  .widget-legend{
+  top: 16%;
+  font-size: 15px;
+}
+.widget-legend-container .widget-legend li{
+  padding: 2px 0;
+}
+.widget-legend-container.widget-legend-container-fullsize  .widget-legend li{
+  font-size: 15px;
+}
+.scorechart .widget-header{
+  padding-right: 52px;
+}
+/*  Widget Icons  */
+[class^="icon-"], [class*=" icon-"] {
+  background-image: url("../img/glyphicons-halflings.png");
+  background-position: 14px 14px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: 14px;
+  line-height: 14px;
+  margin-top: 1px;
+  vertical-align: text-top;
+  width: 14px;
+}
+
+.widget .widget-header .caret,
+.widget .widget-header .icon-fullscreen{
+  position: absolute;
+  left: 100%;
+  top: 50%;
+}
+.widget .widget-header .caret{
+  margin-top: -14px;
+  margin-left: -28px;
+}
+.widget .widget-header .icon-fullscreen{
+  margin-top: -7px;
+  margin-left: -42px;
+  background-position: -456px -144px;
+}
+/*RECENT PORTRAITS*/
+#recent-requests h4 {
+  padding: 10px;
+  font-size:13px;
+  font-weight: 200;
+  line-height: 20px;
+  margin: 0;
+  border-bottom: 1px solid #ccc;
+}
+#recent-requests ul {
+  margin: 0 0 15px 0;
+  overflow-y: auto;
+  padding: 0;
+  max-height: 300px;
+}
+#recent-requests ul li {
+  list-style: none;
+  margin: 0 0 5px;
+  padding: 3px 5px;
+  line-height: 20px;
+  background: #fff;
+}
+#recent-requests ul li a {
+  cursor: pointer;
+  word-wrap: break-word;
+  display: inline-block;
+  width: 140px;
+  font-size: 12px;
+  margin-top: 2px\9;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif !important;
+}
+#recent-requests ul li.act-link {
+  background: #eee;
+  border-radius: 3px;
+  a {
+    font-weight: 800;
+  }
+}
+#recent-requests label {
+  margin: 0 8px 0 0;
+  padding: 0;
+  width: 15px;
+  float:left;
+}
+#recent-requests ul li input,#recent-requests ul li input:focus {
+  width: 95%;
+  border-radius: 3px;
+  padding: 3px;
+}
+.my-tooltip {
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.3);
+  color: #888;
+  font-size: 12px;
+  line-height: 18px;
+  background: #fff;
+  min-width: 67px;
+  max-width: 280px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-word;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  margin: 0;
+  padding: 0;
+  display: none;
+  z-index: 1130;
+  position: absolute;
+  padding: 10px;
+}
+.my-tooltip p {
+  margin: 5px 0;
+  padding: 0;
+}
+.my-tooltip b {
+  color: #333;
+  font-weight: 400;
+}
+.my-tooltip:after {
+  content: url("../img/acxiom-tooltip-arrow-left.png");
+  top: 9px;
+  height: 26px;
+  position: absolute;
+  right: -15px;
+  z-index: 31;
+}
+.my-tooltip.arr-btm:after {
+  content: url("../img/acxiom-tooltip-arrow-bottom.png");
+  left: 50%;
+  top:100%;
+  height: 26px;
+  margin: 0 0 0 -13px;
+  position: absolute;
+  z-index: 31;
+}
+#Scattergram-table-widget .widget {
+  border: none;
+}
+
+#list1 .widget .widget-header, #list2 .widget .widget-header {
+  padding: 6px 70px 6px 6px;
+}

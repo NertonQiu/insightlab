@@ -1,0 +1,404 @@
+<html lang="en">
+<head>
+
+    <title>Jasmine Test Runner</title>
+
+    <link rel="stylesheet" type="text/css" href="lib/jasmine-1.0.2/jasmine.css">
+    <script type="text/javascript" src="lib/jasmine-1.0.2/jasmine.js"></script>
+    <script type="text/javascript" src="lib/jasmine-1.0.2/jasmine-html.js"></script>
+    <script type="text/javascript" src="lib/jasmine-reporters/jasmine.phantomjs-reporter.js"></script>
+
+    <!--
+    <link rel="stylesheet" href="../../main/webapp/resources/stableGlobalNav/CDN/v1_1/libraries/jquery/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="../../main/webapp/resources/stableGlobalNav/CDN/v1_1/5/styles/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../main/webapp/resources/stableGlobalNav/CDN/v1_1/5/styles/acxiom.base.css" />
+
+    <style>
+        .acxiom-global-menu.demo, .acxiom-notifications-tray.demo
+        {
+            position: absolute;
+            z-index: 9;
+        }
+        #acxiom-global-navigation .acxiom-page-container
+        {
+            top: 6px;
+            background-color: transparent !important;
+        }
+
+        .acxiom-page-container .acxiom-subtabs-container
+        {
+            margin-top: 46px;
+        }
+    </style>
+    -->
+
+    <script src="../../main/webapp/resources/stableGlobalNav/CDN/v1_3_2/5/libraries/jquery/jquery.min.js" type="text/javascript"></script>
+    <script src="../../main/webapp/resources/stableGlobalNav/CDN/v1_3_2/5/libraries/jquery/jquery.plugin.migrate.min.js" type="text/javascript"></script>
+    <script src="../../main/webapp/resources/stableGlobalNav/CDN/v1_3_2/5/libraries/jquery/jquery.placeholder.js" type="text/javascript"></script>
+<!--    <script src="../../main/webapp/resources/stableGlobalNav/CDN/v1_3_2/5/js/acxiom.ui.base.js" type="text/javascript"></script>
+-->
+<!--    <script src="../../main/webapp/resources/stableGlobalNav/CDN/v1_3_2/5/js/acxiom.global.navigation.js" type="text/javascript"></script>
+    <script src="../../main/webapp/resources/stableGlobalNav/CDN/v1_3_2/5/js/globalNavAPI.js" type="text/javascript"></script>
+-->
+    <!--
+    <script type="text/javascript">
+        $(document).ready(function () {
+            initNavigationTop();
+            init_acxiom_global_nav();
+            resizeWindow();
+
+            $(window).bind('resize', function () {
+                resizeWindow();
+            });
+        });
+    </script>
+    -->
+
+    <script type="text/javascript" src="../../main/webapp/resources/stableGlobalNav/CDN/v1_3_2/5/libraries/kendoui/js/kendo.dataviz.min.js"></script>
+
+    <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.5/leaflet.js"></script>
+
+    <!--<link href="http://cdn.leafletjs.com/leaflet-0.5/leaflet.css" rel="stylesheet" type="text/css" />-->
+
+    <script type="text/javascript" src="http://leafletjs.com/examples/us-states.js"></script>
+
+  <!--  <script type="text/javascript" src="../../main/webapp/resources/scripts/thirdparty/bootstrap.min.js"></script>-->
+    <script type="text/javascript" src="../../main/webapp/resources/scripts/thirdparty/jquery-ui-1.9.2.custom.min.js"></script>
+    <script type="text/javascript" src="../../main/webapp/resources/stableGlobalNav/CDN/v1_3_2/5/libraries/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../main/webapp/resources/stableGlobalNav/CDN/v1_3_2/5/js/ACXM.js"></script>
+    <script type="text/javascript" src="../../main/webapp/resources/stableGlobalNav/CDN/v1_3_2/5/js/acxiom.dialogue.js"></script>
+    <script type="text/javascript" src="../../main/webapp/resources/stableGlobalNav/CDN/v1_3_2/5/js/acxiom.modal.js"></script>
+<!--    <script type="text/javascript" src="../../main/webapp/resources/scripts/thirdparty/jquery.dataTables.js"></script>
+--><!--    <script type="text/javascript" src="../../main/webapp/resources/scripts/thirdparty/jquery.tooltip.js"></script>
+    <script type="text/javascript" src="../../main/webapp/resources/scripts/thirdparty/jquery.dragsort-0.4.min.js"></script>
+    <script type="text/javascript" src="../../main/webapp/resources/stableGlobalNav/CDN/v1_3_2/5/js/acxiom.modal.js"></script>
+    <script type="text/javascript" src="../../main/webapp/resources/stableGlobalNav/CDN/v1_3_2/5/js/acxiom.dialogue.js"></script>
+-->
+    <script type="text/javascript" src="../../main/webapp/resources/scripts/datatable-plugins/FixedColumns.js"></script>
+    <script type="text/javascript" src="../../main/webapp/resources/scripts/datatable-plugins/rowGrouping.js"></script>
+    <script src="../../main/webapp/js/stubby.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../../main/webapp/resources/scripts/main_compiled.js"></script>
+
+    <!--
+    <link href="../../main/webapp/resources/stableGlobalNav/CDN/v1_1/styles/acxiom.ui.datatables.css" rel="stylesheet" type="text/css">
+    <link href="../../main/webapp/resources/stableGlobalNav/CDN/v1_1/styles/acxiom.ui.modal.css" rel="stylesheet" type="text/css">
+    <link href="../../main/webapp/resources/stableGlobalNav/CDN/v1_1/styles/acxiom.ui.dialogue.css" rel="stylesheet" type="text/css">
+    <link href="../../main/webapp/resources/styles/insightlab-sg.css" rel="stylesheet" type="text/css" />
+
+    <style type="text/css">.acxiom-topnav-logo label { top: 8px !important; }</style>
+    <style type="text/css">.acxiom-topnav-logo label { top: 8px !important; }</style>
+    <style type="text/css">.acxiom-topnav-logo label { top: 8px !important; }</style>
+    -->
+
+    <!-- include spec files here... -->
+<!--    <script type="text/javascript" src="profileAppPage_test.js"></script>
+    <script type="text/javascript" src="portrait_tests.js"></script>
+    <script type="text/javascript" src="Scorecard_test.js"></script>
+    <script type="text/javascript" src="models_test.js"></script>
+    <script type="text/javascript" src="homePage_test.js"></script>
+    <script type="text/javascript" src="insightsPage_test.js"></script>
+    <script type="text/javascript" src="scorecardDetails_test.js"></script>-->
+    <!--<script type="text/javascript" src="panelFilters_test.js"></script>-->
+
+    <script type="text/javascript" src="targetGroupsList_test.js"></script>
+    <script type="text/javascript" src="panelFilters_test.js"></script>
+    <script type="text/javascript" src="recentRequests_test.js"></script>
+    <script type="text/javascript" src="panelwidget_test.js"></script>
+    <script type="text/javascript" src="breadcrumb_test.js"></script>
+    <script type="text/javascript" src="dataFormatter_test.js"></script>
+    <script type="text/javascript" src="filterWidgets_test.js"></script>
+    <script type="text/javascript" src="CheckListComponent_test.js"></script>
+    <script type="text/javascript" src="component_test.js"></script>
+
+</head>
+<body>
+<!-- / Second Level Menu -->
+<div class="acxiom-page-container">
+    <!-- acxiom-page-container (mandatory) -->
+    <div class="row-fluid">
+        <!-- row-fluid -->
+
+        <!-- PAGE BODY -->
+        <div id="acxiom-body-container" class="hpad">
+            <!-- acxiom-content-container (mandatory) -->
+            <div class="acxiom-content-container closed rounded top-buffer">
+                <div class="acxiom-table vfluid">
+                    <div class="row-fluid">
+                        <div class="single-container span12" id="widget-content"></div>
+                    </div>
+                    <!-- Insight-template-->
+                    <!-- HOME PAGE templates -->
+                    <script type="text/x-template" id="complete-insight-template">
+    <div class="widget">
+        <h5>
+            <span class="status">
+                Ready<i class="green"></i>
+            </span>
+            <a class="status-desc">{{description}}</a>
+            <a class="status-ico" href="insights/personicx/index.html&#35;{{id}}/portrait"><img title="Personicx" style="width: 25px;" src="resources/images/icon-personicx.png"/></a>
+            <a class="status-ico" href="insights/dpa/index.html&#35;{{id}}"><img title="Portrait" style="width: 25px;" src="resources/images/icon-portrait.png"/></a>
+        </h5>
+        <div class="row-fluid">
+            <div class="span6">
+                <p>Created: {{createdDate}}</p>
+            </div>
+            <div class="span6">
+                <p>Record Count: {{recordCount}}<br/><b></b></p>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/x-template" id="uncomplete-insight-template">
+    <div class="widget">
+        <h5>
+            <span class="status">
+                Prepping<i class="red"></i>
+            </span>
+            <a class="status-desc">{{description}}</a>
+        </h5>
+        <div class="row-fluid">
+            <div class="span6">
+                <p>Created: {{createdDate}}</p>
+            </div>
+            <div class="span6">
+                <p>Record Count: {{recordCount}}<br/><b></b></p>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/x-template" id="home-template">
+        <div class="span7">
+        <div class="banner"></div>
+        <div class="text">
+            <h5>Acxiom Analytics</h5>
+            <p>Unleash the power of analytics to model your perfect customer</p>
+            <p style="padding:0; margin:0">
+                <a href="insights/index.html" title="View Analytic Datasets"><strong style="font-size: 15px; white-space:nowrap ">View Analytic Datasets &raquo;</strong></a>
+            </p>
+            <p><a id = 'fileCenter' href="#" title="Create Analytic Dataset"><strong style="font-size: 15px; white-space:nowrap ">Create Analytic Dataset &raquo;</strong></a></p>
+        </div>
+
+        <div class="row-fluid">
+            <div class="span4">
+                <div class="widget widget-small">
+                    <h5>Creating Analytic Datasets</h5>
+                    <p>View and analyze customer data using pre-built consumer
+                        propensity models, analytic reports, and predictive analytic
+                        tools.</p>
+                    <div class="footer">
+                    </div>
+                </div>
+            </div>
+            <div class="span4">
+                <div class="widget widget-small">
+                    <h5>Building Models</h5>
+                    <p>Create a look-alike model or a specific propensity model
+                        for the consumer behavior of your choice.</p>
+                    <div class="footer">
+                        <a href="resources/documentation/Modeling Service in Insight Lab.pdf"
+                            target="_blank" title="Learn About Models">Learn About
+                            Models</a>
+                    </div>
+                </div>
+            </div>
+            <div class="span4">
+                <div class="widget widget-small">
+                    <h5>WHAT'S NEW</h5>
+                    <p>Acxiom Audience Propensities: Essential purchase propensities, pre-built and ready to go.</p>
+                    <div class="footer">
+                        <a href="resources/documentation/aud_prop_slip_sheet.pdf" target="_blank"
+                            title="Details">Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+	<div class="span5">
+          <h3>Recent Analytic Datasets</h3>
+        <div id="recent-insights">
+    </div>
+</script>
+
+                    <!-- Scorecards-template-->
+
+                    <script type="text/x-template" id="scorecards-template">
+                            <div class="span12">
+                            <h2>Models</h2>
+                            <div class="acxiom-breadcrumb-container"></div>
+                            <div class="row-fluid">
+                                <div class="span6">
+                                    <ul id="list1" class="dragable" data-listidx="0">
+                                </div>
+                                <div class="span6">
+                                    <ul id="list2" class="dragable" data-listidx="1">
+                                </div>
+                            </div>
+                        </div>
+                    </script>
+                    <script type="text/x-template" id="model-widget">
+                        <div class="widget">
+                            <div class="widget-header"></div>
+                            <div class="widget-body"></div>
+                        </div>
+                    </script>
+                    <div id="details" class="acxiom-modal"></div>
+<script type="text/x-template" id="model-widget">
+    <div class="widget">
+        <div class="widget-header"></div>
+        <div class="widget-body"></div>
+    </div>
+</script>
+<!-- DPA Page template-->
+<script type="text/template" id="profilepage-template">
+    <div class="single-container span12">
+        <h2>Audience Portrait</h2>
+        <div class="acxiom-breadcrumb-container"></div>
+        <div class="row-fluid dashboard">
+            <div class="dashboard-filters">
+                <div class="filter-widget-container"></div>
+            </div>
+        </div>
+
+        <div class="row-fluid">
+            <div class="span12">
+                <ul id="list1" class="dragable" data-listidx=0>
+                    <li id="widget1" data-itemidx=0></li>
+                </ul>
+            </div>
+            <div class="span12">
+                 <ul id="list2" class="dragable" data-listidx=1>
+                    <li id="widget2" data-itemidx=0></li>
+                 </ul>
+            </div>
+        </div>
+    </div>
+</script>
+  
+
+<script type="text/template" id="widget-template1">
+    <div class="widget">
+        <div class="widget-header">
+            <span>Category Overview</span>
+            <a href="#" class="caret to"></a>
+        </div>
+        <div class="widget-body">
+            <p style="margin:0"><strong>Target:</strong> {{Target}}</p>
+            <p style="margin:0"><strong>Reference:</strong> {{Reference}}</p>
+            <p style="margin:0"><strong>Category:</strong> {{Category}}</p>
+            <div id="chart1"></div>
+        </div>
+    </div>
+</script>
+<script type="text/template" id="widget-template2">
+    <div class="widget">
+        <div class="widget-header">
+            <span style="cursor: pointer;">Question Detail</span>
+            <a href="#" class="caret to"></a>
+        </div>
+        <div class="widget-body">
+            <p style="margin:0"><strong>Target:</strong> {{Target}}</p>
+            <p style="margin:0"><strong>Reference:</strong> {{Reference}}</p>
+            <p style="margin:0"><strong>Question:</strong> {{Question}}</p>
+            <div id="table_div3"></div>
+            <div id="chart_div3"></div>
+        </div>
+    </div>
+</script>
+<script type="text/template" id="widget-template3">
+    <div class="widget">
+        <div class="widget-header">
+            <span style="cursor: pointer;">Question Detail</span>
+            <a href="#" class="caret to"></a>
+            <!--<a class="icon-widget icon-fullscreen pull-right" href="models-widgets-details.html" title="Widget #2"></a>-->
+        </div>
+        <div class="widget-body">
+            <p style="margin:0"><strong>Target:</strong> {{Target}}</p>
+            <p style="margin:0"><strong>Reference:</strong> {{Reference}}</p>
+            <p style="margin:0"><strong>Sub-Category:</strong> {{Question}}</p>
+            <div id="table_div3"></div>
+            <div id="chart_div3"></div>
+        </div>
+    </div>
+</script>
+ <!-- DPA Page end--> 
+ <!-- Personicx-template--> 
+    <script type="text/x-template" id="personicx-template">
+    <div id ="breadcrumb" class="acxiom-breadcrumb-container"></div>
+    <div class="tabbable tabs-left ">
+        <ul class="nav nav-tabs span2">
+            <li data-tabId="portrait"><a href="#/portrait" title="Portrait">Portrait</a></li>
+            <li data-tabId="scattergram"><a href="#/scattergram" title="Scattergram">Scattergram</a></li>
+        </ul>
+        <div id="recent-requests"></div>
+        <div id="chart-legend" class="filter-legend"></div>
+        <div class="tab-content span10" id="content"></div>
+    </div>
+</script>
+
+<script type="text/x-template" id="portrait-report-template">
+    <div class="row-fluid dashboard">
+        <div class="dashboard-filters">
+            <div id="portrait-subfilters" class="subfilters-row-top" style="display: none;"></div>
+            <div class="row-fluid" id="portrait-filters">
+                <div class="span2"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span12" id="portrait-title"></div>
+    </div>
+    <div class="row-fluid item-container">
+        <div id="grid-container" class="span12">
+        </div>
+    </div>
+</script>
+
+<script type="text/x-template" id="legend-template">
+<h4>Legend</h4>
+<div>
+    <h5 style="float: left;">Count</h5>
+    <ul class="count-list unstyled">
+        <li>1<span class="small"></span></li>
+        <li>5<span class="medium"></span></li>
+        <li>10<span class="big"></span></li>
+    </ul>
+</div>
+</script>
+ <!-- Question-Scattergram-Template--> 
+<script type="text/x-template" id="question-scattergram-template">
+        <div class="span12">
+            <p><strong>Insight: </strong>{{insightText}}</p>
+            <p><strong>Reference Question: </strong>{{questionText}}</p>
+            <p><strong>Response: </strong>{{responseText}}</p>
+        <div>
+</script>                  
+               
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span12 footer"></div>
+    </div>
+    <div id="progress-loader"></div>
+</div>
+ <!--acxiom-modal-->
+<div id="recent-popup"  class="acxiom-modal" style="display:none">
+   <div class="x-btn acxiom-modal-close"></div>  
+
+        <!-- modal-body -->
+    <div id ='recent-body' class="row-fluid">
+        <div class="span12"></div>
+    </div>
+
+        <!-- footer-body -->
+    <input class="acxiom-button primary pull-right" value="OK" type="button">
+</div>
+<script type="text/javascript">
+    jasmine.getEnv().addReporter(new jasmine.TrivialReporter());
+    jasmine.getEnv().addReporter(new jasmine.PhantomJSReporter());
+    jasmine.getEnv().execute();
+</script>
+</body>
+</html>

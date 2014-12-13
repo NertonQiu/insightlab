@@ -1,0 +1,96 @@
+/* @import url("lavender.less"); */
+
+/* @import url("blue.less"); */
+
+/* @import url("sage.less"); */
+
+/* @import url("rust.less"); */
+
+/*@import url("teal.less"); */
+
+/* default settings */
+.checkbox-radio-img {
+  background-position: 0px -70px;
+}
+/* font */
+@font-face {
+  font-family: 'acxiom-Helvetica';
+  src: url('font/helveticaneuece55roman.eot') format('eot'), url('font/helveticaneuece55roman.eot?#iefix') format('embedded-opentype'), url('font/helveticaneuece55roman.woff') format('woff'), url('font/helveticaneuece55roman.ttf') format('truetype'), url('font/helveticaneuece55roman.svg#helveticaneuece55roman') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.status-font {
+  font-weight: bold;
+}
+/* colors */
+/* utility */
+.no-selection {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.acxiom-list.default {
+  float: left;
+  padding-left: 10px;
+}
+.acxiom-list.default ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  float: left;
+}
+.acxiom-list.default ul li {
+  padding-bottom: 4px;
+  line-height: 1.5;
+}
+.acxiom-list.default h3 {
+  float: left;
+  font-size: 11px;
+  position: relative;
+  bottom: 10px;
+  font-weight: normal;
+  padding-right: 10px;
+}
+.acxiom-list.list ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+.acxiom-list.list li {
+  padding-bottom: 4px;
+  line-height: 1.5;
+}
+.acxiom-list.list h3 {
+  clear: both;
+  font-size: 11px;
+  font-weight: normal;
+}
+.acxiom-list.title ul {
+  list-style-type: none;
+  padding: 0 0 0 10px;
+  margin: 0;
+}
+.acxiom-list.title ul li {
+  padding-bottom: 4px;
+  line-height: 1.5;
+}
+.acxiom-list.title h3 {
+  clear: both;
+  font-weight: bold;
+  font-size: 11px;
+}
+.acxiom-list.bullet {
+  margin: 0;
+}
+.acxiom-list.bullet li {
+  padding: 0 0 4px 4px;
+  line-height: 1.5;
+}
+.acxiom-list.number ol li {
+  padding-bottom: 4px;
+  text-align: left;
+  line-height: 1.5;
+  padding-left: 2px;
+}

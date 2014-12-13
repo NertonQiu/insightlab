@@ -1,0 +1,1069 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="personicxPortrait" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="720" leftMargin="36" rightMargin="36" topMargin="36" bottomMargin="36" uuid="7e240a68-22d6-4fea-aac1-a156e598ba7a">
+	<property name="ireport.zoom" value="1.2100000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<style name="table" mode="Opaque" backcolor="#FFFFFF" fill="Solid" radius="3" hAlign="Left" vAlign="Middle" fontName="SansSerif" fontSize="12" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+		<paragraph leftIndent="7" rightIndent="7"/>
+	</style>
+	<style name="table_TD" mode="Opaque" forecolor="#666666" backcolor="#FFFFFF" fill="Solid" radius="3" hAlign="Left" vAlign="Middle" fontName="SansSerif" fontSize="6" isBold="false">
+		<pen lineStyle="Solid"/>
+		<box topPadding="6" leftPadding="5" bottomPadding="6" rightPadding="5">
+			<pen lineWidth="0.5" lineStyle="Solid" lineColor="#808080"/>
+			<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#808080"/>
+			<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#808080"/>
+			<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#808080"/>
+			<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#808080"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" forecolor="#444444" backcolor="#F5F5F5" fill="Solid" radius="3" hAlign="Center" vAlign="Middle" markup="none" pattern="" fontName="SansSerif" fontSize="6" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<box topPadding="0" leftPadding="5" bottomPadding="0" rightPadding="5">
+			<pen lineWidth="0.0" lineStyle="Solid" lineColor="#808080"/>
+			<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#808080"/>
+			<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#808080"/>
+			<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#808080"/>
+			<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#808080"/>
+		</box>
+	</style>
+	<style name="table_TD_Index_left" mode="Opaque" forecolor="#444444" backcolor="#FFFFFF" fill="Solid" radius="3" hAlign="Left" vAlign="Middle" fontName="SansSerif" fontSize="6" isBold="false">
+		<pen lineStyle="Solid"/>
+		<box topPadding="6" leftPadding="0" bottomPadding="6" rightPadding="0">
+			<pen lineWidth="0.5" lineStyle="Solid" lineColor="#808080"/>
+			<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#808080"/>
+			<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#808080"/>
+			<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#808080"/>
+			<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#808080"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{index} >= 100]]></conditionExpression>
+			<style mode="Opaque" forecolor="#FFFFFF" isBlankWhenNull="false" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+		</conditionalStyle>
+	</style>
+	<style name="table_TD_index_right" mode="Opaque" forecolor="#444444" backcolor="#FFFFFF" fill="Solid" radius="3" hAlign="Left" vAlign="Middle" fontName="SansSerif" fontSize="6" isBold="false">
+		<pen lineStyle="Solid"/>
+		<box topPadding="6" leftPadding="0" bottomPadding="6" rightPadding="0">
+			<pen lineWidth="0.5" lineStyle="Solid" lineColor="#808080"/>
+			<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#808080"/>
+			<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#808080"/>
+			<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#808080"/>
+			<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#808080"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{index} < 100]]></conditionExpression>
+			<style mode="Opaque" forecolor="#FFFFFF" isBlankWhenNull="false" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+		</conditionalStyle>
+	</style>
+	<style name="style1" mode="Opaque" backcolor="#E4EBF1" fontSize="6"/>
+	<subDataset name="TableChart Dataset" uuid="317000be-7b06-4649-a488-41b877a6a251">
+		<parameter name="MAX_BASE_COUNT" class="java.lang.Integer">
+			<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+		</parameter>
+		<parameter name="SEGMENT_CHARACTERISTIC" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{SEGMENT_CHARACTERISTIC}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="SEGMENT_COLOR_MAP" class="java.util.Map">
+			<defaultValueExpression><![CDATA[$P{SEGMENT_COLOR_MAP}]]></defaultValueExpression>
+		</parameter>
+		<field name="probabilityIndex" class="java.lang.String">
+			<fieldDescription><![CDATA[probabilityIndex]]></fieldDescription>
+		</field>
+		<field name="clusterName" class="java.lang.String">
+			<fieldDescription><![CDATA[clusterName]]></fieldDescription>
+		</field>
+		<field name="index" class="java.lang.Integer">
+			<fieldDescription><![CDATA[index]]></fieldDescription>
+		</field>
+		<field name="baseCount" class="java.lang.Integer">
+			<fieldDescription><![CDATA[baseCount]]></fieldDescription>
+		</field>
+		<field name="age" class="java.lang.String">
+			<fieldDescription><![CDATA[age]]></fieldDescription>
+		</field>
+		<field name="income" class="java.lang.String">
+			<fieldDescription><![CDATA[income]]></fieldDescription>
+		</field>
+		<field name="maritalStatus" class="java.lang.String">
+			<fieldDescription><![CDATA[maritalStatus]]></fieldDescription>
+		</field>
+		<field name="homeOwnership" class="java.lang.String">
+			<fieldDescription><![CDATA[homeOwnership]]></fieldDescription>
+		</field>
+		<field name="kids" class="java.lang.String">
+			<fieldDescription><![CDATA[kids]]></fieldDescription>
+		</field>
+		<field name="urbanicity" class="java.lang.String">
+			<fieldDescription><![CDATA[urbanicity]]></fieldDescription>
+		</field>
+		<field name="netWorth" class="java.lang.String">
+			<fieldDescription><![CDATA[netWorth]]></fieldDescription>
+		</field>
+		<field name="targetCount" class="java.lang.Integer">
+			<fieldDescription><![CDATA[targetCount]]></fieldDescription>
+		</field>
+		<field name="ageText" class="java.lang.String"/>
+		<variable name="MAX_INDEX" class="java.lang.Integer" calculation="Highest">
+			<variableExpression><![CDATA[$F{index}]]></variableExpression>
+			<initialValueExpression><![CDATA[0]]></initialValueExpression>
+		</variable>
+		<filterExpression><![CDATA[$F{targetCount} > 0]]></filterExpression>
+	</subDataset>
+	<subDataset name="Table Dataset 2" uuid="28e36e11-dc89-4763-a7ea-d76ac03bc599">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="groupName" class="java.lang.String">
+			<fieldDescription><![CDATA[groupName]]></fieldDescription>
+		</field>
+		<field name="ib1270" class="java.lang.Integer">
+			<fieldDescription><![CDATA[ib1270]]></fieldDescription>
+		</field>
+		<field name="clusterName" class="java.lang.String">
+			<fieldDescription><![CDATA[clusterName]]></fieldDescription>
+		</field>
+		<field name="baseCount" class="java.lang.Integer">
+			<fieldDescription><![CDATA[baseCount]]></fieldDescription>
+		</field>
+		<field name="basePercent" class="java.lang.Double">
+			<fieldDescription><![CDATA[basePercent]]></fieldDescription>
+		</field>
+		<field name="targetCount" class="java.lang.Integer">
+			<fieldDescription><![CDATA[targetCount]]></fieldDescription>
+		</field>
+		<field name="targetPercent" class="java.lang.Double">
+			<fieldDescription><![CDATA[targetPercent]]></fieldDescription>
+		</field>
+		<field name="penetration" class="java.lang.Double">
+			<fieldDescription><![CDATA[penetration]]></fieldDescription>
+		</field>
+		<field name="index" class="java.lang.Integer">
+			<fieldDescription><![CDATA[index]]></fieldDescription>
+		</field>
+		<field name="age" class="java.lang.String">
+			<fieldDescription><![CDATA[age]]></fieldDescription>
+		</field>
+		<field name="maritalStatus" class="java.lang.String">
+			<fieldDescription><![CDATA[maritalStatus]]></fieldDescription>
+		</field>
+		<field name="homeOwnership" class="java.lang.String">
+			<fieldDescription><![CDATA[homeOwnership]]></fieldDescription>
+		</field>
+		<field name="kids" class="java.lang.String">
+			<fieldDescription><![CDATA[kids]]></fieldDescription>
+		</field>
+		<field name="income" class="java.lang.String">
+			<fieldDescription><![CDATA[income]]></fieldDescription>
+		</field>
+		<field name="urbanicity" class="java.lang.String">
+			<fieldDescription><![CDATA[urbanicity]]></fieldDescription>
+		</field>
+		<field name="netWorth" class="java.lang.String">
+			<fieldDescription><![CDATA[netWorth]]></fieldDescription>
+		</field>
+		<field name="ageText" class="java.lang.String"/>
+		<sortField name="index" order="Descending"/>
+	</subDataset>
+	<subDataset name="SegmentDataset" uuid="443aec85-cf4b-40d2-9e67-4f3db55ef7d9">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="_THIS" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="PORTRAIT" class="java.lang.String">
+		<parameterDescription><![CDATA[portrait]]></parameterDescription>
+	</parameter>
+	<parameter name="SEGMENT_CHARACTERISTIC" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="SEGMENT_COLOR_MAP" class="java.util.Map">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="portraitData" class="java.util.List">
+		<fieldDescription><![CDATA[portraitData]]></fieldDescription>
+	</field>
+	<field name="target.question" class="java.lang.String">
+		<fieldDescription><![CDATA[target.question]]></fieldDescription>
+	</field>
+	<field name="target.type" class="java.lang.String">
+		<fieldDescription><![CDATA[target.type]]></fieldDescription>
+	</field>
+	<field name="reference.question" class="java.lang.String">
+		<fieldDescription><![CDATA[reference.question]]></fieldDescription>
+	</field>
+	<field name="reference.response" class="java.lang.String">
+		<fieldDescription><![CDATA[reference.response]]></fieldDescription>
+	</field>
+	<field name="reference.type" class="java.lang.String">
+		<fieldDescription><![CDATA[reference.type]]></fieldDescription>
+	</field>
+	<field name="target.response" class="java.lang.String"/>
+	<variable name="MAX_BASE_COUNT" class="java.lang.Integer">
+		<variableExpression><![CDATA[java.util.Collections.max((List<com.acxiom.insightlab.api.model.PersonicxPortraitRow>)$F{portraitData}, new com.acxiom.insightlab.api.model.BaseCountComparator()).getBaseCount()]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="60" splitType="Stretch">
+			<image>
+				<reportElement isPrintRepeatedValues="false" x="0" y="0" width="222" height="60" uuid="fa41093d-9dbf-48ff-aba9-6c790a0efafd"/>
+				<imageExpression><![CDATA["AOSAnalytics-horizontal-RGB.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="30">
+			<staticText>
+				<reportElement x="0" y="0" width="720" height="30" forecolor="#666666" uuid="654eaa28-e08c-4891-b80e-64c269a4db7e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="22"/>
+				</textElement>
+				<text><![CDATA[Personicx Portrait]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<componentElement>
+				<reportElement key="table 1" positionType="Float" x="0" y="41" width="720" height="83" uuid="e73964f9-613e-45c3-b888-64238d91daf6">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" whenNoDataType="AllSectionsNoDetail">
+					<datasetRun subDataset="TableChart Dataset" uuid="03243ba0-97bc-4f1a-9365-0952a3829fb1">
+						<datasetParameter name="MAX_BASE_COUNT">
+							<datasetParameterExpression><![CDATA[$V{MAX_BASE_COUNT}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="SEGMENT_CHARACTERISTIC">
+							<datasetParameterExpression><![CDATA[$P{SEGMENT_CHARACTERISTIC}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="SEGMENT_COLOR_MAP">
+							<datasetParameterExpression><![CDATA[$P{SEGMENT_COLOR_MAP}]]></datasetParameterExpression>
+						</datasetParameter>
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{portraitData})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:columnGroup width="719" uuid="e6cd967b-7299-43b2-a6d6-e44d13c7fc3d">
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<jr:tableHeader height="0"/>
+						<jr:tableFooter height="0"/>
+						<jr:columnHeader height="0"/>
+						<jr:columnFooter height="40">
+							<barChart>
+								<chart evaluationTime="Report" customizerClass="com.acxiom.insightlab.report.chart.customizer.LegendCustomizer">
+									<reportElement x="0" y="0" width="719" height="30" uuid="1f7a42bc-797e-42d5-a174-a03f1625d41b">
+										<property name="local_mesure_unitheight" value="pixel"/>
+										<property name="com.jaspersoft.studio.unit.height" value="px"/>
+										<printWhenExpression><![CDATA[$P{SEGMENT_CHARACTERISTIC} != null]]></printWhenExpression>
+									</reportElement>
+									<box>
+										<topPen lineColor="#808080"/>
+										<leftPen lineColor="#808080"/>
+										<bottomPen lineColor="#808080"/>
+										<rightPen lineColor="#808080"/>
+									</box>
+									<chartTitle color="#FFFFFF"/>
+									<chartSubtitle/>
+									<chartLegend textColor="#666666">
+										<font size="6"/>
+									</chartLegend>
+								</chart>
+								<categoryDataset>
+									<dataset>
+										<datasetRun subDataset="SegmentDataset" uuid="15acfe3d-f009-477c-99dc-26543d0b5026">
+											<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{SEGMENT_COLOR_MAP}.keySet())]]></dataSourceExpression>
+										</datasetRun>
+									</dataset>
+									<categorySeries>
+										<seriesExpression><![CDATA[$F{_THIS}]]></seriesExpression>
+										<categoryExpression><![CDATA[$F{_THIS}]]></categoryExpression>
+										<valueExpression><![CDATA[0]]></valueExpression>
+										<labelExpression><![CDATA[$F{_THIS}]]></labelExpression>
+									</categorySeries>
+								</categoryDataset>
+								<barPlot isShowLabels="false" isShowTickLabels="false" isShowTickMarks="false">
+									<plot/>
+									<itemLabel/>
+									<categoryAxisFormat>
+										<axisFormat labelColor="#FFFFFF" tickLabelColor="#FFFFFF" verticalTickLabels="false" axisLineColor="#FFFFFF"/>
+									</categoryAxisFormat>
+									<valueAxisFormat>
+										<axisFormat labelColor="#FFFFFF" tickLabelColor="#FFFFFF" verticalTickLabels="false" axisLineColor="#FFFFFF"/>
+									</valueAxisFormat>
+									<domainAxisMinValueExpression><![CDATA[0]]></domainAxisMinValueExpression>
+									<domainAxisMaxValueExpression><![CDATA[0]]></domainAxisMaxValueExpression>
+									<rangeAxisMinValueExpression><![CDATA[0]]></rangeAxisMinValueExpression>
+									<rangeAxisMaxValueExpression><![CDATA[0]]></rangeAxisMaxValueExpression>
+								</barPlot>
+							</barChart>
+						</jr:columnFooter>
+						<jr:column width="30" uuid="c468b21c-e803-4b7b-8f13-e81f4a49d356">
+							<jr:columnHeader height="30" rowSpan="1">
+								<box>
+									<topPen lineWidth="0.5" lineColor="#808080"/>
+									<leftPen lineWidth="0.5" lineColor="#808080"/>
+									<bottomPen lineWidth="0.5" lineColor="#808080"/>
+								</box>
+								<staticText>
+									<reportElement style="table_TH" x="0" y="0" width="30" height="30" uuid="aed4965a-ef68-412f-b9f7-4e097d49bd96">
+										<property name="local_mesure_unitheight" value="pixel"/>
+										<property name="com.jaspersoft.studio.unit.height" value="px"/>
+									</reportElement>
+									<box leftPadding="0" rightPadding="0">
+										<topPen lineWidth="0.0"/>
+										<leftPen lineWidth="0.0" lineColor="#808080"/>
+										<bottomPen lineWidth="0.0"/>
+									</box>
+									<text><![CDATA[]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:columnFooter height="1" rowSpan="1">
+								<box>
+									<topPen lineWidth="0.1" lineColor="#808080"/>
+								</box>
+							</jr:columnFooter>
+							<jr:detailCell style="style1" height="26" rowSpan="1">
+								<box>
+									<leftPen lineWidth="0.5" lineColor="#808080"/>
+								</box>
+								<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="false">
+									<reportElement style="table_TD" positionType="Float" stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="0" y="0" width="30" height="26" isPrintWhenDetailOverflows="true" backcolor="#E4EBF1" uuid="0eb1d8ab-1f51-4974-8346-e7609f58bd0a"/>
+									<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+										<leftPen lineWidth="0.0"/>
+										<bottomPen lineWidth="0.0"/>
+									</box>
+									<textElement textAlignment="Center" rotation="None"/>
+									<textFieldExpression><![CDATA[$F{probabilityIndex}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="116" uuid="8ddc9d59-8cf3-4512-a7a4-db8ea55ad3f3">
+							<jr:columnHeader height="30" rowSpan="1">
+								<box>
+									<topPen lineWidth="0.5" lineColor="#808080"/>
+								</box>
+								<staticText>
+									<reportElement style="table_TH" x="0" y="0" width="116" height="30" uuid="1b3f40c0-1b15-4a09-9ad9-a447b8561de4"/>
+									<box>
+										<topPen lineWidth="0.0"/>
+										<bottomPen lineWidth="0.0"/>
+									</box>
+									<text><![CDATA[]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell height="26" rowSpan="1">
+								<box>
+									<topPen lineWidth="0.5" lineColor="#808080"/>
+									<bottomPen lineWidth="0.5" lineColor="#808080"/>
+								</box>
+								<textField isStretchWithOverflow="true">
+									<reportElement style="table_TD" positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="116" height="26" uuid="f9da33ef-2661-407e-af6a-595e4c3dd861"/>
+									<box>
+										<topPen lineWidth="0.0"/>
+										<bottomPen lineWidth="0.0"/>
+									</box>
+									<textFieldExpression><![CDATA[$F{clusterName}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="107" uuid="5734e273-a3f7-4f04-a119-caeb54615333">
+							<property name="local_mesure_unitheight" value="pixel"/>
+							<jr:columnHeader height="30" rowSpan="1">
+								<box>
+									<topPen lineWidth="0.5" lineColor="#808080"/>
+								</box>
+								<staticText>
+									<reportElement style="table_TH" x="0" y="0" width="107" height="30" uuid="b35e2533-264a-41f4-9b07-bc877ce137d0"/>
+									<box>
+										<topPen lineWidth="0.0"/>
+										<bottomPen lineWidth="0.0"/>
+									</box>
+									<text><![CDATA[INDEX]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell height="26" rowSpan="1">
+								<box>
+									<topPen lineWidth="0.5" lineColor="#808080"/>
+									<bottomPen lineWidth="0.5" lineColor="#808080"/>
+								</box>
+								<textField isStretchWithOverflow="true" pattern="#,##0">
+									<reportElement style="table_TD_index_right" stretchType="RelativeToBandHeight" x="84" y="0" width="23" height="26" uuid="4b563dd4-f43c-472c-8fa4-130c85c9da80"/>
+									<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+										<topPen lineWidth="0.0"/>
+										<bottomPen lineWidth="0.0"/>
+									</box>
+									<textFieldExpression><![CDATA[$F{index}]]></textFieldExpression>
+								</textField>
+								<stackedBarChart>
+									<chart isShowLegend="false" customizerClass="com.acxiom.insightlab.report.chart.customizer.SingleBarCustomizer" renderType="draw" theme="default">
+										<reportElement key="" style="table_TD" stretchType="RelativeToBandHeight" mode="Transparent" x="19" y="0" width="65" height="26" forecolor="#FFFFFF" backcolor="#FFFFFF" uuid="1f0b5bba-68e5-4e8a-968e-e5f78e6af8a8"/>
+										<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+											<topPen lineWidth="0.0" lineColor="#808080"/>
+											<bottomPen lineWidth="0.0" lineColor="#808080"/>
+										</box>
+										<chartTitle/>
+										<chartSubtitle/>
+										<chartLegend/>
+									</chart>
+									<categoryDataset>
+										<dataset resetType="None" incrementType="Column"/>
+										<categorySeries>
+											<seriesExpression><![CDATA["opaque"]]></seriesExpression>
+											<categoryExpression><![CDATA[$F{clusterName}]]></categoryExpression>
+											<valueExpression><![CDATA[$F{index} >= 100 ? 100 : $F{index}]]></valueExpression>
+										</categorySeries>
+										<categorySeries>
+											<seriesExpression><![CDATA[$F{index} >= 100]]></seriesExpression>
+											<categoryExpression><![CDATA[$F{clusterName}]]></categoryExpression>
+											<valueExpression><![CDATA[$F{index} - 100 < 0? 0 :$F{index} - 100]]></valueExpression>
+										</categorySeries>
+										<categorySeries>
+											<seriesExpression><![CDATA[$F{index} < 100]]></seriesExpression>
+											<categoryExpression><![CDATA[$F{clusterName}]]></categoryExpression>
+											<valueExpression><![CDATA[100 - $F{index} < 0 ? 0 :100 - $F{index}]]></valueExpression>
+										</categorySeries>
+										<categorySeries>
+											<seriesExpression><![CDATA["opaque_2"]]></seriesExpression>
+											<categoryExpression><![CDATA[$F{clusterName}]]></categoryExpression>
+											<valueExpression><![CDATA[$V{MAX_INDEX} - $F{index}]]></valueExpression>
+										</categorySeries>
+									</categoryDataset>
+									<barPlot isShowLabels="false" isShowTickLabels="false" isShowTickMarks="false">
+										<plot orientation="Horizontal">
+											<seriesColor seriesOrder="0" color="#F1F1F1"/>
+											<seriesColor seriesOrder="1" color="#637E9A"/>
+											<seriesColor seriesOrder="2" color="#FF0000"/>
+											<seriesColor seriesOrder="3" color="#F1F1F1"/>
+										</plot>
+										<itemLabel/>
+										<categoryAxisFormat>
+											<axisFormat verticalTickLabels="false"/>
+										</categoryAxisFormat>
+										<valueAxisFormat>
+											<axisFormat verticalTickLabels="false"/>
+										</valueAxisFormat>
+										<rangeAxisMinValueExpression><![CDATA[1]]></rangeAxisMinValueExpression>
+										<rangeAxisMaxValueExpression><![CDATA[$V{MAX_INDEX}]]></rangeAxisMaxValueExpression>
+									</barPlot>
+								</stackedBarChart>
+								<textField isStretchWithOverflow="true" pattern="#,##0">
+									<reportElement style="table_TD_Index_left" stretchType="RelativeToBandHeight" x="0" y="0" width="19" height="26" uuid="0bebd90b-a0ad-464e-b91b-142877a09ed8"/>
+									<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+										<topPen lineWidth="0.0"/>
+										<bottomPen lineWidth="0.0"/>
+									</box>
+									<textElement textAlignment="Right"/>
+									<textFieldExpression><![CDATA[$F{index}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="70" uuid="74f4f7f8-fa76-40ec-a006-fa131cee9d4a">
+							<jr:columnHeader height="30" rowSpan="1">
+								<box>
+									<topPen lineWidth="0.5" lineColor="#808080"/>
+								</box>
+								<staticText>
+									<reportElement style="table_TH" x="0" y="0" width="70" height="30" uuid="7f9256d4-0e21-4b72-9c6a-87245c6787b7"/>
+									<box>
+										<topPen lineWidth="0.0"/>
+										<bottomPen lineWidth="0.0"/>
+									</box>
+									<text><![CDATA[REFERENCE]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell height="26" rowSpan="1">
+								<box>
+									<topPen lineWidth="0.5" lineColor="#808080"/>
+									<bottomPen lineWidth="0.5" lineColor="#808080"/>
+								</box>
+								<stackedBarChart>
+									<chart isShowLegend="false" customizerClass="com.acxiom.insightlab.report.chart.customizer.SingleBarCustomizer" theme="default">
+										<reportElement stretchType="RelativeToBandHeight" mode="Transparent" x="0" y="0" width="70" height="26" forecolor="#FFFFFF" uuid="ee22d816-50a5-4656-9d71-a8741dec49ad"/>
+										<box>
+											<topPen lineWidth="0.0" lineColor="#808080"/>
+											<bottomPen lineWidth="0.0" lineColor="#808080"/>
+										</box>
+										<chartTitle/>
+										<chartSubtitle/>
+										<chartLegend/>
+									</chart>
+									<categoryDataset>
+										<dataset resetType="None" incrementType="Column"/>
+										<categorySeries>
+											<seriesExpression><![CDATA["a"]]></seriesExpression>
+											<categoryExpression><![CDATA[$F{clusterName}]]></categoryExpression>
+											<valueExpression><![CDATA[$F{baseCount}]]></valueExpression>
+										</categorySeries>
+										<categorySeries>
+											<seriesExpression><![CDATA["b"]]></seriesExpression>
+											<categoryExpression><![CDATA[$F{clusterName}]]></categoryExpression>
+											<valueExpression><![CDATA[$P{MAX_BASE_COUNT} - $F{baseCount}]]></valueExpression>
+										</categorySeries>
+									</categoryDataset>
+									<barPlot isShowLabels="false" isShowTickLabels="false" isShowTickMarks="false">
+										<plot orientation="Horizontal">
+											<seriesColor seriesOrder="0" color="#637E9A"/>
+											<seriesColor seriesOrder="1" color="#F1F1F1"/>
+										</plot>
+										<itemLabel/>
+										<categoryAxisFormat>
+											<axisFormat verticalTickLabels="false"/>
+										</categoryAxisFormat>
+										<valueAxisFormat>
+											<axisFormat verticalTickLabels="false"/>
+										</valueAxisFormat>
+										<rangeAxisMinValueExpression><![CDATA[0]]></rangeAxisMinValueExpression>
+										<rangeAxisMaxValueExpression><![CDATA[$P{MAX_BASE_COUNT}]]></rangeAxisMaxValueExpression>
+									</barPlot>
+								</stackedBarChart>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="50" uuid="13a44d58-3871-4188-aa0d-23b8254ab401">
+							<jr:columnHeader height="30" rowSpan="1">
+								<box>
+									<topPen lineWidth="0.5" lineColor="#808080"/>
+								</box>
+								<staticText>
+									<reportElement style="table_TH" x="0" y="0" width="50" height="30" uuid="30fc4d92-46b1-4839-9cbe-48da8f0e388e"/>
+									<box>
+										<topPen lineWidth="0.0"/>
+										<bottomPen lineWidth="0.0"/>
+									</box>
+									<textElement textAlignment="Right"/>
+									<text><![CDATA[CLUSTER AGE]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell height="26" rowSpan="1">
+								<box>
+									<topPen lineWidth="0.5" lineColor="#808080"/>
+									<bottomPen lineWidth="0.5" lineColor="#808080"/>
+								</box>
+								<textField isStretchWithOverflow="true">
+									<reportElement style="table_TD" positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="50" height="26" uuid="ac351318-6c0a-44e8-b76a-bf16c143bd8b"/>
+									<box>
+										<topPen lineWidth="0.0"/>
+										<bottomPen lineWidth="0.0"/>
+									</box>
+									<textElement textAlignment="Right"/>
+									<textFieldExpression><![CDATA[$F{age}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="35" uuid="1058caf2-7b0e-4134-a273-39d7f7fdb5da">
+							<jr:columnHeader height="30" rowSpan="1">
+								<box>
+									<topPen lineWidth="0.5" lineColor="#808080"/>
+								</box>
+								<staticText>
+									<reportElement style="table_TH" x="0" y="0" width="35" height="30" uuid="9ed66255-28bd-4e21-85c5-857f1aac63b9"/>
+									<box>
+										<topPen lineWidth="0.0"/>
+										<bottomPen lineWidth="0.0"/>
+									</box>
+									<textElement textAlignment="Left"/>
+									<text><![CDATA[INCOME]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell height="26" rowSpan="1">
+								<box>
+									<topPen lineWidth="0.5" lineColor="#808080"/>
+									<bottomPen lineWidth="0.5" lineColor="#808080"/>
+								</box>
+								<textField isStretchWithOverflow="true">
+									<reportElement style="table_TD" positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="35" height="26" uuid="dd872de5-1b30-433e-9c31-b6b5d08b8c3b"/>
+									<box>
+										<topPen lineWidth="0.0"/>
+										<bottomPen lineWidth="0.0"/>
+									</box>
+									<textFieldExpression><![CDATA[$F{income}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="56" uuid="16b243a6-86e2-444c-9521-72f13b0426d6">
+							<jr:columnHeader height="30" rowSpan="1">
+								<box>
+									<topPen lineWidth="0.5" lineColor="#808080"/>
+								</box>
+								<staticText>
+									<reportElement style="table_TH" x="0" y="0" width="56" height="30" uuid="a3031bb4-5130-4844-b510-a3d9ce98a8be"/>
+									<box>
+										<topPen lineWidth="0.0"/>
+										<bottomPen lineWidth="0.0"/>
+									</box>
+									<textElement textAlignment="Left"/>
+									<text><![CDATA[MARITAL STATUS]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell height="26" rowSpan="1">
+								<box>
+									<topPen lineWidth="0.5" lineColor="#808080"/>
+									<bottomPen lineWidth="0.5" lineColor="#808080"/>
+								</box>
+								<textField isStretchWithOverflow="true">
+									<reportElement style="table_TD" positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="56" height="26" uuid="c4b5bd51-b92b-440b-8921-6746d994ed14"/>
+									<box>
+										<topPen lineWidth="0.0"/>
+										<bottomPen lineWidth="0.0"/>
+									</box>
+									<textFieldExpression><![CDATA[$F{maritalStatus}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="65" uuid="3d7daed7-9efc-45de-997e-f3ac0f252d7b">
+							<jr:columnHeader height="30" rowSpan="1">
+								<box>
+									<topPen lineWidth="0.5" lineColor="#808080"/>
+								</box>
+								<staticText>
+									<reportElement style="table_TH" x="0" y="0" width="65" height="30" uuid="7b87ac57-8fc1-47f4-95d6-a20458e6148c"/>
+									<box>
+										<topPen lineWidth="0.0"/>
+										<bottomPen lineWidth="0.0"/>
+									</box>
+									<textElement textAlignment="Left"/>
+									<text><![CDATA[HOME OWNERSHIP]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell height="26" rowSpan="1">
+								<box>
+									<topPen lineWidth="0.5" lineColor="#808080"/>
+									<bottomPen lineWidth="0.5" lineColor="#808080"/>
+								</box>
+								<textField isStretchWithOverflow="true" pattern="">
+									<reportElement style="table_TD" positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="65" height="26" uuid="ffa9e257-4db1-440b-ad03-e6319a0d8397"/>
+									<box>
+										<topPen lineWidth="0.0"/>
+										<bottomPen lineWidth="0.0"/>
+									</box>
+									<textFieldExpression><![CDATA[$F{homeOwnership}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="72" uuid="2a066462-9339-4186-a13e-16fc0569d133">
+							<jr:columnHeader height="30" rowSpan="1">
+								<box>
+									<topPen lineWidth="0.5" lineColor="#808080"/>
+								</box>
+								<staticText>
+									<reportElement style="table_TH" x="0" y="0" width="72" height="30" uuid="f5578d7a-d80b-430e-838c-9407691e6a1d"/>
+									<box>
+										<topPen lineWidth="0.0"/>
+										<bottomPen lineWidth="0.0"/>
+									</box>
+									<textElement textAlignment="Left"/>
+									<text><![CDATA[KIDS]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell height="26" rowSpan="1">
+								<box>
+									<topPen lineWidth="0.5" lineColor="#808080"/>
+									<bottomPen lineWidth="0.5" lineColor="#808080"/>
+								</box>
+								<textField isStretchWithOverflow="true">
+									<reportElement style="table_TD" positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="72" height="26" uuid="f33b4840-627f-4107-abcb-60fa2bbf782f"/>
+									<box>
+										<topPen lineWidth="0.0"/>
+										<bottomPen lineWidth="0.0"/>
+									</box>
+									<textFieldExpression><![CDATA[$F{kids}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="63" uuid="6db04e74-de66-4fd4-a0d7-95ea99ff415e">
+							<jr:columnHeader height="30" rowSpan="1">
+								<box>
+									<topPen lineWidth="0.5" lineColor="#808080"/>
+								</box>
+								<staticText>
+									<reportElement style="table_TH" x="0" y="0" width="63" height="30" uuid="7e4cb55f-e182-4313-a45b-dd26a58ae3ba"/>
+									<box>
+										<topPen lineWidth="0.0"/>
+										<bottomPen lineWidth="0.0"/>
+									</box>
+									<textElement textAlignment="Left"/>
+									<text><![CDATA[URBANICITY]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell height="26" rowSpan="1">
+								<box>
+									<topPen lineWidth="0.5" lineColor="#808080"/>
+									<bottomPen lineWidth="0.5" lineColor="#808080"/>
+								</box>
+								<textField isStretchWithOverflow="true">
+									<reportElement style="table_TD" positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="63" height="26" uuid="ed4af036-0d3e-40fd-b137-a8f9306957c6"/>
+									<box>
+										<topPen lineWidth="0.0"/>
+										<bottomPen lineWidth="0.0"/>
+									</box>
+									<textFieldExpression><![CDATA[$F{urbanicity}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="55" uuid="43779525-c821-4431-97ec-0db808cbee1c">
+							<jr:columnHeader height="30" rowSpan="1">
+								<box>
+									<topPen lineWidth="0.5" lineColor="#808080"/>
+									<rightPen lineWidth="0.5" lineColor="#808080"/>
+								</box>
+								<staticText>
+									<reportElement style="table_TH" x="0" y="0" width="55" height="30" uuid="5f8d5cc7-b954-4c3e-8e85-4d3afe07f178"/>
+									<box>
+										<topPen lineWidth="0.0"/>
+										<bottomPen lineWidth="0.0"/>
+										<rightPen lineWidth="0.0" lineColor="#808080"/>
+									</box>
+									<textElement textAlignment="Right"/>
+									<text><![CDATA[NET WORTH]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell height="26" rowSpan="1">
+								<box>
+									<topPen lineWidth="0.5" lineColor="#808080"/>
+									<bottomPen lineWidth="0.5" lineColor="#808080"/>
+									<rightPen lineWidth="0.5" lineColor="#808080"/>
+								</box>
+								<textField isStretchWithOverflow="true">
+									<reportElement style="table_TD" positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="55" height="26" uuid="76b2e69a-b7dd-4ffc-9d66-b6dd3e90090f"/>
+									<box>
+										<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+									<textElement textAlignment="Right"/>
+									<textFieldExpression><![CDATA[$F{netWorth}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+					</jr:columnGroup>
+				</jr:table>
+			</componentElement>
+			<textField>
+				<reportElement x="0" y="0" width="720" height="38" forecolor="#666666" uuid="b4150407-7732-4072-94a7-8ab84a620d94">
+					<property name="local_mesure_unitheight" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($P{PORTRAIT} == null? "" : "Portrait Name: " + $P{PORTRAIT} + "\n") + ($F{target.type}.equals("Dataset")? "Analytic Dataset: " + $F{target.question} + "\n" + ($F{reference.type}.equals("National") ? "Reference: National" : "Reference Question/Response: " + $F{reference.question} +"; " +$F{reference.response}):"Survey Question/Response: " +$F{target.question}+ "; " + $F{target.response} +"\n"+ "Reference: National")]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="50">
+			<componentElement>
+				<reportElement key="table 1" x="0" y="0" width="720" height="50" uuid="bae2f6fd-b4ba-4342-8dbf-671a5c9c77ca"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Table Dataset 2" uuid="f507afc8-68d2-44ed-a679-8fd7a2c33fe2">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{portraitData})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="60" uuid="bfeee9dc-5666-4bc3-9aff-1fbc59b0cb79">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" x="0" y="0" width="60" height="30" uuid="ada7212a-4583-4fd5-8a37-c09bafaff3ab"/>
+								<box>
+									<leftPen lineWidth="0.5" lineColor="#808080"/>
+								</box>
+								<textElement textAlignment="Left"/>
+								<text><![CDATA[Life Stage]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="25" rowSpan="1">
+							<textField isStretchWithOverflow="true">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="60" height="25" uuid="8f7ade59-2324-48ea-bd5a-e5c44a5c3f12"/>
+								<box>
+									<leftPen lineWidth="0.5" lineColor="#808080"/>
+								</box>
+								<textFieldExpression><![CDATA[$F{groupName}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="63" uuid="649f2cb3-df10-4481-af42-060a1c10229f">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" x="0" y="0" width="63" height="30" uuid="2f7a40cf-b1f7-41bd-969e-8cab64ba8da6"/>
+								<textElement textAlignment="Left"/>
+								<text><![CDATA[Segment]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="25" rowSpan="1">
+							<textField isStretchWithOverflow="true">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="63" height="25" uuid="bcbbb942-8f9a-44ec-bb77-1f0b5921f842"/>
+								<textFieldExpression><![CDATA[$F{ib1270} + " " + $F{clusterName}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="43" uuid="763495a7-3a49-413a-a356-fbdd5c0b66c4">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" x="0" y="0" width="43" height="30" uuid="4b3b0111-6284-4db3-91fa-8b02867bbae6"/>
+								<textElement textAlignment="Right"/>
+								<text><![CDATA[Ref Count]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="25" rowSpan="1">
+							<textField isStretchWithOverflow="true" pattern="#,##0">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="43" height="25" uuid="35dd1db2-c0c9-4066-a995-4fa8381a66ec"/>
+								<textElement textAlignment="Right"/>
+								<textFieldExpression><![CDATA[$F{baseCount}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="34" uuid="be37d710-03b1-4d44-b322-626492092ef5">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" x="0" y="0" width="34" height="30" uuid="935a1174-c43b-4234-ab62-d36649477e52"/>
+								<textElement textAlignment="Right"/>
+								<text><![CDATA[Ref %]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="25" rowSpan="1">
+							<textField isStretchWithOverflow="true" pattern="#,##0.00%">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="34" height="25" uuid="a9b3b1ad-2d49-4368-9650-7801aa836534"/>
+								<textElement textAlignment="Right"/>
+								<textFieldExpression><![CDATA[$F{basePercent}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="41" uuid="74f88f47-ac98-40d7-b0fb-a9122c5bf9b5">
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" x="0" y="0" width="41" height="30" uuid="3a7640a9-6312-46d9-badb-9ae30dfc761f">
+									<property name="local_mesure_unitwidth" value="pixel"/>
+									<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								</reportElement>
+								<textElement textAlignment="Right"/>
+								<text><![CDATA[Target Count]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="25" rowSpan="1">
+							<textField isStretchWithOverflow="true" pattern="#,##0">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="41" height="25" uuid="398c3a97-5702-4e7b-a793-d72d2d494423">
+									<property name="local_mesure_unitwidth" value="pixel"/>
+									<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								</reportElement>
+								<textElement textAlignment="Right"/>
+								<textFieldExpression><![CDATA[$F{targetCount}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="37" uuid="630d6b63-b87f-4b16-b5d0-f779d80028e6">
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<jr:columnHeader height="30" rowSpan="1">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<staticText>
+								<reportElement style="table_TH" x="0" y="0" width="37" height="30" uuid="a6a1c23c-d25b-4722-bbc7-12d7d4a467a2">
+									<property name="local_mesure_unitwidth" value="pixel"/>
+									<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								</reportElement>
+								<textElement textAlignment="Right"/>
+								<text><![CDATA[Target %]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="25" rowSpan="1">
+							<textField isStretchWithOverflow="true" pattern="#,##0.00%">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="37" height="25" uuid="4b1b90dd-9dfc-4884-bb3e-56c389485d8f">
+									<property name="local_mesure_unitwidth" value="pixel"/>
+									<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								</reportElement>
+								<textElement textAlignment="Right"/>
+								<textFieldExpression><![CDATA[$F{targetPercent}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="50" uuid="1e628215-fbec-4264-b368-cc37003f622b">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" x="0" y="0" width="50" height="30" uuid="aea87c15-f10d-4ee8-932f-ca6fbb19250b"/>
+								<textElement textAlignment="Right"/>
+								<text><![CDATA[Penetration]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="25" rowSpan="1">
+							<textField isStretchWithOverflow="true" pattern="#,##0.00%">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="50" height="25" uuid="25f5c527-ca4f-4276-ab28-a1dabbe76ec1"/>
+								<textElement textAlignment="Right"/>
+								<textFieldExpression><![CDATA[$F{penetration}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="42" uuid="ae972cb2-be64-4fbb-bbe4-c0a486d930a5">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" x="0" y="0" width="42" height="30" uuid="a8a2f20d-0304-4592-aa7d-10d1409479d6"/>
+								<textElement textAlignment="Right"/>
+								<text><![CDATA[Index]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="25" rowSpan="1">
+							<textField isStretchWithOverflow="true" pattern="#,##0">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="42" height="25" uuid="982440ce-8f90-44c6-ba0b-e4ce1fe43fff"/>
+								<textElement textAlignment="Right"/>
+								<textFieldExpression><![CDATA[$F{index}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="29" uuid="f21369b1-3828-48a3-b6fb-94ebe999bb31">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" x="0" y="0" width="29" height="30" uuid="cf0cc3c3-d969-46a3-883c-83a6dee485bb"/>
+								<textElement textAlignment="Right"/>
+								<text><![CDATA[Age]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="25" rowSpan="1">
+							<textField isStretchWithOverflow="true">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="29" height="25" uuid="4fb92902-2ced-4024-b387-348f8ced4837"/>
+								<textElement textAlignment="Right"/>
+								<textFieldExpression><![CDATA[$F{age}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="58" uuid="ab258ad6-105e-4531-b0a1-af03e1f12b11">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" x="0" y="0" width="58" height="30" uuid="2e1d2235-acb8-4139-9389-c911f8074d5f"/>
+								<textElement textAlignment="Left"/>
+								<text><![CDATA[Marital Status]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="25" rowSpan="1">
+							<textField isStretchWithOverflow="true">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="58" height="25" uuid="cd1c2092-f9ed-4908-9f7b-831b5fc834c0"/>
+								<textFieldExpression><![CDATA[$F{maritalStatus}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="55" uuid="e0f3fc8a-de85-4dea-9d82-70aec74e44d7">
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" x="0" y="0" width="55" height="30" uuid="4d35e0fd-44b0-4d83-bec1-aea89e6f6453">
+									<property name="local_mesure_unitwidth" value="pixel"/>
+								</reportElement>
+								<textElement textAlignment="Left"/>
+								<text><![CDATA[Ownership]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="25" rowSpan="1">
+							<textField isStretchWithOverflow="true">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="55" height="25" uuid="802355f2-89c9-4d59-b697-99d4e65c8c0d">
+									<property name="local_mesure_unitwidth" value="pixel"/>
+								</reportElement>
+								<textFieldExpression><![CDATA[$F{homeOwnership}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="67" uuid="837dec58-42f3-49f6-83b5-7886ce7adaca">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" x="0" y="0" width="67" height="30" uuid="e5afc44e-e4e2-4546-acaf-0cd80650d276"/>
+								<textElement textAlignment="Left"/>
+								<text><![CDATA[Children]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="25" rowSpan="1">
+							<textField isStretchWithOverflow="true">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="67" height="25" uuid="ca9215fe-91fd-4af7-b127-4a0f5018fc00"/>
+								<textFieldExpression><![CDATA[$F{kids}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="39" uuid="16afd6af-a0ac-4442-b201-9195fc0030a6">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" x="0" y="0" width="39" height="30" uuid="09e2f04c-59fb-45df-8060-690949187be6"/>
+								<textElement textAlignment="Left"/>
+								<text><![CDATA[Income]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="25" rowSpan="1">
+							<textField isStretchWithOverflow="true">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="39" height="25" uuid="3fbd4000-6581-4956-a7de-88557d1a17b8"/>
+								<textFieldExpression><![CDATA[$F{income}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="50" uuid="6b10e620-7e91-4fcb-b834-39ea8930298a">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" x="0" y="0" width="50" height="30" uuid="267168a5-3fb8-4280-8b10-1ca74bc4e80e"/>
+								<textElement textAlignment="Left"/>
+								<text><![CDATA[Urbanicity]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="25" rowSpan="1">
+							<textField isStretchWithOverflow="true">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="50" height="25" uuid="74970cac-a91a-4815-8877-c82ca277be19"/>
+								<textFieldExpression><![CDATA[$F{urbanicity}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="51" uuid="072586fe-9e35-403a-b010-cbf0b1e0d29b">
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" x="0" y="0" width="51" height="30" uuid="0198d27c-c470-4342-ae70-f5cd17535ddb">
+									<property name="local_mesure_unitwidth" value="pixel"/>
+								</reportElement>
+								<box>
+									<rightPen lineWidth="0.5" lineColor="#808080"/>
+								</box>
+								<textElement textAlignment="Right"/>
+								<text><![CDATA[Net Worth]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="25" rowSpan="1">
+							<textField isStretchWithOverflow="true">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="51" height="25" uuid="5cab41ab-0caf-42ca-aa43-fe43d6a5dccf">
+									<property name="local_mesure_unitwidth" value="pixel"/>
+								</reportElement>
+								<box>
+									<rightPen lineWidth="0.5" lineColor="#808080"/>
+								</box>
+								<textElement textAlignment="Right"/>
+								<textFieldExpression><![CDATA[$F{netWorth}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<break>
+				<reportElement x="0" y="-1" width="720" height="1" uuid="768bc140-b657-42e0-a1af-13ee86ad330f"/>
+			</break>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="410" y="0" width="310" height="24" forecolor="#666666" uuid="29a6ac8c-8f51-4c7f-a471-e0a579f26665"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{reference.question}.equals("National")? "Acxiom Proprietary Information." + "\n" + "© Copyright 2013 Acxiom Corporation. All rights reserved." : "© Copyright 2013 Acxiom Corporation. All rights reserved."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="310" y="0" width="60" height="24" forecolor="#666666" uuid="e4671380-dd6e-4286-a0b6-085599041ee0"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="SansSerif" size="7" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" evaluationTime="Report">
+				<reportElement stretchType="RelativeToBandHeight" x="370" y="0" width="40" height="24" forecolor="#666666" uuid="25d0ef5d-0e3d-4724-9277-86280fbb9e72">
+					<property name="local_mesure_unitx" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="SansSerif" size="7" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

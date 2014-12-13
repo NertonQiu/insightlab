@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Gains" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="720" leftMargin="36" rightMargin="36" topMargin="36" bottomMargin="36" uuid="1f00378e-687c-4cc9-ac92-484b1fb86a44">
+	<property name="ireport.zoom" value="1.0245201830476058"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="169"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ModelReport"/>
+	<style name="table" mode="Opaque" backcolor="#FFFFFF" fill="Solid" radius="3" hAlign="Left" vAlign="Middle" fontName="Arial" fontSize="12" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+		<paragraph leftIndent="7" rightIndent="7"/>
+	</style>
+	<style name="table_TD" mode="Opaque" forecolor="#666666" backcolor="#FFFFFF" fill="Solid" radius="3" hAlign="Left" vAlign="Middle" fontName="SansSerif" fontSize="10" isBold="false">
+		<pen lineStyle="Solid"/>
+		<box topPadding="6" leftPadding="5" bottomPadding="6" rightPadding="5">
+			<pen lineWidth="0.5" lineStyle="Solid" lineColor="#808080"/>
+			<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#808080"/>
+			<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#808080"/>
+			<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#808080"/>
+			<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#808080"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" forecolor="#444444" backcolor="#F5F5F5" fill="Solid" radius="3" hAlign="Center" vAlign="Middle" markup="none" pattern="" fontName="SansSerif" fontSize="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<box topPadding="0" leftPadding="5" bottomPadding="0" rightPadding="5">
+			<pen lineWidth="0.0" lineStyle="Solid" lineColor="#808080"/>
+			<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#808080"/>
+			<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#808080"/>
+			<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#808080"/>
+			<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#808080"/>
+		</box>
+	</style>
+	<subDataset name="Table dataset" uuid="c534d3db-465b-4a4c-97e3-9bc8455a2e90">
+		<queryString language="SQL">
+			<![CDATA[]]>
+		</queryString>
+		<field name="baseline" class="java.lang.Double">
+			<fieldDescription><![CDATA[baseline]]></fieldDescription>
+		</field>
+		<field name="class" class="java.lang.Class">
+			<fieldDescription><![CDATA[class]]></fieldDescription>
+		</field>
+		<field name="cumulativeReference" class="java.lang.Double">
+			<fieldDescription><![CDATA[cumulativeReference]]></fieldDescription>
+		</field>
+		<field name="cumulativeReferencePercent" class="java.lang.Double">
+			<fieldDescription><![CDATA[cumulativeReferencePercent]]></fieldDescription>
+		</field>
+		<field name="cumulativeTarget" class="java.lang.Double">
+			<fieldDescription><![CDATA[cumulativeTarget]]></fieldDescription>
+		</field>
+		<field name="cumulativeTargetPercent" class="java.lang.Double">
+			<fieldDescription><![CDATA[cumulativeTargetPercent]]></fieldDescription>
+		</field>
+		<field name="cumulativeTotal" class="java.lang.Double">
+			<fieldDescription><![CDATA[cumulativeTotal]]></fieldDescription>
+		</field>
+		<field name="cumulativeTotalPercent" class="java.lang.Double">
+			<fieldDescription><![CDATA[cumulativeTotalPercent]]></fieldDescription>
+		</field>
+		<field name="ks" class="java.lang.Double">
+			<fieldDescription><![CDATA[ks]]></fieldDescription>
+		</field>
+		<field name="lift" class="java.lang.Double">
+			<fieldDescription><![CDATA[lift]]></fieldDescription>
+		</field>
+		<field name="liftCurve" class="java.lang.Double">
+			<fieldDescription><![CDATA[liftCurve]]></fieldDescription>
+		</field>
+		<field name="lowerBound" class="java.lang.Double">
+			<fieldDescription><![CDATA[lowerBound]]></fieldDescription>
+		</field>
+		<field name="modelID" class="java.lang.String">
+			<fieldDescription><![CDATA[modelID]]></fieldDescription>
+		</field>
+		<field name="rank" class="java.lang.Double">
+			<fieldDescription><![CDATA[rank]]></fieldDescription>
+		</field>
+		<field name="rankGraph" class="java.lang.Double">
+			<fieldDescription><![CDATA[rankGraph]]></fieldDescription>
+		</field>
+		<field name="reportSource" class="java.lang.String">
+			<fieldDescription><![CDATA[reportSource]]></fieldDescription>
+		</field>
+		<field name="targetNumber" class="java.lang.Double">
+			<fieldDescription><![CDATA[targetNumber]]></fieldDescription>
+		</field>
+		<field name="targetPercent" class="java.lang.Double">
+			<fieldDescription><![CDATA[targetPercent]]></fieldDescription>
+		</field>
+		<field name="total" class="java.lang.Double">
+			<fieldDescription><![CDATA[total]]></fieldDescription>
+		</field>
+		<field name="upperBound" class="java.lang.Double">
+			<fieldDescription><![CDATA[upperBound]]></fieldDescription>
+		</field>
+		<filterExpression><![CDATA[$F{reportSource}.equals( "T" )]]></filterExpression>
+	</subDataset>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="gain" class="java.util.List">
+		<fieldDescription><![CDATA[gain]]></fieldDescription>
+	</field>
+	<field name="ibRank" class="com.acxiom.insightlab.api.model.InfobaseRankModel">
+		<fieldDescription><![CDATA[ibRank]]></fieldDescription>
+	</field>
+	<field name="cumulativeRank" class="java.util.List">
+		<fieldDescription><![CDATA[ibRank.cumulativeRank]]></fieldDescription>
+	</field>
+	<field name="percent" class="java.util.List">
+		<fieldDescription><![CDATA[ibRank.percent]]></fieldDescription>
+	</field>
+	<field name="rank" class="java.util.List">
+		<fieldDescription><![CDATA[ibRank.rank]]></fieldDescription>
+	</field>
+	<field name="id" class="java.lang.String">
+		<fieldDescription><![CDATA[id]]></fieldDescription>
+	</field>
+	<field name="insightDescription" class="java.lang.String">
+		<fieldDescription><![CDATA[insightDescription]]></fieldDescription>
+	</field>
+	<field name="isPrivate" class="java.lang.Double">
+		<fieldDescription><![CDATA[isPrivate]]></fieldDescription>
+	</field>
+	<field name="scorecard" class="java.util.List">
+		<fieldDescription><![CDATA[scorecard]]></fieldDescription>
+	</field>
+	<field name="modelID" class="java.lang.String">
+		<fieldDescription><![CDATA[ibRank.modelID]]></fieldDescription>
+	</field>
+	<field name="description" class="java.lang.String">
+		<fieldDescription><![CDATA[description]]></fieldDescription>
+	</field>
+	<field name="createdDate" class="java.util.Date">
+		<fieldDescription><![CDATA[createdDate]]></fieldDescription>
+	</field>
+	<field name="source" class="java.lang.String">
+		<fieldDescription><![CDATA[source]]></fieldDescription>
+	</field>
+	<field name="status" class="java.lang.String">
+		<fieldDescription><![CDATA[status]]></fieldDescription>
+	</field>
+	<field name="tenantID" class="java.lang.String">
+		<fieldDescription><![CDATA[tenantID]]></fieldDescription>
+	</field>
+	<field name="userID" class="java.lang.String">
+		<fieldDescription><![CDATA[userID]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="60">
+			<image>
+				<reportElement isPrintRepeatedValues="false" x="0" y="0" width="222" height="60" uuid="3bb60afc-af2e-467e-9e9e-7d57d828c18e"/>
+				<imageExpression><![CDATA["AOSAnalytics-horizontal-RGB.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="30">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement x="0" y="0" width="720" height="30" forecolor="#666666" uuid="8033e46f-3807-4b1b-a67e-02fd0067ed9d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="22"/>
+				</textElement>
+				<text><![CDATA[Model Gains]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="391" splitType="Stretch">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="30" width="355" height="20" forecolor="#666666" backcolor="#F5F5F5" uuid="c8d6b87e-c139-40e3-b785-450b3d8152d3">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5" lineColor="#808080"/>
+					<leftPen lineWidth="0.5" lineColor="#808080"/>
+					<bottomPen lineWidth="0.5" lineColor="#808080"/>
+					<rightPen lineWidth="0.5" lineColor="#808080"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isBold="true"/>
+					<paragraph leftIndent="7"/>
+				</textElement>
+				<text><![CDATA[Model Lift Chart]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="365" y="30" width="355" height="20" forecolor="#666666" backcolor="#F5F5F5" uuid="a6a6454a-ce8e-4865-a279-a4eecb4e0f0f">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5" lineColor="#808080"/>
+					<leftPen lineWidth="0.5" lineColor="#808080"/>
+					<bottomPen lineWidth="0.5" lineColor="#808080"/>
+					<rightPen lineWidth="0.5" lineColor="#808080"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isBold="true"/>
+					<paragraph leftIndent="7"/>
+				</textElement>
+				<text><![CDATA[Model Cumulative Gains Chart]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="0" y="51" width="720" height="340" uuid="84d7db4e-c1a8-4455-a8e3-5769f4b10cb3"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{gain})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "GainsCharts.jasper"]]></subreportExpression>
+			</subreport>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="0" y="0" width="720" height="26" forecolor="#666666" uuid="c769d36d-a4fe-480c-822a-815df0175b55">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineColor="#808080"/>
+					<leftPen lineWidth="0.0" lineColor="#808080"/>
+					<bottomPen lineWidth="0.0" lineColor="#808080"/>
+					<rightPen lineWidth="0.0" lineColor="#808080"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="11"/>
+					<paragraph leftIndent="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA["For Model: "+ $F{description}+", based on Analytic Dataset: "+ $F{insightDescription}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="1">
+			<break>
+				<reportElement x="0" y="0" width="100" height="1" uuid="991419f3-5c22-497d-b53f-11b961ba73db"/>
+			</break>
+		</band>
+		<band height="95">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<textField>
+				<reportElement x="0" y="0" width="720" height="26" forecolor="#666666" uuid="51eba2e2-df72-44bb-a9f5-b089da2e10cd">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineColor="#808080"/>
+					<leftPen lineWidth="0.0" lineColor="#808080"/>
+					<rightPen lineWidth="0.0" lineColor="#808080"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="11"/>
+					<paragraph leftIndent="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA["For Model: "+ $F{description}+", based on Analytic Dataset: "+ $F{insightDescription}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="30" width="720" height="20" forecolor="#666666" backcolor="#F5F5F5" uuid="2da49be1-b847-4a7c-aad8-912274e94e1f">
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5" lineColor="#808080"/>
+					<leftPen lineWidth="0.5" lineColor="#808080"/>
+					<bottomPen lineWidth="0.5" lineColor="#808080"/>
+					<rightPen lineWidth="0.5" lineColor="#808080"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isBold="true"/>
+					<paragraph leftIndent="7"/>
+				</textElement>
+				<text><![CDATA[Model Gains]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement key="table 1" x="0" y="50" width="720" height="45" uuid="a5ec626b-34bc-4856-9225-33fb37ccf180">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Table dataset" uuid="b8670520-cc34-491e-b5cd-67ba394f1053">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{gain})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="40" uuid="4630e696-bcba-4984-855b-4e1440678af7">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" stretchType="RelativeToTallestObject" x="0" y="0" width="40" height="30" uuid="24f192f5-eeda-44d6-b9c8-444c66a260d7"/>
+								<box>
+									<leftPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Right">
+									<font size="10"/>
+								</textElement>
+								<text><![CDATA[Rank]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="25" rowSpan="1">
+							<textField isStretchWithOverflow="true" pattern="###0">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="40" height="25" uuid="7a0231da-ea6d-4574-8438-2a4f747db6de"/>
+								<box>
+									<leftPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Right">
+									<font size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{rank}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="34" uuid="90d1559f-03cc-4660-bd1f-d9024c0e28c9">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" stretchType="RelativeToTallestObject" x="0" y="0" width="34" height="30" uuid="316d778e-02f5-442d-8d10-60589b62d644"/>
+								<textElement textAlignment="Right">
+									<font size="10"/>
+								</textElement>
+								<text><![CDATA[Lift]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="25" rowSpan="1">
+							<textField isStretchWithOverflow="true" pattern="###0">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="34" height="25" uuid="1afb3ac9-a728-4c76-becc-3bdff3c2e0c5"/>
+								<textElement textAlignment="Right">
+									<font size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{lift}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="40" uuid="c86d9069-274e-4f6b-aaf6-743d80c1b270">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" stretchType="RelativeToTallestObject" x="0" y="0" width="40" height="30" uuid="fb6c957b-513a-487f-b399-7a37956a9558"/>
+								<textElement textAlignment="Right">
+									<font size="10"/>
+								</textElement>
+								<text><![CDATA[Total]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="25" rowSpan="1">
+							<textField isStretchWithOverflow="true" pattern="#,##0">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="40" height="25" uuid="1d04b574-7d30-4786-8378-7d1d8cded46f"/>
+								<textElement textAlignment="Right">
+									<font size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="50" uuid="99b36201-eaf3-42e6-b946-bfcc86ea9957">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" stretchType="RelativeToTallestObject" x="0" y="0" width="50" height="30" uuid="b09de200-9952-40ed-ae2e-df64c361034f"/>
+								<textElement textAlignment="Right">
+									<font size="10"/>
+								</textElement>
+								<text><![CDATA[Cume Total]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="25" rowSpan="1">
+							<textField isStretchWithOverflow="true" pattern="#,##0">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="50" height="25" uuid="d250f615-ed0d-429e-b7b1-5ad1da5d0852"/>
+								<textElement textAlignment="Right">
+									<font size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{cumulativeTotal}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="52" uuid="fb6802cc-ffe3-4cbf-bfe5-6171c669aa84">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" stretchType="RelativeToTallestObject" x="0" y="0" width="52" height="30" uuid="02d7fd93-4663-47e0-9dbf-4bc5aee6ff98"/>
+								<textElement textAlignment="Right">
+									<font size="10"/>
+								</textElement>
+								<text><![CDATA[Cume Total %]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="25" rowSpan="1">
+							<textField isStretchWithOverflow="true" pattern="#,##0.0%">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="52" height="25" uuid="27f0aa3a-bd78-4f68-a7ad-e8e3bcd19147"/>
+								<textElement textAlignment="Right">
+									<font size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{cumulativeTotalPercent}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="47" uuid="b784756c-2e3e-4e8e-9b5a-b01578c10d04">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" stretchType="RelativeToTallestObject" x="0" y="0" width="47" height="30" uuid="224d8434-4868-4ce0-819a-b17834d245a0"/>
+								<textElement textAlignment="Right">
+									<font size="10"/>
+								</textElement>
+								<text><![CDATA[Target]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="25" rowSpan="1">
+							<textField isStretchWithOverflow="true" pattern="#,##0">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="47" height="25" uuid="6cf4a98c-9063-4726-86e9-dcd2f79452be"/>
+								<textElement textAlignment="Right">
+									<font size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{targetNumber}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="47" uuid="845f3e75-46ce-4ba5-bc0a-85e73d7c97ab">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" stretchType="RelativeToTallestObject" x="0" y="0" width="47" height="30" uuid="ebf21de9-7069-4cbc-aad6-52828ba6e785"/>
+								<textElement textAlignment="Right">
+									<font size="10"/>
+								</textElement>
+								<text><![CDATA[Target %]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="25" rowSpan="1">
+							<textField isStretchWithOverflow="true" pattern="#,##0.00%">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="47" height="25" uuid="2bd89eec-2773-4096-8b47-c07bd880f57c"/>
+								<textElement textAlignment="Right">
+									<font size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{targetPercent}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="48" uuid="9c80568c-a2a0-4dc1-90b8-da53c4239032">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" stretchType="RelativeToTallestObject" x="0" y="0" width="48" height="30" uuid="bbfc3158-3a56-47bf-95d3-c2e85fc6c96c"/>
+								<textElement textAlignment="Right">
+									<font size="10"/>
+								</textElement>
+								<text><![CDATA[Cume Target]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="25" rowSpan="1">
+							<textField isStretchWithOverflow="true" pattern="#,##0">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="48" height="25" uuid="8aac5fb4-a6bf-45d1-952b-45b33f2f869d"/>
+								<textElement textAlignment="Right">
+									<font size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{cumulativeTarget}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="48" uuid="70a591f2-cbec-475c-b7c4-ef715538d690">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" stretchType="RelativeToTallestObject" x="0" y="0" width="48" height="30" uuid="0f51b017-a918-4702-b548-d70c200a1cdf"/>
+								<textElement textAlignment="Right">
+									<font size="10"/>
+								</textElement>
+								<text><![CDATA[Cume Ref]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="25" rowSpan="1">
+							<textField isStretchWithOverflow="true" pattern="#,##0">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="48" height="25" uuid="3af3672b-8699-444e-a2f5-990ef2dd019b"/>
+								<textElement textAlignment="Right">
+									<font size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{cumulativeReference}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="58" uuid="9fd2853f-9a63-4ee8-94c5-5d985ba76b28">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" stretchType="RelativeToTallestObject" x="0" y="0" width="58" height="30" uuid="5ba41194-0bd3-443d-b7d7-96a1bcb57fa7"/>
+								<textElement textAlignment="Right">
+									<font size="10"/>
+								</textElement>
+								<text><![CDATA[Cume Target % ]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="25" rowSpan="1">
+							<textField isStretchWithOverflow="true" pattern="#,##0.00%">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="58" height="25" uuid="868967e7-b67f-4a1d-8986-3c602c1ab646"/>
+								<textElement textAlignment="Right">
+									<font size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{cumulativeTargetPercent}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="58" uuid="bcf421d9-7cd5-4d1f-b6ba-36caa822b88f">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" stretchType="RelativeToTallestObject" x="0" y="0" width="58" height="30" uuid="1060ca5a-0ffb-4350-8e9d-3dd9efe59d78"/>
+								<textElement textAlignment="Right">
+									<font size="10"/>
+								</textElement>
+								<text><![CDATA[Cume Ref %]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="25" rowSpan="1">
+							<textField isStretchWithOverflow="true" pattern="#,##0.00%">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="58" height="25" uuid="ce3538fd-6916-4591-9b48-87b1d497da08"/>
+								<textElement textAlignment="Right">
+									<font size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{cumulativeReferencePercent}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="77" uuid="0d00d097-8ca2-4ce6-b54c-4ca2b1af074d">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" stretchType="RelativeToTallestObject" x="0" y="0" width="77" height="30" uuid="ab15d8fa-17dc-4392-92be-4f0af5c99332"/>
+								<textElement textAlignment="Right">
+									<font size="10"/>
+								</textElement>
+								<text><![CDATA[Lower Bound]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="25" rowSpan="1">
+							<textField isStretchWithOverflow="true" pattern="###0.00000000">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="77" height="25" uuid="2a33d9f2-13f6-4c41-8bb3-7c2d5417e87b"/>
+								<textElement textAlignment="Right">
+									<font size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{lowerBound}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="77" uuid="9e3f7ee9-12e8-459e-b5bc-47c1669206de">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" stretchType="RelativeToTallestObject" x="0" y="0" width="77" height="30" uuid="64d5be9d-3ede-4c9c-b220-cdaf57581bad"/>
+								<textElement textAlignment="Right">
+									<font size="10"/>
+								</textElement>
+								<text><![CDATA[Upper Bound]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="25" rowSpan="1">
+							<textField isStretchWithOverflow="true" pattern="###0.00000000">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="77" height="25" uuid="e2a9a26b-f3cc-4e30-bd17-0b49114a4500"/>
+								<textElement textAlignment="Right">
+									<font size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{upperBound}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="44" uuid="1e9b2727-0d84-4a72-b4b6-8128a2cb8b39">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" stretchType="RelativeToTallestObject" x="0" y="0" width="44" height="30" uuid="9c9edd80-8eba-47f2-b96a-32f4c82b8074"/>
+								<box>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Right">
+									<font size="10"/>
+								</textElement>
+								<text><![CDATA[K.S.]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="25" rowSpan="1">
+							<textField isStretchWithOverflow="true" pattern="###0.00;-###0.00">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="44" height="25" uuid="65202542-f840-41d2-b4bb-4a6f61e2ff40"/>
+								<box>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Right">
+									<font size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{ks}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="15" splitType="Stretch">
+			<textField isStretchWithOverflow="true" evaluationTime="Report">
+				<reportElement stretchType="RelativeToBandHeight" x="370" y="0" width="40" height="15" forecolor="#666666" uuid="3a2c0af9-0f8d-4351-aea6-377065d61e2b"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="SansSerif" size="7" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="310" y="0" width="60" height="15" forecolor="#666666" uuid="aa788d57-0749-4457-b229-4f7c68d0fd2b"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="SansSerif" size="7" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="410" y="0" width="310" height="15" forecolor="#666666" uuid="206dbefc-2ca1-4d34-ab35-d03b49d55945"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom" markup="none">
+					<font fontName="SansSerif" size="7" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[© Copyright 2013 Acxiom Corporation. All rights reserved.]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

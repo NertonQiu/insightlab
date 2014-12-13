@@ -1,0 +1,465 @@
+html, body {
+  background: url("../styles/img/bg.png") !important;
+}
+
+#acxm-global-nav {
+  position: relative;
+  z-index: 999;
+
+  max-width: 1200px;
+  min-width: 970px;
+  margin: auto;
+
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+
+  .hidden {
+    display: none !important;
+  }
+
+  /* Reset */
+  ul, ol {
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style: none;
+    }
+  }
+
+  label {
+    padding: 0;
+  }
+
+  /* Util */
+  .acxm-dd-menu {
+    position: relative;
+
+    > label {
+      display: inline-block;
+      height: 35px;
+      line-height: 35px;
+      cursor: pointer;
+      color: #F3F2F3;
+      font-weight: bold;
+      font-size: 1em;
+
+      &:after {
+        content: url(../styles/img/arrow.png);
+        margin: 0 0 0 5px;
+      }
+    }
+
+    > ul {
+      position: absolute;
+      z-index: 1;
+      display: none;
+      background: #F9F9F9;
+      border: 1px solid #A3A3A3;
+      box-shadow: 1px 1px 4px #999999;
+      border-radius: 3px;
+      min-width: 150px;
+
+      &:hover {
+        display: block;
+      }
+
+      li {
+        position: relative;
+        border-top: 1px solid transparent;
+        border-bottom: 1px solid transparent;
+
+        &.active {
+          background: #EDEDED;
+          border-top-color: #CFCFCF;
+          border-bottom-color: #CFCFCF;
+        }
+
+        &.application-marketplace {
+          border-top: 1px solid #D6D6D6;
+
+          .label {
+            text-transform: none;
+            text-align: right;
+            color: #666;
+            font-size: 12px;
+          }
+        }
+      }
+
+      > li {
+        > ol {
+          border-bottom: 1px solid #D3D3D2;
+        }
+
+        &:last-child {
+          > ol {
+            border-bottom: none;
+          }
+        }
+      }
+
+      .label {
+        @height: 30px;
+
+        color: #424242;
+        height: @height;
+        line-height: @height;
+        vertical-align: middle;
+        white-space: nowrap;
+        cursor: pointer;
+        text-transform: uppercase;
+        padding: 0 25px 0 7px;
+        font-size: 0.9em;
+        display: inline-block;
+        width: ~"calc(100% - 14px)";
+
+        &:hover {
+          &:before {
+            border-right: 3px solid #FF9324;
+            content: "";
+            font-size: 28px;
+            font-weight: bold;
+            height: 30px;
+            left: -2px;
+            position: absolute;
+            width: 1px;
+          }
+        }
+      }
+    }
+
+    &:hover {
+      > ul {
+        display: block;
+      }
+    }
+
+    .info {
+      background: url("../styles/img/info.png") no-repeat scroll center center;
+      display: inline-block;
+      height: 16px;
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      width: 16px;
+      cursor: pointer;
+
+      & + .acxm-global-nav-dialog {
+        left: -100px;
+        margin: auto;
+        margin-top: -47px;
+        position: fixed;
+      }
+    }
+  }
+
+  .acxm-dd-menu-left {
+    ul {
+      right: 0;
+    }
+  }
+
+  .s-signin {
+    display: inline-block;
+
+    a {
+      color: #FFFFFF;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  /* Sections */
+
+  /* L0 */
+  #acxm-glbal-nav-l0 {
+    @height: 35px;
+
+    background: #80A1B6;
+    height: @height;
+
+    .s-logo {
+      > a {
+        display: inline-block;
+        text-decoration: none;
+      }
+
+      display: inline-block;
+      height: inherit;
+      line-height: @height;
+      vertical-align: middle;
+      margin: 0 10px 0 30px;
+
+      &:after {
+        //        content: "|";
+        //        margin: 0 0 0 10px;
+        //        font-weight: bold;
+      }
+
+      label {
+        display: inline-block;
+        cursor: inherit;
+        visibility: hidden;
+      }
+
+      img {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 10px 0 0;
+        width: 104px;
+        height: 31px;
+      }
+    }
+
+    .s-application-name {
+      display: inline-block;
+    }
+
+    .right-section {
+      float: right;
+      margin: 0 30px 0 0;
+      height: @height;
+      line-height: @height;
+
+      & > div {
+        line-height: normal;
+      }
+    }
+
+    .s-tenant {
+      display: inline-block;
+      margin: 0 10px 0 0;
+
+      > ul {
+        right: 0;
+      }
+    }
+
+    .s-user-name {
+      display: inline-block;
+      margin: 0 10px 0 0;
+
+      > ul {
+        right: 0;
+      }
+    }
+
+    .s-notification {
+      display: inline-block;
+
+      .label {
+        background: #FFD37F;
+        border-radius: 5px;
+        border: 2px solid #797777;
+        padding: 3px 5px;
+      }
+    }
+  }
+
+  /* L1 */
+  #acxm-glbal-nav-l1 {
+    @height: 25px;
+
+    height: @height;
+    background: #424242;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+
+    .s-placeholder-left,
+    .s-placeholder-right,
+    .s-feature-bar {
+      height: @height;
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    .acxm-dd-menu {
+      > label {
+        color: #EBEBEB;
+
+        &:after {
+          content: "";
+        }
+      }
+    }
+
+    .s-feature-bar {
+      & > ul {
+        > li {
+          display: inline-block;
+          margin: 0 10px 0 0;
+
+          a {
+            text-decoration: none;
+            color: #EBEBEB;
+
+            &:hover {
+              text-decoration: underline;
+            }
+
+            .label {
+              height: @height;
+              line-height: @height;
+              cursor: pointer;
+              color: #EBEBEB;
+            }
+          }
+
+          &.active {
+            a {
+              font-weight: bold;
+              text-decoration: underline;
+              color: #75bf65;
+
+              span {
+                color: #75bf65;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .s-placeholder-left {
+      width: 184px; /* TODO: do with JS */
+    }
+
+    .s-placeholder-right {
+      float: right;
+      width: 300px; /* TODO: do with JS */
+      text-align: right;
+
+      [data-id="upgrade"] {
+        > a {
+          display: inline-block;
+          height: inherit;
+          line-height: @height;
+          margin: 0 35px 0 0;
+          vertical-align: middle;
+          color: #A9A9A9;
+          text-decoration: none;
+          font-weight: bold;
+        }
+
+        .acxm-global-nav-dialog {
+          &:after {
+            top: -18px;
+            left: auto;
+            right: 45px;
+            transform: rotate(90deg);
+          }
+        }
+      }
+    }
+  }
+
+  .acxm-global-nav-dialog {
+    background: none repeat scroll 0 0 #CCCCCC;
+    line-height: 21px;
+    margin: 5px;
+    padding: 10px;
+    text-align: left;
+    position: relative;
+    border: 1px solid #929292;
+    box-shadow: 1px 1px 5px #999999;
+    min-height: 40px;
+    width: 275px;
+    right: 5px;
+    z-index: 2;
+
+    &:before {
+      border-left: 20px solid transparent;
+      content: " ";
+      height: 100%;
+      left: -15px;
+      padding: 4px 0;
+      position: absolute;
+      top: -2px;
+    }
+
+    &:after {
+      content: url("../styles/img/arrow-dialog.png");
+      position: absolute;
+      left: -15px;
+      top: 20px;
+    }
+
+    > a {
+      color: #0883C7;
+    }
+
+    .close {
+      display: inline-block;
+      background: url("../styles/img/close-button.png") no-repeat center center;
+      width: 16px;
+      height: 16px;
+      border: none;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      cursor: pointer;
+    }
+
+    &.hidden {
+      display: none;
+    }
+  }
+
+  .s-collapse {
+    background: #F9F9F9;
+    border: 1px solid #F2F2F2;
+    color: #DADADA;
+    cursor: pointer;
+    float: right;
+    font-size: 17px;
+    height: 14px;
+    margin: 7px 40px 0 0;
+    padding: 1px;
+    text-align: center;
+    width: 14px;
+  }
+
+  &.collapsed {
+    .acxm-dd-menu {
+      > ul {
+        top: 30px;
+      }
+    }
+
+    #acxm-glbal-nav-l0 {
+      position: absolute;
+      top: -52px;
+
+      .right-section {
+        display: none;
+      }
+
+      .s-application-name {
+        left: 20px;
+        position: absolute;
+        top: 49px;
+        width: 100%;
+      }
+    }
+
+    .s-application-name {
+      .acxm-global-nav-dialog {
+        left: -435px;
+      }
+
+      &.acxm-dd-menu {
+        > label {
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    .s-collapse {
+      transform: rotate(180deg);
+      -webkit-transform: rotate(180deg);
+    }
+  }
+}

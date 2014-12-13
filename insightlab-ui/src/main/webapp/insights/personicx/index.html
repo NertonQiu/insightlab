@@ -1,0 +1,159 @@
+
+<script src="../../resources/html/stable_header.js" type="text/javascript"></script>
+
+<script type="text/x-template" id="personicx-template">
+    <h2></h2>
+    <div id ="breadcrumb" class="acxiom-breadcrumb-container"></div>
+        <div class="dashboard-filters">
+            <div id="personicx-filters" class="clearfix"></div>
+            <div id="report-filters" class="clearfix" style="display:none"></div>
+        </div>
+    <div class="tabbable">
+        <ul class="nav nav-tabs">
+            <li data-tabId="portrait"><a href="#/portrait" title="Portrait">Portrait</a></li>
+            <li data-tabId="scattergram"><a href="#/scattergram" title="Scattergram">Scattergram</a></li>
+            <li data-tabId="target-group"><a href="#/target" title="Target Group">Target Group</a></li>
+        </ul>
+		<div style="display:none;">
+        	<div id="recent-requests"></div>
+		</div>
+        <div id="chart-legend" class="filter-legend" style="display:none"></div>
+        <div class="tab-content" id="content">
+            <div id="scattergram-report" class="row-fluid dashboard"></div>
+            <div id="portrait-report"></div>
+            <div id="target-group-report"></div>
+			<div id="empty-report">
+				<div class="title span8"></div>
+			</div>
+        </div>
+    </div>
+</script>
+
+<script type="text/x-template" id="portrait-report-template">
+    <div class="row-fluid dashboard">
+    </div>
+    <div class="row-fluid">
+        <div class="span12 clearfix" id="portrait-title" style="display:none"></div>
+    </div>
+    <div class="row-fluid item-container">
+        <div id="grid-container" class="span11">
+            <div class="chart-container" id="portraitChart-widget">
+            </div>
+            <div class="chart-container widget-container acxiom-datatable tableColorHd" id="portraitTable-widget"
+                 style="display: block;">
+                <div class="widget-container acxiom-datatable tableColorHd"></div>
+            </div>
+        </div>
+        <div id="right-panel" style="display:none">
+            <div class="panel-buttons">
+                <a class="side-icon side-arr"></a>
+            </div>
+            <div class="panel-box">
+                <h3 class="panel-title">RECENT PORTRAITS</h3>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/x-template" id="legend-template">
+<h4>Legend</h4>
+<div>
+    <h5 style="float: left;">Count</h5>
+    <ul class="count-list unstyled">
+        <li>1<span class="small"></span></li>
+        <li>5<span class="medium"></span></li>
+        <li>10<span class="big"></span></li>
+    </ul>
+</div>
+</script>
+
+<script type="text/x-template" id="question-scattergram-template">
+        <div class="span11 resp-span">
+               Survey Question/Response: {{questionText}}; {{responseText}}</span>
+        </div>
+</script>
+
+<script type="text/x-template" id="scattergram-template">
+        <div class="span12">
+            <span>SWOT</span><input type="checkbox" id="switcher" style="display:block"/>
+        </div>
+        <div class='scattergram' id='bubblechart-scattergram'>
+            <ul id="swot" style="display:none">
+                <li>
+                    <span style="left:32px; top:2px; background: #7c9dc0">W</span>
+                </li>
+                <li>
+                    <span style="right:12px; top:2px; background: #b28821">T</span>
+                </li>
+                <li>
+                    <span style="bottom:32px; left:32px; background: #a8b278">O</span>
+                </li>
+                <li>
+                    <span style="right:12px; bottom:32px; background: #ce9971">S</span>
+                </li>
+            </ul>
+        </div>
+        <div class='scatter-table-container chart-container' id='table-scattergram'></div>
+</script>
+
+
+<div class="row-fluid dashboard">
+    <div class="span12" id="widget-content"></div>
+</div>
+
+<script src="../../resources/html/stable_footer.js" type="text/javascript"></script>
+
+<div id="feedbackDialog" class="acxiom-modal"></div>
+<div id="custom_tooltip"></div>
+
+
+<!--acxiom-modal-->
+<div id="dialogChoose"  class="acxiom-modal">
+    <div class="x-btn acxiom-modal-close"></div>
+    <!-- modal-header -->
+    <div class="row-fluid">
+        <h4>DEMOGRAPHICS COLUMNS</h4>
+    </div>
+
+    <!-- / modal-header -->
+
+    <!-- modal-body -->
+    <div id ='dialogChoose-body' class="row-fluid">
+        <div class="span12"></div>
+    </div>
+    <!-- footer-body -->
+    <div class="row-fluid top-buffer vpad-top">
+        <div class="span12 span-right">
+            <input class="acxiom-button clear acxiom-modal-close pull-right" value="CANCEL" type="button">
+            <input class="acxiom-button primary pull-right" value="OK" type="button">
+        </div>
+    </div>
+    <!--/ footer-body -->
+</div>
+
+
+<div id="return-portrait-popup" class="acxiom-modal">
+    <div class="acxiom-modal-close"></div>
+    <!-- modal-header -->
+    <div class="row-fluid">
+        <h4>Confirm changes</h4>
+        <p>Target Group was not saved.</p>
+        <p>Are you sure you want to return to Portrait without saving changes?</p>
+    </div>
+    <!-- footer-body -->
+    <div>
+        <input class="acxiom-modal-close acxiom-button secondary pull-right" value="NO" type="button">
+        <input id='return-portrait' class="acxiom-modal-close acxiom-button primary pull-right" value="YES" type="button">
+    </div>
+</div>
+
+<div id="analyticDataset-popup" class="acxiom-modal">
+    <div class="x-btn acxiom-modal-close"></div>
+    <!-- modal-header -->
+    <div class="row-fluid">
+        <p>SELECT AN ANALYTIC DATASET</p>
+        <div id="ad-table"></div>
+    </div>
+    <!-- footer-body -->
+    <div id="table-select-btn"></div>
+</div>

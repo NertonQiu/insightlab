@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="GainsCharts" pageWidth="720" pageHeight="340" orientation="Landscape" columnWidth="720" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="7ea4df4f-8a3d-4416-9e0c-8d224d8c2ed6">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="detail" forecolor="#FF0000" backcolor="#808080" fill="Solid" markup="none">
+		<box>
+			<pen lineWidth="0.0"/>
+			<topPen lineWidth="0.0"/>
+			<leftPen lineWidth="0.0"/>
+			<bottomPen lineWidth="0.0"/>
+			<rightPen lineWidth="0.0"/>
+		</box>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[]]>
+	</queryString>
+	<field name="cumulativeTargetPercent" class="java.lang.Double">
+		<fieldDescription><![CDATA[cumulativeTargetPercent]]></fieldDescription>
+	</field>
+	<field name="cumulativeTotalPercent" class="java.lang.Double">
+		<fieldDescription><![CDATA[cumulativeTotalPercent]]></fieldDescription>
+	</field>
+	<field name="reportSource" class="java.lang.String">
+		<fieldDescription><![CDATA[reportSource]]></fieldDescription>
+	</field>
+	<field name="liftCurve" class="java.lang.Double"/>
+	<variable name="MIN" class="java.lang.Double" calculation="Lowest">
+		<variableExpression><![CDATA[$F{reportSource}.equals("T")? $F{cumulativeTotalPercent}*100.0: 100.0]]></variableExpression>
+		<initialValueExpression><![CDATA[]]></initialValueExpression>
+	</variable>
+	<variable name="DECIMAL_FORMAT" class="java.text.DecimalFormat" resetType="None">
+		<variableExpression><![CDATA[new java.text.DecimalFormat("0.00")]]></variableExpression>
+		<initialValueExpression><![CDATA[]]></initialValueExpression>
+	</variable>
+	<filterExpression><![CDATA[!$F{reportSource}.equals("V")]]></filterExpression>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<summary>
+		<band height="340">
+			<xyLineChart>
+				<chart>
+					<reportElement x="0" y="0" width="355" height="340" uuid="89a1e557-55a1-4070-bd6c-4964f0d65d4d">
+						<property name="net.sf.jasperreports.chart.domain.axis.tick.interval" value="10"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.5" lineColor="#808080"/>
+						<leftPen lineWidth="0.5" lineColor="#808080"/>
+						<bottomPen lineWidth="0.5" lineColor="#808080"/>
+						<rightPen lineWidth="0.5" lineColor="#808080"/>
+					</box>
+					<chartTitle>
+						<font fontName="SansSerif"/>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend textColor="#666666" position="Top">
+						<font fontName="SansSerif" size="10"/>
+					</chartLegend>
+				</chart>
+				<xyDataset>
+					<xySeries>
+						<seriesExpression><![CDATA[$F{reportSource}.equals("BASELINE")? "Baseline": "Test Lift"]]></seriesExpression>
+						<xValueExpression><![CDATA[$F{cumulativeTotalPercent}*100]]></xValueExpression>
+						<yValueExpression><![CDATA[$F{liftCurve}]]></yValueExpression>
+					</xySeries>
+				</xyDataset>
+				<linePlot isShowLines="true" isShowShapes="true">
+					<plot>
+						<seriesColor seriesOrder="0" color="#1D5898"/>
+						<seriesColor seriesOrder="1" color="#7F3762"/>
+					</plot>
+					<categoryAxisLabelExpression><![CDATA["% Consumers Contacted"]]></categoryAxisLabelExpression>
+					<categoryAxisFormat>
+						<axisFormat labelColor="#666666" tickLabelColor="#666666" tickLabelMask="#.##'%'" verticalTickLabels="false" axisLineColor="#666666">
+							<labelFont>
+								<font fontName="SansSerif" size="10"/>
+							</labelFont>
+							<tickLabelFont>
+								<font fontName="SansSerif"/>
+							</tickLabelFont>
+						</axisFormat>
+					</categoryAxisFormat>
+					<valueAxisLabelExpression><![CDATA["Lift"]]></valueAxisLabelExpression>
+					<valueAxisFormat>
+						<axisFormat labelColor="#666666" tickLabelColor="#666666" tickLabelMask="#.##'%'" axisLineColor="#666666">
+							<labelFont>
+								<font fontName="SansSerif" size="10"/>
+							</labelFont>
+							<tickLabelFont>
+								<font fontName="SansSerif"/>
+							</tickLabelFont>
+						</axisFormat>
+					</valueAxisFormat>
+					<domainAxisMinValueExpression><![CDATA[$V{MIN}]]></domainAxisMinValueExpression>
+				</linePlot>
+			</xyLineChart>
+			<xyLineChart>
+				<chart>
+					<reportElement x="365" y="0" width="355" height="340" uuid="2831c81d-92ab-43bd-8e40-9f47d563f36e"/>
+					<box>
+						<topPen lineWidth="0.5" lineColor="#808080"/>
+						<leftPen lineWidth="0.5" lineColor="#808080"/>
+						<bottomPen lineWidth="0.5" lineColor="#808080"/>
+						<rightPen lineWidth="0.5" lineColor="#808080"/>
+					</box>
+					<chartTitle>
+						<font fontName="SansSerif"/>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend textColor="#666666" position="Top">
+						<font fontName="SansSerif" size="10"/>
+					</chartLegend>
+				</chart>
+				<xyDataset>
+					<xySeries>
+						<seriesExpression><![CDATA[$F{reportSource}.equals("BASELINE")?"Random Model":"Test Model"]]></seriesExpression>
+						<xValueExpression><![CDATA[$F{reportSource}.equals("BASELINE") && !$F{cumulativeTotalPercent}.equals(1.0) ? 0 : $F{cumulativeTotalPercent} * 100]]></xValueExpression>
+						<yValueExpression><![CDATA[$F{cumulativeTargetPercent} * 100]]></yValueExpression>
+						<labelExpression><![CDATA["test"]]></labelExpression>
+					</xySeries>
+				</xyDataset>
+				<linePlot>
+					<plot>
+						<seriesColor seriesOrder="0" color="#1D5898"/>
+						<seriesColor seriesOrder="1" color="#7F3762"/>
+					</plot>
+					<categoryAxisLabelExpression><![CDATA["% Consumers Contacted"]]></categoryAxisLabelExpression>
+					<categoryAxisFormat>
+						<axisFormat labelColor="#666666" tickLabelColor="#666666" tickLabelMask="#.##'%'" axisLineColor="#666666">
+							<labelFont>
+								<font fontName="SansSerif"/>
+							</labelFont>
+							<tickLabelFont>
+								<font fontName="SansSerif"/>
+							</tickLabelFont>
+						</axisFormat>
+					</categoryAxisFormat>
+					<valueAxisLabelExpression><![CDATA["% Responders"]]></valueAxisLabelExpression>
+					<valueAxisFormat>
+						<axisFormat labelColor="#666666" tickLabelColor="#666666" tickLabelMask="#.##'%'" axisLineColor="#666666">
+							<labelFont>
+								<font fontName="SansSerif"/>
+							</labelFont>
+							<tickLabelFont>
+								<font fontName="SansSerif"/>
+							</tickLabelFont>
+						</axisFormat>
+					</valueAxisFormat>
+				</linePlot>
+			</xyLineChart>
+		</band>
+	</summary>
+</jasperReport>

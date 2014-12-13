@@ -1,0 +1,44 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.acxiom.insightlab</groupId>
+	<artifactId>InsightLabUI-AU</artifactId>
+	<version>2.0.1</version>
+	<name>InsightLabUI</name>
+	<packaging>pom</packaging>
+	
+	<properties>
+		<applicationVersion>2.0.1</applicationVersion>
+	</properties>
+	<modules>
+		<module>insightlab-ui</module>
+		<module>insightlab-services-client</module>
+	</modules>
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.tomcat.maven</groupId>
+					<artifactId>tomcat6-maven-plugin</artifactId>
+					<version>2.0</version>
+					<configuration>
+						<url>http://localhost:8080/manager</url>
+						<server>localhost</server>
+						<!-- Add <server> entry to you ~/m2/settings.xml file -->
+						<!-- example -->
+						<!-- <servers> <server> <id>localhost</id> <username>manager</username> 
+							<password>tomcat</password> </server> </servers> -->
+						<!-- and add role to $CATALINA_HOME/config/tomcat-users.xml -->
+						<!-- example -->
+						<!-- <role rolename="manager"/> <user username="manager" password="tomcat" 
+							roles="manager"/> -->
+						<!-- now just use: "mvn tomcat:deploy -P test-maven-profile" or "mvn 
+							tomcat:redeploy" -->
+						<path>/insightlab</path>
+						<warFile>target/insightlab.war</warFile>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>

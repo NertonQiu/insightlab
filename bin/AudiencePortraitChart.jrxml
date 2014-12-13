@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="AudiencePortraitChart" pageWidth="720" pageHeight="364" orientation="Landscape" columnWidth="720" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="7cdd8455-67bc-44ae-873e-6c22abc7fe7d">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="AudiencePortraitRowsFactory"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="ROWS_COUNT" class="java.lang.Integer"/>
+	<queryString language="SQL">
+		<![CDATA[]]>
+	</queryString>
+	<field name="boxedBasePercent" class="java.lang.Double">
+		<fieldDescription><![CDATA[boxedBasePercent]]></fieldDescription>
+	</field>
+	<field name="questionText" class="java.lang.String">
+		<fieldDescription><![CDATA[questionText]]></fieldDescription>
+	</field>
+	<field name="boxedBaseCount" class="java.lang.Integer">
+		<fieldDescription><![CDATA[boxedBaseCount]]></fieldDescription>
+	</field>
+	<field name="responseID" class="java.lang.String">
+		<fieldDescription><![CDATA[responseID]]></fieldDescription>
+	</field>
+	<field name="responseValue" class="java.lang.String">
+		<fieldDescription><![CDATA[responseValue]]></fieldDescription>
+	</field>
+	<field name="overUnderFlag" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[overUnderFlag]]></fieldDescription>
+	</field>
+	<field name="questionID" class="java.lang.String">
+		<fieldDescription><![CDATA[questionID]]></fieldDescription>
+	</field>
+	<field name="boxedBaseTotal" class="java.lang.Integer">
+		<fieldDescription><![CDATA[boxedBaseTotal]]></fieldDescription>
+	</field>
+	<field name="boxedTargetCount" class="java.lang.Integer">
+		<fieldDescription><![CDATA[boxedTargetCount]]></fieldDescription>
+	</field>
+	<field name="questionReportText" class="java.lang.String">
+		<fieldDescription><![CDATA[questionReportText]]></fieldDescription>
+	</field>
+	<field name="boxedTargetTotal" class="java.lang.Integer">
+		<fieldDescription><![CDATA[boxedTargetTotal]]></fieldDescription>
+	</field>
+	<field name="boxedTargetPercent" class="java.lang.Double">
+		<fieldDescription><![CDATA[boxedTargetPercent]]></fieldDescription>
+	</field>
+	<field name="responseText" class="java.lang.String">
+		<fieldDescription><![CDATA[responseText]]></fieldDescription>
+	</field>
+	<field name="responseReportText" class="java.lang.String">
+		<fieldDescription><![CDATA[responseReportText]]></fieldDescription>
+	</field>
+	<field name="index" class="java.lang.Integer">
+		<fieldDescription><![CDATA[index]]></fieldDescription>
+	</field>
+	<field name="zScore" class="java.lang.Double">
+		<fieldDescription><![CDATA[zScore]]></fieldDescription>
+	</field>
+	<variable name="CATEGORY" class="java.lang.String">
+		<variableExpression><![CDATA[$F{questionReportText}+(($F{responseReportText}== null || $F{responseReportText}.isEmpty())?"":(" - "+$F{responseReportText}))]]></variableExpression>
+	</variable>
+	<variable name="MAX_INDEX" class="java.lang.Integer" calculation="Highest">
+		<variableExpression><![CDATA[$F{index}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="CHART_WIDTH" class="java.lang.Double" incrementType="Report">
+		<variableExpression><![CDATA[720]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="MULTIPLIER" class="java.lang.Double">
+		<variableExpression><![CDATA[0.1]]></variableExpression>
+	</variable>
+	<variable name="BAR_LABEL_WIDTH" class="java.lang.Double">
+		<variableExpression><![CDATA[$V{MAX_INDEX}*$V{MULTIPLIER}]]></variableExpression>
+	</variable>
+	<variable name="OPTIMAL_ROWS_NUMBER_ON_PAGE" class="java.lang.Integer" incrementType="Report">
+		<variableExpression><![CDATA[15]]></variableExpression>
+	</variable>
+	<variable name="NUMBER_OF_BARS_IN_GROUP" class="java.lang.Integer" incrementType="Report">
+		<variableExpression><![CDATA[$V{OPTIMAL_ROWS_NUMBER_ON_PAGE}]]></variableExpression>
+	</variable>
+	<group name="MAX_NUMBER_OF_BARS_GROUP" isStartNewPage="true">
+		<groupExpression><![CDATA[($V{REPORT_COUNT}-1)/$V{OPTIMAL_ROWS_NUMBER_ON_PAGE}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="364" splitType="Stretch">
+			<printWhenExpression><![CDATA[$V{MAX_NUMBER_OF_BARS_GROUP_COUNT}.equals(1)]]></printWhenExpression>
+			<frame>
+				<reportElement x="0" y="0" width="720" height="364" uuid="919d168c-6120-4316-9212-89233ead4088">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<stackedBarChart>
+					<chart isShowLegend="false" customizerClass="com.acxiom.insightlab.report.chart.customizer.StackedBarChartCustomizer" renderType="draw" theme="AudiencePortraitChartTheme">
+						<reportElement mode="Opaque" x="0" y="0" width="720" height="364" isRemoveLineWhenBlank="true" backcolor="#FFFFFF" uuid="6c8e19b3-48a0-4d7c-b18a-0feb9015b753">
+							<property name="net.sf.jasperreports.print.keep.full.text" value="true"/>
+							<printWhenExpression><![CDATA[($P{ROWS_COUNT}%$V{OPTIMAL_ROWS_NUMBER_ON_PAGE} >= $V{OPTIMAL_ROWS_NUMBER_ON_PAGE} - $V{OPTIMAL_ROWS_NUMBER_ON_PAGE}/3) ||(!$V{PAGE_NUMBER}.equals(( $P{ROWS_COUNT}/$V{OPTIMAL_ROWS_NUMBER_ON_PAGE})+1))]]></printWhenExpression>
+						</reportElement>
+						<box topPadding="5">
+							<pen lineWidth="0.5" lineColor="#808080"/>
+							<topPen lineWidth="0.5" lineColor="#808080"/>
+							<leftPen lineWidth="0.5" lineColor="#808080"/>
+							<bottomPen lineWidth="0.5" lineColor="#808080"/>
+							<rightPen lineWidth="0.5" lineColor="#808080"/>
+						</box>
+						<chartTitle>
+							<font size="8" isPdfEmbedded="true"/>
+						</chartTitle>
+						<chartSubtitle/>
+						<chartLegend position="Top"/>
+					</chart>
+					<categoryDataset>
+						<dataset resetType="Group" resetGroup="MAX_NUMBER_OF_BARS_GROUP"/>
+						<categorySeries>
+							<seriesExpression><![CDATA["a"]]></seriesExpression>
+							<categoryExpression><![CDATA[$V{CATEGORY}]]></categoryExpression>
+							<valueExpression><![CDATA[$F{index} >= 100? 100 : $F{index}]]></valueExpression>
+							<labelExpression><![CDATA[""]]></labelExpression>
+						</categorySeries>
+						<categorySeries>
+							<seriesExpression><![CDATA["b"]]></seriesExpression>
+							<categoryExpression><![CDATA[$V{CATEGORY}]]></categoryExpression>
+							<valueExpression><![CDATA[$F{index} >= 100? ($F{index} == 100?0.1:$F{index} - 100) : 100 - $F{index}]]></valueExpression>
+							<labelExpression><![CDATA[$F{index} + ""]]></labelExpression>
+						</categorySeries>
+					</categoryDataset>
+					<barPlot isShowLabels="true" isShowTickLabels="true" isShowTickMarks="true">
+						<plot orientation="Horizontal" backgroundAlpha="1.0" foregroundAlpha="0.85">
+							<seriesColor seriesOrder="0" color="#FFFFFF"/>
+							<seriesColor seriesOrder="1" color="#637E9A"/>
+							<seriesColor seriesOrder="2" color="#FFFFFF"/>
+						</plot>
+						<itemLabel color="#666666" backgroundColor="#FFFFFF">
+							<font fontName="SansSerif" size="8"/>
+						</itemLabel>
+						<categoryAxisFormat>
+							<axisFormat labelColor="#666666" tickLabelColor="#666666" verticalTickLabels="false" axisLineColor="#BBBBBB">
+								<labelFont>
+									<font size="8" isPdfEmbedded="true"/>
+								</labelFont>
+								<tickLabelFont>
+									<font size="8" isPdfEmbedded="true"/>
+								</tickLabelFont>
+							</axisFormat>
+						</categoryAxisFormat>
+						<valueAxisFormat>
+							<axisFormat labelColor="#666666" tickLabelColor="#666666" verticalTickLabels="false" axisLineColor="#BBBBBB">
+								<labelFont>
+									<font size="8" isPdfEmbedded="true"/>
+								</labelFont>
+								<tickLabelFont>
+									<font size="8" isPdfEmbedded="true"/>
+								</tickLabelFont>
+							</axisFormat>
+						</valueAxisFormat>
+						<rangeAxisMaxValueExpression><![CDATA[$V{MAX_INDEX}+$V{BAR_LABEL_WIDTH}]]></rangeAxisMaxValueExpression>
+					</barPlot>
+				</stackedBarChart>
+			</frame>
+			<frame>
+				<reportElement x="0" y="0" width="720" height="364" uuid="aa3e0770-dcc9-4365-9731-b224a48982eb">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<stackedBarChart>
+					<chart isShowLegend="false" customizerClass="com.acxiom.insightlab.report.chart.customizer.StackedBarMiddleSizeChartCustomizer" renderType="draw" theme="AudiencePortraitChartTheme">
+						<reportElement mode="Opaque" x="0" y="0" width="720" height="244" isRemoveLineWhenBlank="true" backcolor="#FFFFFF" uuid="34839ae3-c9ed-4690-b2fe-7b93fbe84fc1">
+							<property name="net.sf.jasperreports.print.keep.full.text" value="true"/>
+							<property name="local_mesure_unitheight" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<printWhenExpression><![CDATA[($P{ROWS_COUNT}%$V{OPTIMAL_ROWS_NUMBER_ON_PAGE} < $V{OPTIMAL_ROWS_NUMBER_ON_PAGE} - $V{OPTIMAL_ROWS_NUMBER_ON_PAGE}/3 &&
+$P{ROWS_COUNT}%$V{OPTIMAL_ROWS_NUMBER_ON_PAGE} >= $V{OPTIMAL_ROWS_NUMBER_ON_PAGE} - ($V{OPTIMAL_ROWS_NUMBER_ON_PAGE}/3)*2 ) && ($V{PAGE_NUMBER}.equals(( $P{ROWS_COUNT}/$V{OPTIMAL_ROWS_NUMBER_ON_PAGE})+1))]]></printWhenExpression>
+						</reportElement>
+						<box topPadding="5">
+							<pen lineWidth="0.5" lineColor="#808080"/>
+							<topPen lineWidth="0.5" lineColor="#808080"/>
+							<leftPen lineWidth="0.5" lineColor="#808080"/>
+							<bottomPen lineWidth="0.5" lineColor="#808080"/>
+							<rightPen lineWidth="0.5" lineColor="#808080"/>
+						</box>
+						<chartTitle>
+							<font size="8" isPdfEmbedded="true"/>
+						</chartTitle>
+						<chartSubtitle/>
+						<chartLegend position="Top"/>
+					</chart>
+					<categoryDataset>
+						<dataset resetType="Group" resetGroup="MAX_NUMBER_OF_BARS_GROUP"/>
+						<categorySeries>
+							<seriesExpression><![CDATA["a"]]></seriesExpression>
+							<categoryExpression><![CDATA[$V{CATEGORY}]]></categoryExpression>
+							<valueExpression><![CDATA[$F{index} >= 100? 100 : $F{index}]]></valueExpression>
+							<labelExpression><![CDATA[""]]></labelExpression>
+						</categorySeries>
+						<categorySeries>
+							<seriesExpression><![CDATA["b"]]></seriesExpression>
+							<categoryExpression><![CDATA[$V{CATEGORY}]]></categoryExpression>
+							<valueExpression><![CDATA[$F{index} >= 100? ($F{index} == 100?0.1:$F{index} - 100) : 100 - $F{index}]]></valueExpression>
+							<labelExpression><![CDATA[$F{index} + ""]]></labelExpression>
+						</categorySeries>
+					</categoryDataset>
+					<barPlot isShowLabels="true" isShowTickLabels="true" isShowTickMarks="true">
+						<plot orientation="Horizontal" backgroundAlpha="1.0" foregroundAlpha="0.85">
+							<seriesColor seriesOrder="0" color="#FFFFFF"/>
+							<seriesColor seriesOrder="1" color="#637E9A"/>
+							<seriesColor seriesOrder="2" color="#FFFFFF"/>
+						</plot>
+						<itemLabel color="#666666" backgroundColor="#FFFFFF">
+							<font fontName="SansSerif" size="8"/>
+						</itemLabel>
+						<categoryAxisFormat>
+							<axisFormat labelColor="#666666" tickLabelColor="#666666" verticalTickLabels="false" axisLineColor="#BBBBBB">
+								<labelFont>
+									<font size="8" isPdfEmbedded="true"/>
+								</labelFont>
+								<tickLabelFont>
+									<font size="8" isPdfEmbedded="true"/>
+								</tickLabelFont>
+							</axisFormat>
+						</categoryAxisFormat>
+						<valueAxisFormat>
+							<axisFormat labelColor="#666666" tickLabelColor="#666666" verticalTickLabels="false" axisLineColor="#BBBBBB">
+								<labelFont>
+									<font size="8" isPdfEmbedded="true"/>
+								</labelFont>
+								<tickLabelFont>
+									<font size="8" isPdfEmbedded="true"/>
+								</tickLabelFont>
+							</axisFormat>
+						</valueAxisFormat>
+						<rangeAxisMaxValueExpression><![CDATA[$V{MAX_INDEX}+$V{BAR_LABEL_WIDTH}]]></rangeAxisMaxValueExpression>
+					</barPlot>
+				</stackedBarChart>
+			</frame>
+			<frame>
+				<reportElement x="0" y="0" width="720" height="364" uuid="29adbccd-fd89-4630-9544-824bfccdab5b">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<stackedBarChart>
+					<chart isShowLegend="false" customizerClass="com.acxiom.insightlab.report.chart.customizer.StackedBarSmallSizeChartCustomizer" renderType="draw" theme="AudiencePortraitChartTheme">
+						<reportElement mode="Opaque" x="0" y="0" width="720" height="122" isRemoveLineWhenBlank="true" backcolor="#FFFFFF" uuid="9601ec3d-a4e7-4f09-ba46-be02c839eba6">
+							<property name="net.sf.jasperreports.print.keep.full.text" value="true"/>
+							<property name="local_mesure_unitheight" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<printWhenExpression><![CDATA[($P{ROWS_COUNT}%$V{OPTIMAL_ROWS_NUMBER_ON_PAGE} < $V{OPTIMAL_ROWS_NUMBER_ON_PAGE} - 2*($V{OPTIMAL_ROWS_NUMBER_ON_PAGE}/3)) && ($V{PAGE_NUMBER}.equals(( $P{ROWS_COUNT}/$V{OPTIMAL_ROWS_NUMBER_ON_PAGE})+1))]]></printWhenExpression>
+						</reportElement>
+						<box topPadding="5">
+							<pen lineWidth="0.5" lineColor="#808080"/>
+							<topPen lineWidth="0.5" lineColor="#808080"/>
+							<leftPen lineWidth="0.5" lineColor="#808080"/>
+							<bottomPen lineWidth="0.5" lineColor="#808080"/>
+							<rightPen lineWidth="0.5" lineColor="#808080"/>
+						</box>
+						<chartTitle>
+							<font size="8" isPdfEmbedded="true"/>
+						</chartTitle>
+						<chartSubtitle/>
+						<chartLegend position="Top"/>
+					</chart>
+					<categoryDataset>
+						<dataset resetType="Group" resetGroup="MAX_NUMBER_OF_BARS_GROUP"/>
+						<categorySeries>
+							<seriesExpression><![CDATA["a"]]></seriesExpression>
+							<categoryExpression><![CDATA[$V{CATEGORY}]]></categoryExpression>
+							<valueExpression><![CDATA[$F{index} >= 100? 100 : $F{index}]]></valueExpression>
+							<labelExpression><![CDATA[""]]></labelExpression>
+						</categorySeries>
+						<categorySeries>
+							<seriesExpression><![CDATA["b"]]></seriesExpression>
+							<categoryExpression><![CDATA[$V{CATEGORY}]]></categoryExpression>
+							<valueExpression><![CDATA[$F{index} >= 100? ($F{index} == 100?0.1:$F{index} - 100) : 100 - $F{index}]]></valueExpression>
+							<labelExpression><![CDATA[$F{index} + ""]]></labelExpression>
+						</categorySeries>
+					</categoryDataset>
+					<barPlot isShowLabels="true" isShowTickLabels="true" isShowTickMarks="true">
+						<plot orientation="Horizontal" backgroundAlpha="1.0" foregroundAlpha="0.85">
+							<seriesColor seriesOrder="0" color="#FFFFFF"/>
+							<seriesColor seriesOrder="1" color="#637E9A"/>
+							<seriesColor seriesOrder="2" color="#FFFFFF"/>
+						</plot>
+						<itemLabel color="#666666" backgroundColor="#FFFFFF">
+							<font fontName="SansSerif" size="8"/>
+						</itemLabel>
+						<categoryAxisFormat>
+							<axisFormat labelColor="#666666" tickLabelColor="#666666" verticalTickLabels="false" axisLineColor="#BBBBBB">
+								<labelFont>
+									<font size="8" isPdfEmbedded="true"/>
+								</labelFont>
+								<tickLabelFont>
+									<font size="8" isPdfEmbedded="true"/>
+								</tickLabelFont>
+							</axisFormat>
+						</categoryAxisFormat>
+						<valueAxisFormat>
+							<axisFormat labelColor="#666666" tickLabelColor="#666666" verticalTickLabels="false" axisLineColor="#BBBBBB">
+								<labelFont>
+									<font size="8" isPdfEmbedded="true"/>
+								</labelFont>
+								<tickLabelFont>
+									<font size="8" isPdfEmbedded="true"/>
+								</tickLabelFont>
+							</axisFormat>
+						</valueAxisFormat>
+						<rangeAxisMaxValueExpression><![CDATA[$V{MAX_INDEX}+$V{BAR_LABEL_WIDTH}]]></rangeAxisMaxValueExpression>
+					</barPlot>
+				</stackedBarChart>
+			</frame>
+		</band>
+	</detail>
+</jasperReport>

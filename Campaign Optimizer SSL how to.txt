@@ -1,0 +1,42 @@
+*************************************************************************************************
+*                                                                                               *
+* This document helps you to fix problems with access to CO API that is accessible via HTTPS. *
+*                                                                                               *
+*************************************************************************************************
+
+Prerequisites:
+
+1. CO API client written on JAVA.
+
+How to:
+
+	1. Access CO API via browser. 
+	2. Export certificate from browser storage to your local file system folder.
+	3. Open command line (Windows), or Terminal (UNIX based systems);
+	4. Run "keytool -import -alias <some descriptive name> -file <certificate file> -keystore <path to keystore>"
+   
+	   	NOTE: This command exists in every JDK, and has to be accessible from any location in your command line, 
+	   	however it's basic location is in $JAVA_HOME/bin/keytool (for Windows %JAVA_HOME%/bin/keytool)
+	   
+	   	NOTE 1: keystore location:
+	         - MAC: $JAVA_HOME/lib/security/cacerts
+	         - Linux:  $JAVA_HOME/jre/lib/security/cacerts
+	         - Windows: %JAVA_HOME%\jre\lib\security\cacerts
+	   
+	   	NOTE 2: JAVA_HOME location on MAC:
+	   		 /System/Library/Frameworks/JavaVM.framework/Versions/<your version>/Home
+	   	NOTE 3: default keystore password: changeit (or changeme)
+   
+Examples:
+
+	- Windows: "%JAVA_HOME%\bin\keytool" -import -alias co.acxm.sethq.com -file "C:\Users\Viktor\Desktop\co.myacxiom.aws.crt" -keystore "%JAVA_HOME%\lib\security\cacerts"
+	- MAC OS X: sudo keytool -import -alias acxm.sethq.com -file /path/to/co/certificate/co.acxm.sethq.com.cer -keystore /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/security/cacerts
+
+Usefull links:
+
+	http://www.chrissearle.org/blog/technical/adding_self_signed_https_certificates_java_keystore
+
+         
+    
+	
+

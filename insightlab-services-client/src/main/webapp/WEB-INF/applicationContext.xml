@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   		http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+	   		http://www.springframework.org/schema/context
+	   		http://www.springframework.org/schema/context/spring-context-3.1.xsd
+			http://www.springframework.org/schema/mvc 
+			http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
+
+	<!-- Activates various annotations to be detected in bean classes -->
+	<context:annotation-config />
+
+	<!-- Scans the classpath for annotated components that will be auto-registered 
+		as Spring beans. For example @Controller and @Service. Make sure to set the 
+		correct base-package -->
+	<context:component-scan base-package="com.acxiom" />
+
+<bean id="cacheFilter" class="com.acxiom.insightlab.filter.ServicesMemcachingFilter">
+</bean>
+
+	<!-- Rest Template -->
+	<bean id="restTemplate" class="org.springframework.web.client.RestTemplate">
+	</bean>
+	
+
+	<!-- Configures the annotation-driven Spring MVC Controller programming 
+		model. Note that, with Spring 3.0, this tag works in Servlet MVC only! -->
+	<mvc:annotation-driven />
+
+
+
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:/application.properties</value>
+				<value>file:/etc/acxm/config/insightlab/application.properties
+				</value>
+				<!-- for administrative purposes -->
+				<value>classpath:/admin.properties</value>
+				<value>file:/etc/acxm/config/insightlab/admin.properties</value>
+				<!-- co service -->
+				<value>classpath:/co.properties</value>
+				<value>file:/etc/acxm/config/insightlab/co.properties</value>
+				
+				<!-- client api -->
+				<value>classpath:/accountManager.properties</value>
+				<value>file:/etc/acxm/config/insightlab/accountManager.properties</value>
+			</list>
+		</property>
+		<property name="ignoreResourceNotFound" value="true" />
+		<!-- <property name="ignoreUnresolvablePlaceholders" value="true" /> -->
+	</bean>
+
+	<!-- Load Spring Security configuration -->
+	<import resource="spring-root-context.xml" />
+
+</beans>

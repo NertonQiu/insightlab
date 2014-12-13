@@ -1,0 +1,116 @@
+/* IE8 fix input & select height + padding issues caused by Bootstrap span* classes */
+select, select[class*="span"]{min-height: 18px !important; padding-bottom:5px !important; padding-right: 4px !important;}
+input.acxiom-input, input[class*="span"] {min-height: 17px !important; padding-top:6px !important;}
+
+/* button min-width adjustments */
+.acxiom-button {min-width: 60px;}
+.acxiom-button.action {min-width: 32px !important;}
+
+.acxiom-button.action.arrow {
+    padding: 0 !important;
+}
+
+/* combobox height */
+body .acxiom-combobox input {min-height: 17px !important;}
+
+/* action bar overrides */
+body .acxiom-action-container input.acxiom-input[class*="span"] {min-height: 17px !important; padding-top:4px !important; margin-bottom: 3px !important}
+body .acxiom-action-container input.acxiom-button,
+body .acxiom-action-container input.acxiom-button.primary,
+body .acxiom-action-container input.acxiom-button.secondary {min-width:32px !important;}
+body .acxiom-action-container .acxiom-select[class*="span"],
+body .acxiom-action-container .acxiom-select[class*="span"] select {min-height: 16px !important; display: inline-block; float:none; margin-right: 5px !important; top: -1px !important; margin-top: 0 !important;}
+body .acxiom-action-container .acxiom-select[class*="span"] select {min-height: 16px !important; padding-bottom:4px !important; padding-top:3px !important;}
+body .acxiom-select:after {display:none !important;}
+body .acxiom-action-container .acxiom-pagination input { margin-top: -4px !important; }
+
+.acxiom-select select:focus {
+    width: auto !important;
+}
+
+/* reactivate hidden single checkboxes inside datatables */
+.acxiom-table label.acxm-checkbox input[type="checkbox"],
+.acxiom-table label.acxm-checkbox input[type="checkbox"] {
+	display: inline;
+    margin-top:-2px !important;
+}
+
+.acxiom-spinner {
+    line-height: 14px !important;
+    height: 20px !important;
+}
+
+/* correct tooltip arrow positioning */
+div.acxiom-tooltip:after {
+	bottom: -10px !important;
+}
+
+/* Checkbox */
+.acxm-checkbox input + span,
+.acxm-radio input + span {
+    background: none !important;
+    position: relative;
+    top: 5px;
+    left: 5px;
+}
+
+/* The alignment on all radio buttons is off in IE because of the right setting */
+.acxiom-radio-group LABEL { right: auto; overflow: hidden; }
+
+/* switch styling uses a checked class instead of the :checked pseudo class */
+.acxiom-radio-group.switch {
+     border: none;
+}
+.acxiom-radio-group.switch label {
+     border-left: none;
+     position: relative;
+}
+.acxiom-radio-group.switch input[type="radio"]{
+    display: inline-block;
+    margin: 0;
+    position: relative;
+    width: auto;
+    height: auto;
+    filter: alpha(opacity = 0);
+}
+.acxiom-radio-group.switch input[type="radio"] + span {
+     line-height: normal;
+     min-width: auto;
+     background: none;
+     filter: none;
+     text-transform: none;
+     text-indent: 0;
+     margin: 2px 10px 0 0;
+     padding: 0;
+}
+
+.acxm-disabled,
+.acxm-disabled > * {
+    filter: alpha(opacity = 50);
+}
+
+#pointer-overlay {
+    position: absolute;
+    background: red;
+    filter: alpha(opacity = 0);
+    z-index: 998;
+    cursor: default;
+}
+
+.s-placeholder-right .acxm-global-nav-dialog:after {
+    content: url("../styles/img/arrow-dialog-top.png") !important;
+    top: -15px !important;
+}
+
+.acxm-dd-menu > ul li a {
+    display: block;
+    text-decoration: none;
+}
+
+.acxm-dd-menu > ul li a .label {
+    display: block !important;
+}
+
+#acxm-global-nav.collapsed .s-collapse {
+    filter: progid:DXImageTransform.Microsoft.Matrix(M11=-1.00000000, M12=-0.00000000, M21=0.00000000, M22=-1.00000000,sizingMethod='auto expand');
+}

@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Scorecard" pageWidth="612" pageHeight="792" columnWidth="540" leftMargin="36" rightMargin="36" topMargin="36" bottomMargin="36" uuid="1f00378e-687c-4cc9-ac92-484b1fb86a44">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="382"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ModelReport"/>
+	<property name="net.sf.jasperreports.export.pdf.force.linebreak.policy" value="true"/>
+	<style name="table" mode="Opaque" backcolor="#FFFFFF" fill="Solid" radius="3" hAlign="Left" vAlign="Middle" fontName="SansSerif" fontSize="12" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+		<paragraph leftIndent="7" rightIndent="7"/>
+	</style>
+	<style name="table_TD" style="table" mode="Opaque" forecolor="#666666" backcolor="#FFFFFF" fill="Solid" radius="3" hAlign="Left" vAlign="Middle" fontName="SansSerif" fontSize="10" isBold="false" isPdfEmbedded="true">
+		<pen lineStyle="Solid"/>
+		<box topPadding="6" leftPadding="0" bottomPadding="6" rightPadding="0">
+			<pen lineWidth="0.5" lineStyle="Solid" lineColor="#808080"/>
+			<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#808080"/>
+			<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#808080"/>
+			<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#808080"/>
+			<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#808080"/>
+		</box>
+		<paragraph leftIndent="7" rightIndent="7"/>
+	</style>
+	<style name="table_TH" style="table" mode="Opaque" forecolor="#444444" backcolor="#F5F5F5" fill="Solid" radius="3" vAlign="Middle" markup="none" pattern="" fontName="SansSerif" fontSize="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true">
+		<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+			<pen lineWidth="0.0" lineStyle="Solid" lineColor="#808080"/>
+			<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#808080"/>
+			<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#808080"/>
+			<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#808080"/>
+			<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#808080"/>
+		</box>
+	</style>
+	<style name="style1" fontName="SansSerif" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{isPrivate} < 10]]></conditionExpression>
+			<style mode="Opaque" backcolor="#00CCCC" hAlign="Left" rotation="UpsideDown" pattern="" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false">
+				<pen lineWidth="0.75"/>
+			</style>
+		</conditionalStyle>
+	</style>
+	<subDataset name="Table dataset" uuid="c534d3db-465b-4a4c-97e3-9bc8455a2e90">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="averageRank" class="java.lang.Double">
+			<fieldDescription><![CDATA[平均排名]]></fieldDescription>
+		</field>
+		<field name="contribution" class="java.lang.Double">
+			<fieldDescription><![CDATA[贡献度]]></fieldDescription>
+		</field>
+		<field name="count" class="java.lang.Double">
+			<fieldDescription><![CDATA[数量]]></fieldDescription>
+		</field>
+		<field name="description" class="java.lang.String">
+			<fieldDescription><![CDATA[描述]]></fieldDescription>
+		</field>
+		<field name="ibElement" class="java.lang.String">
+			<fieldDescription><![CDATA[ibElement]]></fieldDescription>
+		</field>
+		<field name="modelID" class="java.lang.String">
+			<fieldDescription><![CDATA[模型编号]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="Chart dataset" uuid="f7fb46c7-0047-43b8-bff5-fee67a0867b7">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="averageRank" class="java.lang.Double">
+			<fieldDescription><![CDATA[平均排名]]></fieldDescription>
+		</field>
+		<field name="contribution" class="java.lang.Double">
+			<fieldDescription><![CDATA[贡献度]]></fieldDescription>
+		</field>
+		<field name="count" class="java.lang.Double">
+			<fieldDescription><![CDATA[数量]]></fieldDescription>
+		</field>
+		<field name="description" class="java.lang.String">
+			<fieldDescription><![CDATA[描述]]></fieldDescription>
+		</field>
+		<field name="ibElement" class="java.lang.String">
+			<fieldDescription><![CDATA[ibElement]]></fieldDescription>
+		</field>
+		<field name="modelID" class="java.lang.String">
+			<fieldDescription><![CDATA[模型编号]]></fieldDescription>
+		</field>
+	</subDataset>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="gain" class="java.util.List">
+		<fieldDescription><![CDATA[增益]]></fieldDescription>
+	</field>
+	<field name="ibRank" class="com.acxiom.insightlab.api.model.InfobaseRankModel">
+		<fieldDescription><![CDATA[ibRank]]></fieldDescription>
+	</field>
+	<field name="cumulativeRank" class="java.util.List">
+		<fieldDescription><![CDATA[累积排名]]></fieldDescription>
+	</field>
+	<field name="percent" class="java.util.List">
+		<fieldDescription><![CDATA[百分比]]></fieldDescription>
+	</field>
+	<field name="rank" class="java.util.List">
+		<fieldDescription><![CDATA[排名]]></fieldDescription>
+	</field>
+	<field name="id" class="java.lang.String">
+		<fieldDescription><![CDATA[编号]]></fieldDescription>
+	</field>
+	<field name="insightDescription" class="java.lang.String">
+		<fieldDescription><![CDATA[描述]]></fieldDescription>
+	</field>
+	<field name="isPrivate" class="java.lang.Double">
+		<fieldDescription><![CDATA[是否私有]]></fieldDescription>
+	</field>
+	<field name="scorecard" class="java.util.List">
+		<fieldDescription><![CDATA[计分卡]]></fieldDescription>
+	</field>
+	<field name="modelID" class="java.lang.String">
+		<fieldDescription><![CDATA[模型编号]]></fieldDescription>
+	</field>
+	<field name="description" class="java.lang.String">
+		<fieldDescription><![CDATA[模型描述]]></fieldDescription>
+	</field>
+	<field name="createdDate" class="java.util.Date">
+		<fieldDescription><![CDATA[创建日期]]></fieldDescription>
+	</field>
+	<field name="source" class="java.lang.String">
+		<fieldDescription><![CDATA[来源]]></fieldDescription>
+	</field>
+	<field name="status" class="java.lang.String">
+		<fieldDescription><![CDATA[状态]]></fieldDescription>
+	</field>
+	<field name="tenantID" class="java.lang.String">
+		<fieldDescription><![CDATA[广告主编号]]></fieldDescription>
+	</field>
+	<field name="userID" class="java.lang.String">
+		<fieldDescription><![CDATA[用户名]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="60">
+			<image>
+				<reportElement isPrintRepeatedValues="false" x="0" y="0" width="222" height="60" uuid="5ebe8520-48a8-471a-992a-43a0dd15abf9"/>
+				<imageExpression><![CDATA["AOSAnalytics-horizontal-RGB.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="26">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement x="0" y="0" width="540" height="26" forecolor="#666666" uuid="8033e46f-3807-4b1b-a67e-02fd0067ed9d">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="22" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[模型计分卡]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="619" splitType="Stretch">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement x="0" y="0" width="540" height="38" forecolor="#666666" uuid="c769d36d-a4fe-480c-822a-815df0175b55"/>
+				<box>
+					<topPen lineWidth="0.0" lineColor="#808080"/>
+					<leftPen lineWidth="0.0" lineColor="#808080"/>
+					<bottomPen lineWidth="0.0" lineColor="#808080"/>
+					<rightPen lineWidth="0.0" lineColor="#808080"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" pdfEncoding="" isPdfEmbedded="true"/>
+					<paragraph leftIndent="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA["模型: "+ $F{description}+", 数据集: "+ $F{insightDescription}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="38" width="540" height="20" forecolor="#666666" backcolor="#F5F5F5" uuid="c8d6b87e-c139-40e3-b785-450b3d8152d3">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5" lineColor="#808080"/>
+					<leftPen lineWidth="0.5" lineColor="#808080"/>
+					<bottomPen lineWidth="0.5" lineColor="#808080"/>
+					<rightPen lineWidth="0.5" lineColor="#808080"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isBold="true" isPdfEmbedded="true"/>
+					<paragraph leftIndent="7"/>
+				</textElement>
+				<text><![CDATA[Variable % Contribution Chart]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="0" y="58" width="540" height="561" uuid="90d67c2f-a60c-4c4e-9445-d936ccf94090">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<subreportParameter name="ROWS_COUNT">
+					<subreportParameterExpression><![CDATA[$F{scorecard}.size()]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{scorecard})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "ScorecardChart.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="1">
+			<break>
+				<reportElement x="0" y="0" width="100" height="1" uuid="991419f3-5c22-497d-b53f-11b961ba73db"/>
+			</break>
+		</band>
+		<band height="100">
+			<textField>
+				<reportElement x="0" y="0" width="540" height="38" forecolor="#666666" uuid="51eba2e2-df72-44bb-a9f5-b089da2e10cd">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineColor="#808080"/>
+					<leftPen lineWidth="0.0" lineColor="#808080"/>
+					<rightPen lineWidth="0.0" lineColor="#808080"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isPdfEmbedded="true"/>
+					<paragraph leftIndent="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA["模型: "+ $F{description}+", 数据集: "+ $F{insightDescription}]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement key="" x="0" y="67" width="540" height="33" uuid="284a413a-ef50-4927-89e0-c9352efa8f28">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Table dataset" uuid="21eab96e-6aa1-4100-b2bc-243a69bbe024">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{scorecard})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="110" uuid="3f29e15c-1630-477a-9272-0ca1b5b6bc1f">
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" x="0" y="0" width="110" height="30" uuid="7c50e0db-4263-4f38-9c90-46f40e3d8af3">
+									<property name="local_mesure_unitwidth" value="pixel"/>
+									<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								</reportElement>
+								<box>
+									<leftPen lineWidth="0.5" lineColor="#808080"/>
+								</box>
+								<text><![CDATA[变量]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="25" rowSpan="1">
+							<textField isStretchWithOverflow="true" pattern="">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="110" height="25" uuid="6202bc33-20e9-4096-bcad-853de4408427">
+									<property name="local_mesure_unitwidth" value="pixel"/>
+									<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								</reportElement>
+								<box>
+									<leftPen lineWidth="0.5" lineColor="#808080"/>
+								</box>
+								<textFieldExpression><![CDATA[$F{ibElement}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="202" uuid="6b73a6f4-8b22-4a6a-8741-a82d2ff867d1">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" x="0" y="0" width="202" height="30" uuid="a4e1832e-64cc-4f6e-a92f-66d0dda5919a"/>
+								<box>
+									<rightPen lineWidth="0.0"/>
+								</box>
+								<text><![CDATA[描述]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="25" rowSpan="1">
+							<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="false">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="202" height="25" uuid="76ea950e-03c1-43fd-b1aa-c92eb35c51f9"/>
+								<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="60" uuid="9e75a786-6034-4813-b205-9c474535fcb4">
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" x="0" y="0" width="60" height="30" uuid="27d403bb-4052-4a37-accd-52d8184f3360">
+									<property name="local_mesure_unitwidth" value="pixel"/>
+									<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								</reportElement>
+								<textElement textAlignment="Right"/>
+								<text><![CDATA[数量]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="25" rowSpan="1">
+							<textField isStretchWithOverflow="true" pattern="###0">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="60" height="25" uuid="20c73dc3-0d67-4305-b077-3497c14f7cf5">
+									<property name="local_mesure_unitwidth" value="pixel"/>
+									<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								</reportElement>
+								<textElement textAlignment="Right"/>
+								<textFieldExpression><![CDATA[$F{count}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="54" uuid="7427354c-84cf-421c-983d-a374616f08da">
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" x="0" y="0" width="54" height="30" uuid="1ea53b39-14f5-496e-82f7-7ffe8c34b7e4">
+									<property name="local_mesure_unitwidth" value="pixel"/>
+									<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								</reportElement>
+								<textElement textAlignment="Right"/>
+								<text><![CDATA[排名 ]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="25" rowSpan="1">
+							<textField isStretchWithOverflow="true" pattern="###0.00">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="54" height="25" uuid="c23869e3-d243-4cbf-a245-816805f69879">
+									<property name="local_mesure_unitwidth" value="pixel"/>
+									<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								</reportElement>
+								<box topPadding="6" bottomPadding="6"/>
+								<textElement textAlignment="Right"/>
+								<textFieldExpression><![CDATA[$F{averageRank}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="114" uuid="697540c3-cf02-4d30-8a2a-e15493af7746">
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" x="0" y="0" width="114" height="30" uuid="ee42d1c7-fb03-4178-b101-fb220bf896a7">
+									<property name="local_mesure_unitwidth" value="pixel"/>
+									<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								</reportElement>
+								<box>
+									<leftPen lineWidth="0.0"/>
+									<rightPen lineWidth="0.5" lineColor="#808080"/>
+								</box>
+								<textElement textAlignment="Right">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[% CONTRIBUTION]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="25" rowSpan="1">
+							<textField isStretchWithOverflow="true" pattern="#,##0.00%">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="114" height="25" uuid="27ed5390-9ed5-47e6-915a-62da43898fb0">
+									<property name="local_mesure_unitwidth" value="pixel"/>
+									<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								</reportElement>
+								<box>
+									<leftPen lineWidth="0.0"/>
+									<rightPen lineWidth="0.5" lineColor="#808080"/>
+								</box>
+								<textElement textAlignment="Right"/>
+								<textFieldExpression><![CDATA[$F{contribution} / 100]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<staticText>
+				<reportElement style="table_TH" mode="Opaque" x="0" y="42" width="540" height="25" forecolor="#666666" backcolor="#F5F5F5" uuid="d20b1b2b-bb95-4d4c-8a94-9bb6f3af778b">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5" lineColor="#808080"/>
+					<leftPen lineWidth="0.5" lineColor="#808080"/>
+					<bottomPen lineWidth="0.5" lineColor="#808080"/>
+					<rightPen lineWidth="0.5" lineColor="#808080"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isBold="true" isPdfEmbedded="true"/>
+					<paragraph leftIndent="7"/>
+				</textElement>
+				<text><![CDATA[模型计分卡]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="320" y="0" width="220" height="15" forecolor="#666666" uuid="86e06b41-f20c-4f5b-b73b-52068549f01e">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Bottom" markup="none">
+					<font fontName="SansSerif" size="7" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[© Copyright 2013 Acxiom Corporation. All rights reserved.]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" evaluationTime="Report">
+				<reportElement stretchType="RelativeToBandHeight" x="280" y="0" width="40" height="15" forecolor="#666666" uuid="606a1651-dd43-4fd2-be86-0673272ddfc2">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="SansSerif" size="7" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="220" y="0" width="60" height="15" forecolor="#666666" uuid="32052639-e351-411b-a3fc-960a9da613a7">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="SansSerif" size="7" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

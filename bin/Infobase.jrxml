@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Infobase" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="720" leftMargin="36" rightMargin="36" topMargin="36" bottomMargin="36" uuid="151fef05-a144-4c82-a304-596c28418017">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="199"/>
+	<style name="table" mode="Opaque" backcolor="#FFFFFF" fill="Solid" radius="3" hAlign="Left" vAlign="Middle" fontName="Arial" fontSize="12" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+		<paragraph leftIndent="7" rightIndent="7"/>
+	</style>
+	<style name="table_TD" mode="Opaque" forecolor="#666666" backcolor="#FFFFFF" fill="Solid" radius="3" hAlign="Left" vAlign="Middle" fontName="SansSerif" fontSize="10" isBold="false">
+		<pen lineStyle="Solid"/>
+		<box topPadding="6" leftPadding="7" bottomPadding="6" rightPadding="7">
+			<pen lineWidth="0.5" lineStyle="Solid" lineColor="#808080"/>
+			<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#808080"/>
+			<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#808080"/>
+			<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#808080"/>
+			<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#808080"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" forecolor="#444444" backcolor="#F5F5F5" fill="Solid" radius="3" hAlign="Center" vAlign="Middle" markup="none" pattern="" fontName="SansSerif" fontSize="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<box topPadding="0" leftPadding="7" bottomPadding="0" rightPadding="7">
+			<pen lineWidth="0.0" lineStyle="Solid" lineColor="#808080"/>
+			<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#808080"/>
+			<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#808080"/>
+			<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#808080"/>
+			<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#808080"/>
+		</box>
+	</style>
+	<subDataset name="Chart dataset" uuid="62e81cda-fb1d-41dd-be12-e1c56971abba">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="cumulativeRank" class="java.lang.Double">
+			<fieldDescription><![CDATA[cumulativeRank]]></fieldDescription>
+		</field>
+		<field name="percent" class="java.lang.Double">
+			<fieldDescription><![CDATA[percent]]></fieldDescription>
+		</field>
+		<field name="rank" class="java.lang.Double">
+			<fieldDescription><![CDATA[rank]]></fieldDescription>
+		</field>
+		<variable name="DECIMAL_FORMAT" class="java.text.DecimalFormat" resetType="None">
+			<variableExpression><![CDATA[new java.text.DecimalFormat("0.00")]]></variableExpression>
+			<initialValueExpression><![CDATA[]]></initialValueExpression>
+		</variable>
+	</subDataset>
+	<subDataset name="Table dataset" uuid="32623cf2-5152-4488-b646-3866af87fca3">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="cumulativeRank" class="java.lang.Double">
+			<fieldDescription><![CDATA[cumulativeRank]]></fieldDescription>
+		</field>
+		<field name="percent" class="java.lang.Double">
+			<fieldDescription><![CDATA[percent]]></fieldDescription>
+		</field>
+		<field name="rank" class="java.lang.Double">
+			<fieldDescription><![CDATA[rank]]></fieldDescription>
+		</field>
+	</subDataset>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="modelID" class="java.lang.String">
+		<fieldDescription><![CDATA[modelID]]></fieldDescription>
+	</field>
+	<field name="rankTotal" class="java.lang.Double">
+		<fieldDescription><![CDATA[rankTotal]]></fieldDescription>
+	</field>
+	<field name="infobaseRankRowList" class="java.util.List">
+		<fieldDescription><![CDATA[infobaseRankRowList]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="60">
+			<image>
+				<reportElement uuid="15f5ec6b-b1a6-4dea-bda9-d3c1397bdd04" isPrintRepeatedValues="false" x="0" y="0" width="222" height="60"/>
+				<imageExpression><![CDATA["AOSAnalytics-horizontal-RGB.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="30">
+			<staticText>
+				<reportElement uuid="bae68893-bcde-41d1-8624-b33429f5bf63" x="0" y="0" width="720" height="30" forecolor="#666666"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="22"/>
+				</textElement>
+				<text><![CDATA[人群打分]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="425" splitType="Stretch">
+			<pieChart>
+				<chart theme="default">
+					<reportElement uuid="7c94a4aa-035e-4d57-b44f-b0245ab5aaa9" mode="Transparent" x="0" y="20" width="720" height="405"/>
+					<box>
+						<topPen lineWidth="0.5" lineColor="#808080"/>
+						<leftPen lineWidth="0.5" lineColor="#808080"/>
+						<bottomPen lineWidth="0.5" lineColor="#808080"/>
+						<rightPen lineWidth="0.5" lineColor="#808080"/>
+					</box>
+					<chartTitle color="#666666"/>
+					<chartSubtitle/>
+					<chartLegend textColor="#666666" position="Top"/>
+				</chart>
+				<pieDataset>
+					<dataset>
+						<datasetRun subDataset="Chart dataset" uuid="ded7b02a-9e2c-4558-b742-15dfee4cbd39">
+							<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{infobaseRankRowList})]]></dataSourceExpression>
+						</datasetRun>
+					</dataset>
+					<keyExpression><![CDATA[$V{REPORT_COUNT}]]></keyExpression>
+					<valueExpression><![CDATA[$F{percent}]]></valueExpression>
+					<labelExpression><![CDATA[$V{REPORT_COUNT} + " - " + $V{DECIMAL_FORMAT}.format($F{percent}*100) + " %"]]></labelExpression>
+				</pieDataset>
+				<piePlot isCircular="true" labelFormat="{0}" legendLabelFormat="{0}">
+					<plot>
+						<seriesColor seriesOrder="0" color="#1D5898"/>
+						<seriesColor seriesOrder="1" color="#4472A5"/>
+						<seriesColor seriesOrder="2" color="#7C9DC0"/>
+						<seriesColor seriesOrder="3" color="#A0B7D1"/>
+						<seriesColor seriesOrder="4" color="#D9E9FA"/>
+						<seriesColor seriesOrder="5" color="#E1BAD1"/>
+						<seriesColor seriesOrder="6" color="#C2A6B8"/>
+						<seriesColor seriesOrder="7" color="#B288A1"/>
+						<seriesColor seriesOrder="8" color="#905478"/>
+						<seriesColor seriesOrder="9" color="#7F3762"/>
+					</plot>
+					<itemLabel color="#666666"/>
+				</piePlot>
+			</pieChart>
+			<staticText>
+				<reportElement uuid="c2108030-df3a-4e5c-b1bf-bb8d283ee820" mode="Opaque" x="0" y="0" width="720" height="20" forecolor="#666666" backcolor="#F5F5F5"/>
+				<box>
+					<topPen lineWidth="0.5" lineColor="#808080"/>
+					<leftPen lineWidth="0.5" lineColor="#808080"/>
+					<bottomPen lineWidth="0.5" lineColor="#808080"/>
+					<rightPen lineWidth="0.5" lineColor="#808080"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isBold="true"/>
+					<paragraph leftIndent="7"/>
+				</textElement>
+				<text><![CDATA[Decile Chart]]></text>
+			</staticText>
+			<ellipse>
+				<reportElement uuid="b6ce90a3-f961-4c8b-8265-b7cc915db207" mode="Opaque" x="290" y="161" width="140" height="140" forecolor="#808080"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</ellipse>
+		</band>
+		<band height="45">
+			<break>
+				<reportElement uuid="38ba23ed-3b9d-498b-bfa2-fff05ce07304" x="0" y="0" width="720" height="1"/>
+			</break>
+			<componentElement>
+				<reportElement uuid="23353738-6412-45bd-839e-c280fd88c926" key="table" x="0" y="1" width="720" height="44"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Table dataset" uuid="a07f9366-2893-4bc8-92ed-4af037be8b88">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{infobaseRankRowList})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="180" uuid="651e81d2-976b-42f9-b15b-ed11fc411266">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="3442cbcd-71f7-4e49-9feb-f0bc1471fe48" style="table_TH" x="0" y="0" width="180" height="30"/>
+								<box>
+									<leftPen lineWidth="0.5" lineColor="#808080"/>
+								</box>
+								<textElement textAlignment="Center"/>
+								<text><![CDATA[DECILE]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="30" rowSpan="1">
+							<textField>
+								<reportElement uuid="7092b92b-4495-4c93-a057-4861e6120f99" style="table_TD" x="0" y="0" width="180" height="30"/>
+								<box>
+									<leftPen lineWidth="0.5" lineColor="#808080"/>
+								</box>
+								<textElement textAlignment="Right"/>
+								<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="180" uuid="dfd070dd-c1c2-49e3-8439-9796340f428a">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="dd7b5118-127e-4dab-be63-19bcfa14a42a" style="table_TH" x="0" y="0" width="180" height="30"/>
+								<textElement textAlignment="Center"/>
+								<text><![CDATA[HOUSEHOLDS]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="30" rowSpan="1">
+							<textField pattern="#,##0">
+								<reportElement uuid="25f8d766-1c72-45f7-a674-51d1df5fca13" style="table_TD" x="0" y="0" width="180" height="30"/>
+								<textElement textAlignment="Right"/>
+								<textFieldExpression><![CDATA[$F{rank}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="180" uuid="b48be899-4af1-4cf9-9e9a-18abfe90ae9a">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="cc809dbd-d9c5-452b-b425-a896b9dd02d1" style="table_TH" x="0" y="0" width="180" height="30"/>
+								<textElement textAlignment="Center"/>
+								<text><![CDATA[CUMULATIVE]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="30" rowSpan="1">
+							<textField pattern="#,##0">
+								<reportElement uuid="a7cab934-5255-4224-ba00-4de4f514104a" style="table_TD" x="0" y="0" width="180" height="30"/>
+								<textElement textAlignment="Right"/>
+								<textFieldExpression><![CDATA[$F{cumulativeRank}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="180" uuid="74976fc2-96a0-40d0-8649-133430cfbe5b">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="f83b522a-07aa-4552-ac3a-eebf6dd9aa92" style="table_TH" x="0" y="0" width="180" height="30"/>
+								<box>
+									<rightPen lineWidth="0.5" lineColor="#808080"/>
+								</box>
+								<textElement textAlignment="Center"/>
+								<text><![CDATA[PERCENT]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="30" rowSpan="1">
+							<textField pattern="#,##0.00 %">
+								<reportElement uuid="bb81862d-6568-4957-ace7-4c79824eed79" style="table_TD" x="0" y="0" width="180" height="30"/>
+								<box>
+									<rightPen lineWidth="0.5" lineColor="#808080"/>
+								</box>
+								<textElement textAlignment="Right"/>
+								<textFieldExpression><![CDATA[$F{percent}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="15">
+			<textField evaluationTime="Report">
+				<reportElement uuid="46e4c0e9-685a-451d-b797-f87030f632c4" x="352" y="0" width="40" height="15" forecolor="#666666"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4d0eb650-3951-4af6-b6ba-b1110942b3ea" x="270" y="0" width="80" height="15" forecolor="#666666"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="3145b999-a687-4a2c-bae6-ecb8c0db53cb" x="392" y="0" width="328" height="15" forecolor="#666666"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[© Copyright 2013 by Acxiom Corporation. All rights reserved.]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

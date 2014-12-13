@@ -1,0 +1,676 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Scattergram" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="720" leftMargin="36" rightMargin="36" topMargin="36" bottomMargin="36" uuid="7e240a68-22d6-4fea-aac1-a156e598ba7a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="147"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ScattergramFactory"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<style name="table" mode="Opaque" backcolor="#FFFFFF" fill="Solid" radius="3" hAlign="Left" vAlign="Middle" fontName="SansSerif" fontSize="12" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+		<paragraph leftIndent="7" rightIndent="7"/>
+	</style>
+	<style name="table_TD" mode="Opaque" forecolor="#666666" backcolor="#FFFFFF" fill="Solid" radius="3" hAlign="Left" vAlign="Middle" fontName="SansSerif" fontSize="8" isBold="false">
+		<pen lineStyle="Solid"/>
+		<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+			<pen lineWidth="0.5" lineStyle="Solid" lineColor="#808080"/>
+			<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#808080"/>
+			<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#808080"/>
+			<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#808080"/>
+			<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#808080"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" forecolor="#444444" backcolor="#F5F5F5" fill="Solid" radius="3" hAlign="Center" vAlign="Middle" markup="none" pattern="" fontName="SansSerif" fontSize="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<box topPadding="0" leftPadding="3" bottomPadding="0" rightPadding="3">
+			<pen lineWidth="0.0" lineStyle="Solid" lineColor="#808080"/>
+			<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#808080"/>
+			<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#808080"/>
+			<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#808080"/>
+			<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#808080"/>
+		</box>
+	</style>
+	<subDataset name="Chart dataset" uuid="317000be-7b06-4649-a488-41b877a6a251">
+		<parameter name="MAX_REF_PERCENT" class="java.lang.Double">
+			<parameterDescription><![CDATA[]]></parameterDescription>
+		</parameter>
+		<queryString language="SQL">
+			<![CDATA[]]>
+		</queryString>
+		<field name="age" class="java.lang.String">
+			<fieldDescription><![CDATA[age]]></fieldDescription>
+		</field>
+		<field name="ib1270" class="java.lang.Integer">
+			<fieldDescription><![CDATA[ib1270]]></fieldDescription>
+		</field>
+		<field name="clusterName" class="java.lang.String">
+			<fieldDescription><![CDATA[clusterName]]></fieldDescription>
+		</field>
+		<field name="homeOwnership" class="java.lang.String">
+			<fieldDescription><![CDATA[homeOwnership]]></fieldDescription>
+		</field>
+		<field name="income" class="java.lang.String">
+			<fieldDescription><![CDATA[income]]></fieldDescription>
+		</field>
+		<field name="kids" class="java.lang.String">
+			<fieldDescription><![CDATA[kids]]></fieldDescription>
+		</field>
+		<field name="maritalStatus" class="java.lang.String">
+			<fieldDescription><![CDATA[maritalStatus]]></fieldDescription>
+		</field>
+		<field name="netWorth" class="java.lang.String">
+			<fieldDescription><![CDATA[netWorth]]></fieldDescription>
+		</field>
+		<field name="urbanicity" class="java.lang.String">
+			<fieldDescription><![CDATA[urbanicity]]></fieldDescription>
+		</field>
+		<field name="chartIndex1" class="java.lang.Integer">
+			<fieldDescription><![CDATA[chartIndex1]]></fieldDescription>
+		</field>
+		<field name="chartIndex2" class="java.lang.Integer">
+			<fieldDescription><![CDATA[chartIndex2]]></fieldDescription>
+		</field>
+		<field name="index1" class="java.lang.Integer">
+			<fieldDescription><![CDATA[index1]]></fieldDescription>
+		</field>
+		<field name="index2" class="java.lang.Integer">
+			<fieldDescription><![CDATA[index2]]></fieldDescription>
+		</field>
+		<field name="quadrant" class="java.lang.String">
+			<fieldDescription><![CDATA[quadrant]]></fieldDescription>
+		</field>
+		<field name="groupName" class="java.lang.String">
+			<fieldDescription><![CDATA[groupName]]></fieldDescription>
+		</field>
+		<field name="groupCode" class="java.lang.String">
+			<fieldDescription><![CDATA[groupCode]]></fieldDescription>
+		</field>
+		<field name="ageText" class="java.lang.String">
+			<fieldDescription><![CDATA[ageText]]></fieldDescription>
+		</field>
+		<field name="referencePercent" class="java.lang.Double">
+			<fieldDescription><![CDATA[referencePercent]]></fieldDescription>
+		</field>
+		<variable name="MAX_VALUE" class="java.lang.Integer" incrementType="Report">
+			<variableExpression><![CDATA[241]]></variableExpression>
+		</variable>
+		<variable name="MAX_X_Y_FOR_BUBBLES" class="java.lang.Integer" incrementType="Report">
+			<variableExpression><![CDATA[240]]></variableExpression>
+		</variable>
+		<variable name="BUBBLE_CHART_HEIGHT" class="java.lang.Integer" incrementType="Report">
+			<variableExpression><![CDATA[276]]></variableExpression>
+		</variable>
+		<variable name="MIN_BUBBLE_DIAMETER" class="java.lang.Double" incrementType="Report">
+			<variableExpression><![CDATA[java.lang.Math.max($V{BUBBLE_CHART_HEIGHT}*0.02, 10)]]></variableExpression>
+		</variable>
+		<variable name="MAX_BUBBLE_DIAMETER" class="java.lang.Double" incrementType="Report">
+			<variableExpression><![CDATA[$V{BUBBLE_CHART_HEIGHT}*0.2]]></variableExpression>
+		</variable>
+		<variable name="MIN_BUBBLE_RADIUS" class="java.lang.Double" incrementType="Report">
+			<variableExpression><![CDATA[$V{MIN_BUBBLE_DIAMETER}/2]]></variableExpression>
+		</variable>
+		<variable name="MAX_BUBBLE_RADIUS" class="java.lang.Double" incrementType="Report">
+			<variableExpression><![CDATA[$V{MAX_BUBBLE_DIAMETER}/2]]></variableExpression>
+		</variable>
+		<variable name="MIN_BUBBLE_AREA" class="java.lang.Double" incrementType="Report">
+			<variableExpression><![CDATA[java.lang.Math.PI*$V{MIN_BUBBLE_RADIUS}*$V{MIN_BUBBLE_RADIUS}]]></variableExpression>
+		</variable>
+		<variable name="MAX_BUBBLE_AREA" class="java.lang.Double" incrementType="Report">
+			<variableExpression><![CDATA[java.lang.Math.PI*$V{MAX_BUBBLE_RADIUS}*$V{MAX_BUBBLE_RADIUS}]]></variableExpression>
+		</variable>
+		<variable name="MULTIPLIER" class="java.lang.Double" incrementType="Report">
+			<variableExpression><![CDATA[($V{MAX_BUBBLE_AREA} - $V{MIN_BUBBLE_AREA})/$P{MAX_REF_PERCENT}]]></variableExpression>
+		</variable>
+		<variable name="ADJUSTED_BUBBLE_RADIUS" class="java.lang.Double">
+			<variableExpression><![CDATA[java.lang.Math.sqrt(($V{MIN_BUBBLE_AREA} +$F{referencePercent}*$V{MULTIPLIER})/java.lang.Math.PI)]]></variableExpression>
+		</variable>
+		<variable name="ADJUSTED_BUBBLE_DIAMETER" class="java.lang.Double">
+			<variableExpression><![CDATA[2*$V{ADJUSTED_BUBBLE_RADIUS}]]></variableExpression>
+		</variable>
+	</subDataset>
+	<subDataset name="Table dataset" uuid="16ad171b-5981-476d-80c5-3300a4ea4401">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ScattergramRowFactory"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="ib1270" class="java.lang.Integer">
+			<fieldDescription><![CDATA[ib1270]]></fieldDescription>
+		</field>
+		<field name="groupCode" class="java.lang.String">
+			<fieldDescription><![CDATA[groupCode]]></fieldDescription>
+		</field>
+		<field name="kids" class="java.lang.String">
+			<fieldDescription><![CDATA[kids]]></fieldDescription>
+		</field>
+		<field name="income" class="java.lang.String">
+			<fieldDescription><![CDATA[income]]></fieldDescription>
+		</field>
+		<field name="maritalStatus" class="java.lang.String">
+			<fieldDescription><![CDATA[maritalStatus]]></fieldDescription>
+		</field>
+		<field name="chartIndex1" class="java.lang.Integer">
+			<fieldDescription><![CDATA[chartIndex1]]></fieldDescription>
+		</field>
+		<field name="index1" class="java.lang.Integer">
+			<fieldDescription><![CDATA[index1]]></fieldDescription>
+		</field>
+		<field name="homeOwnership" class="java.lang.String">
+			<fieldDescription><![CDATA[homeOwnership]]></fieldDescription>
+		</field>
+		<field name="netWorth" class="java.lang.String">
+			<fieldDescription><![CDATA[netWorth]]></fieldDescription>
+		</field>
+		<field name="groupName" class="java.lang.String">
+			<fieldDescription><![CDATA[groupName]]></fieldDescription>
+		</field>
+		<field name="quadrant" class="java.lang.String">
+			<fieldDescription><![CDATA[quadrant]]></fieldDescription>
+		</field>
+		<field name="urbanicity" class="java.lang.String">
+			<fieldDescription><![CDATA[urbanicity]]></fieldDescription>
+		</field>
+		<field name="referencePercent" class="java.lang.Double">
+			<fieldDescription><![CDATA[referencePercent]]></fieldDescription>
+		</field>
+		<field name="clusterName" class="java.lang.String">
+			<fieldDescription><![CDATA[clusterName]]></fieldDescription>
+		</field>
+		<field name="chartIndex2" class="java.lang.Integer">
+			<fieldDescription><![CDATA[chartIndex2]]></fieldDescription>
+		</field>
+		<field name="ageText" class="java.lang.String">
+			<fieldDescription><![CDATA[ageText]]></fieldDescription>
+		</field>
+		<field name="age" class="java.lang.String">
+			<fieldDescription><![CDATA[age]]></fieldDescription>
+		</field>
+		<field name="index2" class="java.lang.Integer">
+			<fieldDescription><![CDATA[index2]]></fieldDescription>
+		</field>
+		<sortField name="ib1270"/>
+	</subDataset>
+	<parameter name="MAX_REFERENCE_PERCENT" class="java.lang.Double">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="scattergramData" class="java.util.List">
+		<fieldDescription><![CDATA[scattergramData]]></fieldDescription>
+	</field>
+	<field name="insightDescription" class="java.lang.String">
+		<fieldDescription><![CDATA[insightDescription]]></fieldDescription>
+	</field>
+	<field name="refQuestion" class="java.lang.String">
+		<fieldDescription><![CDATA[refQuestion]]></fieldDescription>
+	</field>
+	<field name="refResponse" class="java.lang.String">
+		<fieldDescription><![CDATA[refResponse]]></fieldDescription>
+	</field>
+	<variable name="MAX_VALUE" class="java.lang.Integer" incrementType="Report">
+		<variableExpression><![CDATA[241]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="60">
+			<image>
+				<reportElement isPrintRepeatedValues="false" x="0" y="0" width="222" height="60" uuid="8cf551b9-0982-4fea-be28-c10051e9d897"/>
+				<imageExpression><![CDATA["AOSAnalytics-horizontal-RGB.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="30">
+			<staticText>
+				<reportElement x="0" y="0" width="720" height="30" forecolor="#666666" uuid="654eaa28-e08c-4891-b80e-64c269a4db7e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="22"/>
+				</textElement>
+				<text><![CDATA[Personicx Scattergram]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="430" splitType="Stretch">
+			<multiAxisChart>
+				<chart isShowLegend="false" renderType="draw">
+					<reportElement mode="Opaque" x="0" y="31" width="755" height="276" uuid="b2bdaf7e-9a3e-404e-9ef5-b5ec30bb895f">
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend position="Top"/>
+				</chart>
+				<multiAxisPlot>
+					<plot/>
+					<axis position="leftOrTop">
+						<bubbleChart>
+							<chart isShowLegend="false" customizerClass="com.acxiom.insightlab.report.chart.customizer.ScattergramCustomizer" renderType="draw">
+								<reportElement mode="Opaque" x="0" y="0" width="0" height="0" forecolor="#666666" backcolor="#FFFFFF" uuid="3959df05-12cf-4b2b-86c2-81dc85f20e31"/>
+								<chartTitle color="#000000"/>
+								<chartSubtitle color="#000000"/>
+								<chartLegend textColor="#000000" backgroundColor="#FFFFFF" position="Top"/>
+							</chart>
+							<xyzDataset>
+								<dataset>
+									<datasetRun subDataset="Chart dataset" uuid="5b167cb9-728a-4772-80a7-7904ea42b691">
+										<datasetParameter name="MAX_REF_PERCENT">
+											<datasetParameterExpression><![CDATA[$P{MAX_REFERENCE_PERCENT}]]></datasetParameterExpression>
+										</datasetParameter>
+										<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{scattergramData})]]></dataSourceExpression>
+									</datasetRun>
+								</dataset>
+								<xyzSeries>
+									<seriesExpression><![CDATA[$F{quadrant}.equals("Opportunities") ? "O" : $F{quadrant}.equals("Weaknesses") ? "W" : $F{quadrant}.equals("Threats") ? "T" : $F{quadrant}.equals("Strengths") ? "S" : ""]]></seriesExpression>
+									<xValueExpression><![CDATA[java.lang.Math.min($F{chartIndex1}, $V{MAX_X_Y_FOR_BUBBLES})]]></xValueExpression>
+									<yValueExpression><![CDATA[java.lang.Math.min($F{chartIndex2}, $V{MAX_X_Y_FOR_BUBBLES})]]></yValueExpression>
+									<zValueExpression><![CDATA[$V{ADJUSTED_BUBBLE_DIAMETER}]]></zValueExpression>
+								</xyzSeries>
+							</xyzDataset>
+							<bubblePlot scaleType="RangeAxis">
+								<plot>
+									<seriesColor seriesOrder="0" color="#A8B278"/>
+									<seriesColor seriesOrder="1" color="#CE9971"/>
+									<seriesColor seriesOrder="2" color="#B28821"/>
+									<seriesColor seriesOrder="3" color="#7C9DC0"/>
+								</plot>
+								<xAxisLabelExpression><![CDATA["National File Index"]]></xAxisLabelExpression>
+								<xAxisFormat>
+									<axisFormat>
+										<labelFont>
+											<font size="9"/>
+										</labelFont>
+										<tickLabelFont>
+											<font size="9"/>
+										</tickLabelFont>
+									</axisFormat>
+								</xAxisFormat>
+								<yAxisLabelExpression><![CDATA["Survey Response Index"]]></yAxisLabelExpression>
+								<yAxisFormat>
+									<axisFormat>
+										<labelFont>
+											<font size="9"/>
+										</labelFont>
+										<tickLabelFont>
+											<font size="9"/>
+										</tickLabelFont>
+									</axisFormat>
+								</yAxisFormat>
+								<domainAxisMinValueExpression><![CDATA[0]]></domainAxisMinValueExpression>
+								<domainAxisMaxValueExpression><![CDATA[$V{MAX_VALUE}]]></domainAxisMaxValueExpression>
+								<rangeAxisMinValueExpression><![CDATA[0]]></rangeAxisMinValueExpression>
+								<rangeAxisMaxValueExpression><![CDATA[$V{MAX_VALUE}]]></rangeAxisMaxValueExpression>
+							</bubblePlot>
+						</bubbleChart>
+					</axis>
+					<axis position="rightOrBottom">
+						<xyLineChart>
+							<chart isShowLegend="false" renderType="draw">
+								<reportElement mode="Opaque" x="0" y="0" width="0" height="0" forecolor="#666666" backcolor="#FFFFFF" uuid="599ee9ab-2f88-4e82-bfc8-3aedffc323a8"/>
+								<chartTitle color="#000000"/>
+								<chartSubtitle color="#000000"/>
+								<chartLegend textColor="#000000" backgroundColor="#FFFFFF" position="Top"/>
+							</chart>
+							<xyDataset>
+								<dataset>
+									<datasetRun subDataset="Chart dataset" uuid="c73a069c-1ecd-46c3-8bb6-ca9abcb3d332">
+										<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{scattergramData})]]></dataSourceExpression>
+									</datasetRun>
+								</dataset>
+								<xySeries>
+									<seriesExpression><![CDATA[""]]></seriesExpression>
+									<xValueExpression><![CDATA[100]]></xValueExpression>
+									<yValueExpression><![CDATA[$V{REPORT_COUNT}.equals(1)? 0: $V{MAX_VALUE}]]></yValueExpression>
+								</xySeries>
+							</xyDataset>
+							<linePlot isShowLines="true" isShowShapes="false">
+								<plot>
+									<seriesColor seriesOrder="0" color="#666666"/>
+								</plot>
+								<categoryAxisFormat>
+									<axisFormat labelColor="#FFFFFF" verticalTickLabels="false" axisLineColor="#666666"/>
+								</categoryAxisFormat>
+								<valueAxisFormat>
+									<axisFormat labelColor="#666666" tickLabelColor="#FFFFFF" verticalTickLabels="false" axisLineColor="#FFFFFF"/>
+								</valueAxisFormat>
+								<domainAxisMinValueExpression><![CDATA[0]]></domainAxisMinValueExpression>
+								<domainAxisMaxValueExpression><![CDATA[$V{MAX_VALUE}]]></domainAxisMaxValueExpression>
+								<rangeAxisMinValueExpression><![CDATA[0]]></rangeAxisMinValueExpression>
+								<rangeAxisMaxValueExpression><![CDATA[$V{MAX_VALUE}]]></rangeAxisMaxValueExpression>
+							</linePlot>
+						</xyLineChart>
+					</axis>
+					<axis position="rightOrBottom">
+						<xyLineChart>
+							<chart isShowLegend="false" renderType="draw">
+								<reportElement mode="Opaque" x="0" y="0" width="0" height="0" forecolor="#666666" backcolor="#FFFFFF" uuid="5fc7cee4-4afc-4145-a157-47cc69e0bc15"/>
+								<chartTitle color="#000000"/>
+								<chartSubtitle color="#000000"/>
+								<chartLegend textColor="#000000" backgroundColor="#FFFFFF" position="Top"/>
+							</chart>
+							<xyDataset>
+								<dataset>
+									<datasetRun subDataset="Chart dataset" uuid="e62a097b-4060-42c1-a9b2-835a2c81598c">
+										<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{scattergramData})]]></dataSourceExpression>
+									</datasetRun>
+								</dataset>
+								<xySeries>
+									<seriesExpression><![CDATA[""]]></seriesExpression>
+									<xValueExpression><![CDATA[$V{REPORT_COUNT}.equals(1)? 0: $V{MAX_VALUE}]]></xValueExpression>
+									<yValueExpression><![CDATA[100]]></yValueExpression>
+								</xySeries>
+							</xyDataset>
+							<linePlot isShowLines="true" isShowShapes="false">
+								<plot>
+									<seriesColor seriesOrder="0" color="#666666"/>
+								</plot>
+								<categoryAxisFormat>
+									<axisFormat labelColor="#FFFFFF" tickLabelColor="#000000" verticalTickLabels="false"/>
+								</categoryAxisFormat>
+								<valueAxisFormat>
+									<axisFormat tickLabelColor="#FFFFFF" verticalTickLabels="false" axisLineColor="#FFFFFF"/>
+								</valueAxisFormat>
+								<domainAxisMinValueExpression><![CDATA[0]]></domainAxisMinValueExpression>
+								<domainAxisMaxValueExpression><![CDATA[$V{MAX_VALUE}]]></domainAxisMaxValueExpression>
+								<rangeAxisMinValueExpression><![CDATA[0]]></rangeAxisMinValueExpression>
+								<rangeAxisMaxValueExpression><![CDATA[$V{MAX_VALUE}]]></rangeAxisMaxValueExpression>
+							</linePlot>
+						</xyLineChart>
+					</axis>
+				</multiAxisPlot>
+			</multiAxisChart>
+			<textField>
+				<reportElement x="0" y="3" width="720" height="25" forecolor="#666666" uuid="cc0aee66-9b5f-465b-8ac6-29ce859ed5a8"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Survey Question/Response: " + $F{refQuestion} + "; " + $F{refResponse}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="48">
+			<componentElement>
+				<reportElement key="table 1" x="0" y="0" width="720" height="48" uuid="20611bee-9e61-4540-b7fe-c2d65256a997"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Table dataset" uuid="2a9c1422-5dbd-41d7-b7ac-5cdaa6974b1a">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{scattergramData})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="79" uuid="d34489cf-ac8d-465a-bf5d-628907862fb3">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" stretchType="RelativeToTallestObject" x="0" y="0" width="79" height="30" uuid="c51b61dc-d85d-4c15-9be0-66fec2b1bc23"/>
+								<box>
+									<leftPen lineWidth="0.5" lineColor="#808080"/>
+								</box>
+								<textElement textAlignment="Left">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[SEGMENT]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="27" rowSpan="1">
+							<textField isStretchWithOverflow="true">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="79" height="27" uuid="f87022a9-6528-4720-bc94-5d919ef856cd"/>
+								<box>
+									<leftPen lineWidth="0.5" lineColor="#808080"/>
+								</box>
+								<textFieldExpression><![CDATA[$F{ib1270} + " " + $F{clusterName}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="48" uuid="e30f6f26-e45c-4058-aa39-d80760809f30">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" stretchType="RelativeToTallestObject" x="0" y="0" width="48" height="30" uuid="6420325e-6f12-487e-94af-8fe34a013e5f"/>
+								<textElement textAlignment="Right"/>
+								<text><![CDATA[ANALYTIC DATASET]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="27" rowSpan="1">
+							<textField isStretchWithOverflow="true">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="48" height="27" uuid="62d3362c-1841-4e2e-a528-63f54651ac6b"/>
+								<textElement textAlignment="Right">
+									<font size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{chartIndex1}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="58" uuid="9ebcadd0-f6c1-42f8-ae0c-2c35a0cc9a49">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" stretchType="RelativeToTallestObject" x="0" y="0" width="58" height="30" uuid="cede2aab-12a2-4776-8e57-acfbf2dddf90"/>
+								<textElement textAlignment="Right"/>
+								<text><![CDATA[REFERENCE]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="27" rowSpan="1">
+							<textField isStretchWithOverflow="true">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="58" height="27" uuid="699e8fb9-2c81-4284-a142-555b11157729"/>
+								<textElement textAlignment="Right">
+									<font size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{chartIndex2}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="58" uuid="1b57197b-c159-4a42-b9fe-e035533ecc93">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" stretchType="RelativeToTallestObject" x="0" y="0" width="58" height="30" uuid="daba02ba-c000-49ab-a256-381bcc8534c9"/>
+								<textElement textAlignment="Right"/>
+								<text><![CDATA[REFERENCE %]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="27" rowSpan="1">
+							<textField isStretchWithOverflow="true" pattern="#,##0.00%">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="58" height="27" uuid="2e870115-c769-4d4f-9772-6c6ef551cf9b"/>
+								<textElement textAlignment="Right">
+									<font size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{referencePercent}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="44" uuid="58f62f9d-91dd-41d7-8651-f3b46eb48acc">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" stretchType="RelativeToTallestObject" x="0" y="0" width="44" height="30" uuid="cbc155d0-2b48-473b-b42e-1c3d83e418c2"/>
+								<textElement textAlignment="Right"/>
+								<text><![CDATA[CLUSTER AGE]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="27" rowSpan="1">
+							<textField isStretchWithOverflow="true">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="44" height="27" uuid="611a7a71-a715-4614-bce2-2d1403bb95c0"/>
+								<textElement textAlignment="Right">
+									<font size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{age}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="66" uuid="3691983e-01e6-4bcf-85ec-b80a45eba9b4">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" stretchType="RelativeToTallestObject" x="0" y="0" width="66" height="30" uuid="66debbbd-a9cc-423d-aae4-cd20a93bee56"/>
+								<textElement textAlignment="Left"/>
+								<text><![CDATA[MARITAL STATUS]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="27" rowSpan="1">
+							<textField isStretchWithOverflow="true">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="66" height="27" uuid="5eac026d-7b83-4db7-8756-e6deee8ea2e9"/>
+								<textElement>
+									<font size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{maritalStatus}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="63" uuid="221e59f5-ab8b-454a-b5ae-04951de842cb">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" stretchType="RelativeToTallestObject" x="0" y="0" width="63" height="30" uuid="7b006e46-429d-468d-bf4d-964f0103fa70"/>
+								<textElement textAlignment="Left"/>
+								<text><![CDATA[HOME OWNERSHIP]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="27" rowSpan="1">
+							<textField isStretchWithOverflow="true">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="63" height="27" uuid="55df8b7d-cf69-4c0b-9f5c-60dffac9bc8b"/>
+								<textElement>
+									<font size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{homeOwnership}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="78" uuid="36e3e59e-2abc-4e6c-aa05-b3ac9b07302f">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" stretchType="RelativeToTallestObject" x="0" y="0" width="78" height="30" uuid="06036ead-01c3-46d0-b378-67fc416fc4c8"/>
+								<textElement textAlignment="Left"/>
+								<text><![CDATA[KIDS]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="27" rowSpan="1">
+							<textField isStretchWithOverflow="true">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="78" height="27" uuid="63b1ad1c-6c69-4008-90c1-6f0adf0276d5"/>
+								<textElement>
+									<font size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{kids}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="40" uuid="94c367ff-3d74-4b25-a74a-28ab733983d3">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" stretchType="RelativeToTallestObject" x="0" y="0" width="40" height="30" uuid="b738825b-9773-479a-8677-15199d94cb85"/>
+								<textElement textAlignment="Left"/>
+								<text><![CDATA[INCOME]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="27" rowSpan="1">
+							<textField isStretchWithOverflow="true">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="40" height="27" uuid="4098941d-e052-42ad-86da-ca078830912a"/>
+								<textElement>
+									<font size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{income}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="60" uuid="de247132-0e97-4eaa-9e79-f3c469b86f62">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" stretchType="RelativeToTallestObject" x="0" y="0" width="60" height="30" uuid="3127f607-305a-40f4-ada2-b92719096ce1"/>
+								<textElement textAlignment="Left"/>
+								<text><![CDATA[URBANICITY]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="27" rowSpan="1">
+							<textField isStretchWithOverflow="true">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="60" height="27" uuid="b16ce4e7-adb4-481f-9933-b11f4915eb40"/>
+								<textElement>
+									<font size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{urbanicity}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="64" uuid="cf55f4c5-c48b-474a-b6b7-3d4256807646">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" stretchType="RelativeToTallestObject" x="0" y="0" width="64" height="30" uuid="39604fb6-e225-4cba-bd8c-b14bbfd9c7eb"/>
+								<textElement textAlignment="Right"/>
+								<text><![CDATA[NET WORTH]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="27" rowSpan="1">
+							<textField isStretchWithOverflow="true">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="64" height="27" uuid="9216a33b-19be-4b24-b1d9-6258804c98b9"/>
+								<textElement textAlignment="Right">
+									<font size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{netWorth}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="60" uuid="b9ea5347-3f9c-4624-aba5-b4167f5a22fb">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_TH" stretchType="RelativeToTallestObject" x="0" y="0" width="60" height="30" uuid="be2ebd61-0981-4ac0-b727-503b38eba34c"/>
+								<box>
+									<rightPen lineWidth="0.5" lineColor="#808080"/>
+								</box>
+								<textElement textAlignment="Left"/>
+								<text><![CDATA[QUADRANT]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="27" rowSpan="1">
+							<textField isStretchWithOverflow="true">
+								<reportElement style="table_TD" stretchType="RelativeToTallestObject" x="0" y="0" width="60" height="27" uuid="0fc10501-bf01-4b1d-a0e7-63f656302c2b"/>
+								<box>
+									<rightPen lineWidth="0.5" lineColor="#808080"/>
+								</box>
+								<textElement>
+									<font size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{quadrant}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<break>
+				<reportElement x="0" y="0" width="720" height="1" uuid="768bc140-b657-42e0-a1af-13ee86ad330f"/>
+			</break>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="410" y="0" width="310" height="15" forecolor="#666666" uuid="c5b1d7fa-1cdb-47cb-8e40-2c4523d26cbb">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="SansSerif" size="7" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[© Copyright 2013 Acxiom Corporation. All rights reserved.]]></text>
+			</staticText>
+			<textField evaluationTime="Report">
+				<reportElement x="370" y="0" width="40" height="15" forecolor="#666666" uuid="fdf8713f-fe98-423c-b0f4-c1ee907c838d">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="SansSerif" size="7" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="310" y="0" width="60" height="15" forecolor="#666666" uuid="4ce8b302-f755-4510-b765-cc4226dc9973">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="SansSerif" size="7" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

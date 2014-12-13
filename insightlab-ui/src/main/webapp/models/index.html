@@ -1,0 +1,52 @@
+
+<script src="../resources/html/stable_header.js" type="text/javascript"></script>
+
+<script type="text/x-template" id="model-template">
+    <h2><%=acxResourceManager.getResource("model.index.modle.header")%></h2>
+    <div id ="breadcrumb-model" class="acxiom-breadcrumb-container"></div>
+    <div class="tabbable">
+        <ul class="nav nav-tabs">
+            <li data-tabId="analytic"><a href="#analytic" title="Segment Analytics"><span class="analytic-ico tab-ico"></span><%=acxResourceManager.getResource("model.index.modle.tab")%></a></li>
+            <!--<li data-tabId="audience"><a href="#audience" title="Audience Manager"><span class="audience-ico tab-ico"></span>Audience Manager</a></li>-->
+            <!--li data-tabId="campaign" style="display:none"><a href="#campaign" title="Campaign Optimizer"><span class="campaign-ico tab-ico"></span>Campaign Optimizer</a></li-->
+        </ul>
+        <div class="tab-content" id="content">
+            <div id="analytic-model"></div>
+            <div id="audience-model"></div>
+            <div id="campaign-model"></div>
+        </div>
+    </div>
+</script>
+<div class="row-fluid dashboard">
+	<div class="span12" id="widget-content"></div>
+</div>
+
+<script src="../resources/html/stable_footer.js" type="text/javascript"></script>
+
+<!--acxiom-modal-->
+<div id="lookAlike"  class="acxiom-modal">
+   <div class="x-btn acxiom-modal-close"></div>  
+   <!-- modal-header -->
+         <div class="row-fluid">
+            <h4><%=acxResourceManager.getResource("model.index.lookalike.header")%></h4>
+         </div>
+    <!-- / modal-header -->
+
+        <!-- modal-body -->
+    <div id ='Like-body' class="row-fluid">
+        <div id="lookheader"></div>
+        <div class="span12"></div>
+        </div>
+   </div>
+<div id="dialogueBox"  class="acxiom-modal">
+     <div id ='dialogue-body' class="row-fluid">
+        <div class="span12">
+        </div>
+    </div>
+     <div class="row-fluid top-buffer">
+         <div class="span12 span-right"></div>
+     </div>
+</div>
+
+<div id="feedbackModel" class="acxiom-modal"></div>
+<div id="CO" class="acxiom-modal"></div>
